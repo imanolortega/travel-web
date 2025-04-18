@@ -1,12 +1,12 @@
-import { Flex } from "@/once-ui/components";
-import MasonryGrid from "@/components/gallery/MasonryGrid";
-import { baseURL } from "@/app/resources";
-import { gallery, person } from "@/app/resources/content";
+import { Flex } from '@/once-ui/components'
+import MasonryGrid from '@/components/gallery/MasonryGrid'
+import { baseURL } from '@/app/resources'
+import { gallery, person } from '@/app/resources/content'
 
 export async function generateMetadata() {
-  const title = gallery.title;
-  const description = gallery.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const title = gallery.title
+  const description = gallery.description
+  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
@@ -14,7 +14,7 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
-      type: "website",
+      type: 'website',
       url: `https://${baseURL}/gallery`,
       images: [
         {
@@ -24,12 +24,12 @@ export async function generateMetadata() {
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
       images: [ogImage],
     },
-  };
+  }
 }
 
 export default function Gallery() {
@@ -40,21 +40,21 @@ export default function Gallery() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ImageGallery",
+            '@context': 'https://schema.org',
+            '@type': 'ImageGallery',
             name: gallery.title,
             description: gallery.description,
             url: `https://${baseURL}/gallery`,
             image: gallery.images.map((image) => ({
-              "@type": "ImageObject",
+              '@type': 'ImageObject',
               url: `${baseURL}${image.src}`,
               description: image.alt,
             })),
             author: {
-              "@type": "Person",
+              '@type': 'Person',
               name: person.name,
               image: {
-                "@type": "ImageObject",
+                '@type': 'ImageObject',
                 url: `${baseURL}${person.avatar}`,
               },
             },
@@ -63,5 +63,5 @@ export default function Gallery() {
       />
       <MasonryGrid />
     </Flex>
-  );
+  )
 }

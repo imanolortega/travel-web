@@ -1,57 +1,52 @@
-"use client";
+'use client'
 
-import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { usePathname } from 'next/navigation'
+import { useEffect, useState } from 'react'
 
-import { Fade, Flex, ToggleButton } from "@/once-ui/components";
-import styles from "@/components/Header.module.scss";
+import { Fade, Flex, ToggleButton } from '@/once-ui/components'
+import styles from '@/components/Header.module.scss'
 
-import { routes } from "@/app/resources";
-import {
-  about,
-  blog,
-  work,
-  gallery,
-} from "@/app/resources/content";
+import { routes } from '@/app/resources'
+import { about, blog, work, gallery } from '@/app/resources/content'
 
 type TimeDisplayProps = {
-  timeZone: string;
-  locale?: string;
-};
+  timeZone: string
+  locale?: string
+}
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({
-  timeZone = "America/Argentina/Buenos_Aires",
-  locale = "es-AR",
+  timeZone = 'America/Argentina/Buenos_Aires',
+  locale = 'es-AR',
 }) => {
-  const [currentTime, setCurrentTime] = useState("");
+  const [currentTime, setCurrentTime] = useState('')
 
   useEffect(() => {
     const updateTime = () => {
-      const now = new Date();
+      const now = new Date()
       const options: Intl.DateTimeFormatOptions = {
         timeZone,
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit",
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
         hour12: false,
-      };
-      const timeString = new Intl.DateTimeFormat(locale, options).format(now);
-      setCurrentTime(timeString);
-    };
+      }
+      const timeString = new Intl.DateTimeFormat(locale, options).format(now)
+      setCurrentTime(timeString)
+    }
 
-    updateTime();
-    const intervalId = setInterval(updateTime, 1000);
+    updateTime()
+    const intervalId = setInterval(updateTime, 1000)
 
-    return () => clearInterval(intervalId);
-  }, [timeZone, locale]);
+    return () => clearInterval(intervalId)
+  }, [timeZone, locale])
 
-  return <>{currentTime}</>;
-};
+  return <>{currentTime}</>
+}
 
-export default TimeDisplay;
+export default TimeDisplay
 
 export const Header = () => {
-  const pathname = usePathname() ?? "";
+  const pathname = usePathname() ?? ''
 
   return (
     <>
@@ -90,71 +85,71 @@ export const Header = () => {
             horizontal="center"
           >
             <Flex gap="4" vertical="center" textVariant="body-default-s">
-              {routes["/"] && (
+              {routes['/'] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="person"
                     href="/"
                     label={about.label}
-                    selected={pathname === "/"}
+                    selected={pathname === '/'}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="person"
                     href="/"
-                    selected={pathname === "/"}
+                    selected={pathname === '/'}
                   />
                 </>
               )}
-              {routes["/work"] && (
+              {routes['/work'] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="grid"
                     href="/work"
                     label={work.label}
-                    selected={pathname.startsWith("/work")}
+                    selected={pathname.startsWith('/work')}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="grid"
                     href="/work"
-                    selected={pathname.startsWith("/work")}
+                    selected={pathname.startsWith('/work')}
                   />
                 </>
               )}
-              {routes["/blog"] && (
+              {routes['/blog'] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="book"
                     href="/blog"
                     label={blog.label}
-                    selected={pathname.startsWith("/blog")}
+                    selected={pathname.startsWith('/blog')}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="book"
                     href="/blog"
-                    selected={pathname.startsWith("/blog")}
+                    selected={pathname.startsWith('/blog')}
                   />
                 </>
               )}
-              {routes["/gallery"] && (
+              {routes['/gallery'] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="gallery"
                     href="/gallery"
                     label={gallery.label}
-                    selected={pathname.startsWith("/gallery")}
+                    selected={pathname.startsWith('/gallery')}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="gallery"
                     href="/gallery"
-                    selected={pathname.startsWith("/gallery")}
+                    selected={pathname.startsWith('/gallery')}
                   />
                 </>
               )}
@@ -164,5 +159,5 @@ export const Header = () => {
         <Flex fillWidth horizontal="end" vertical="center"></Flex>
       </Flex>
     </>
-  );
-};
+  )
+}

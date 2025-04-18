@@ -1,13 +1,13 @@
-import { Column, Flex, Heading } from "@/once-ui/components";
-import { Mailchimp } from "@/components";
-import { Posts } from "@/components/blog/Posts";
-import { baseURL } from "@/app/resources";
-import { blog, person, newsletter } from "@/app/resources/content";
+import { Column, Flex, Heading } from '@/once-ui/components'
+import { Mailchimp } from '@/components'
+import { Posts } from '@/components/blog/Posts'
+import { baseURL } from '@/app/resources'
+import { blog, person, newsletter } from '@/app/resources/content'
 
 export async function generateMetadata() {
-  const title = blog.title;
-  const description = blog.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const title = blog.title
+  const description = blog.description
+  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
@@ -15,7 +15,7 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
-      type: "website",
+      type: 'website',
       url: `https://${baseURL}/blog`,
       images: [
         {
@@ -25,12 +25,12 @@ export async function generateMetadata() {
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
       images: [ogImage],
     },
-  };
+  }
 }
 
 export default function Blog() {
@@ -41,17 +41,17 @@ export default function Blog() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Blog",
+            '@context': 'https://schema.org',
+            '@type': 'Blog',
             headline: blog.title,
             description: blog.description,
             url: `https://${baseURL}/blog`,
             image: `${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
             author: {
-              "@type": "Person",
+              '@type': 'Person',
               name: person.name,
               image: {
-                "@type": "ImageObject",
+                '@type': 'ImageObject',
                 url: `${baseURL}${person.avatar}`,
               },
             },
@@ -67,5 +67,5 @@ export default function Blog() {
       </Column>
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
-  );
+  )
 }

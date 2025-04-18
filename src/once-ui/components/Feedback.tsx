@@ -1,32 +1,33 @@
-"use client";
+'use client'
 
-import React, { forwardRef, ReactNode } from "react";
-import { IconButton, Button, Icon, Flex, Text } from ".";
+import React, { forwardRef, ReactNode } from 'react'
+import { IconButton, Button, Icon, Flex, Text } from '.'
 
-interface FeedbackProps extends Omit<React.ComponentProps<typeof Flex>, "title"> {
-  variant?: "info" | "danger" | "warning" | "success";
-  icon?: boolean;
-  title?: string;
-  description?: string;
-  showCloseButton?: boolean;
-  onClose?: () => void;
-  actionButtonProps?: React.ComponentProps<typeof Button>;
-  children?: ReactNode;
+interface FeedbackProps
+  extends Omit<React.ComponentProps<typeof Flex>, 'title'> {
+  variant?: 'info' | 'danger' | 'warning' | 'success'
+  icon?: boolean
+  title?: string
+  description?: string
+  showCloseButton?: boolean
+  onClose?: () => void
+  actionButtonProps?: React.ComponentProps<typeof Button>
+  children?: ReactNode
 }
 
 const variantIconMap: {
-  [key in "info" | "danger" | "warning" | "success"]: string;
+  [key in 'info' | 'danger' | 'warning' | 'success']: string
 } = {
-  info: "infoCircle",
-  danger: "errorCircle",
-  warning: "warningTriangle",
-  success: "checkCircle",
-};
+  info: 'infoCircle',
+  danger: 'errorCircle',
+  warning: 'warningTriangle',
+  success: 'checkCircle',
+}
 
 const Feedback = forwardRef<HTMLDivElement, FeedbackProps>(
   (
     {
-      variant = "info",
+      variant = 'info',
       icon,
       title,
       description,
@@ -36,7 +37,7 @@ const Feedback = forwardRef<HTMLDivElement, FeedbackProps>(
       children,
       ...rest
     },
-    ref,
+    ref
   ) => {
     return (
       <Flex
@@ -62,7 +63,13 @@ const Feedback = forwardRef<HTMLDivElement, FeedbackProps>(
             />
           </Flex>
         )}
-        <Flex fillWidth padding="16" gap="24" vertical="center" direction="column">
+        <Flex
+          fillWidth
+          padding="16"
+          gap="24"
+          vertical="center"
+          direction="column"
+        >
           {(title || description) && (
             <Flex direction="column" fillWidth gap="4">
               {title && (
@@ -92,7 +99,10 @@ const Feedback = forwardRef<HTMLDivElement, FeedbackProps>(
               )}
               {description && (
                 <Flex fillWidth>
-                  <Text variant="body-default-s" onBackground={`${variant}-strong`}>
+                  <Text
+                    variant="body-default-s"
+                    onBackground={`${variant}-strong`}
+                  >
                     {description}
                   </Text>
                 </Flex>
@@ -107,9 +117,9 @@ const Feedback = forwardRef<HTMLDivElement, FeedbackProps>(
           )}
         </Flex>
       </Flex>
-    );
-  },
-);
+    )
+  }
+)
 
-Feedback.displayName = "Feedback";
-export { Feedback };
+Feedback.displayName = 'Feedback'
+export { Feedback }

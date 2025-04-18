@@ -1,9 +1,9 @@
-import { Flex, IconButton, SmartLink, Text } from "@/once-ui/components";
-import { person, social } from "@/app/resources/content";
-import styles from "./Footer.module.scss";
+import { Flex, IconButton, SmartLink, Text } from '@/once-ui/components'
+import { person, social } from '@/app/resources/content'
+import styles from './Footer.module.scss'
 
 export const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const currentYear = new Date().getFullYear()
 
   return (
     <Flex
@@ -39,11 +39,11 @@ export const Footer = () => {
                   size="s"
                   variant="ghost"
                 />
-              ),
+              )
           )}
         </Flex>
       </Flex>
       <Flex height="80" show="s"></Flex>
     </Flex>
-  );
-};
+  )
+}

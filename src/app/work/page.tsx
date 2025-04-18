@@ -1,13 +1,13 @@
-import { getPosts } from "@/app/utils/utils";
-import { Column } from "@/once-ui/components";
-import { Projects } from "@/components/work/Projects";
-import { baseURL } from "@/app/resources";
-import { person, work } from "@/app/resources/content";
+import { getPosts } from '@/app/utils/utils'
+import { Column } from '@/once-ui/components'
+import { Projects } from '@/components/work/Projects'
+import { baseURL } from '@/app/resources'
+import { person, work } from '@/app/resources/content'
 
 export async function generateMetadata() {
-  const title = work.title;
-  const description = work.description;
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`;
+  const title = work.title
+  const description = work.description
+  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`
 
   return {
     title,
@@ -15,7 +15,7 @@ export async function generateMetadata() {
     openGraph: {
       title,
       description,
-      type: "website",
+      type: 'website',
       url: `https://${baseURL}/work/`,
       images: [
         {
@@ -25,16 +25,16 @@ export async function generateMetadata() {
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
       images: [ogImage],
     },
-  };
+  }
 }
 
 export default function Work() {
-  let allProjects = getPosts(["src", "app", "work", "projects"]);
+  let allProjects = getPosts(['src', 'app', 'work', 'projects'])
 
   return (
     <Column maxWidth="m">
@@ -43,18 +43,18 @@ export default function Work() {
         suppressHydrationWarning
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "CollectionPage",
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
             headline: work.title,
             description: work.description,
             url: `https://${baseURL}/projects`,
             image: `${baseURL}/og?title=Design%20Projects`,
             author: {
-              "@type": "Person",
+              '@type': 'Person',
               name: person.name,
             },
             hasPart: allProjects.map((project) => ({
-              "@type": "CreativeWork",
+              '@type': 'CreativeWork',
               headline: project.metadata.title,
               description: project.metadata.summary,
               url: `https://${baseURL}/projects/${project.slug}`,
@@ -65,5 +65,5 @@ export default function Work() {
       />
       <Projects />
     </Column>
-  );
+  )
 }

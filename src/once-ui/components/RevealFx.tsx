@@ -1,26 +1,26 @@
-"use client";
+'use client'
 
-import React, { useState, useEffect, forwardRef } from "react";
-import { SpacingToken } from "../types";
-import styles from "./RevealFx.module.scss";
-import { Flex } from ".";
+import React, { useState, useEffect, forwardRef } from 'react'
+import { SpacingToken } from '../types'
+import styles from './RevealFx.module.scss'
+import { Flex } from '.'
 
 interface RevealFxProps extends React.ComponentProps<typeof Flex> {
-  children: React.ReactNode;
-  speed?: "slow" | "medium" | "fast";
-  delay?: number;
-  revealedByDefault?: boolean;
-  translateY?: number | SpacingToken;
-  trigger?: boolean;
-  style?: React.CSSProperties;
-  className?: string;
+  children: React.ReactNode
+  speed?: 'slow' | 'medium' | 'fast'
+  delay?: number
+  revealedByDefault?: boolean
+  translateY?: number | SpacingToken
+  trigger?: boolean
+  style?: React.CSSProperties
+  className?: string
 }
 
 const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(
   (
     {
       children,
-      speed = "medium",
+      speed = 'medium',
       delay = 0,
       revealedByDefault = false,
       translateY,
@@ -29,53 +29,53 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(
       className,
       ...rest
     },
-    ref,
+    ref
   ) => {
-    const [isRevealed, setIsRevealed] = useState(revealedByDefault);
+    const [isRevealed, setIsRevealed] = useState(revealedByDefault)
 
     useEffect(() => {
       const timer = setTimeout(() => {
-        setIsRevealed(true);
-      }, delay * 1000);
+        setIsRevealed(true)
+      }, delay * 1000)
 
-      return () => clearTimeout(timer);
-    }, [delay]);
+      return () => clearTimeout(timer)
+    }, [delay])
 
     useEffect(() => {
       if (trigger !== undefined) {
-        setIsRevealed(trigger);
+        setIsRevealed(trigger)
       }
-    }, [trigger]);
+    }, [trigger])
 
     const getSpeedDuration = () => {
       switch (speed) {
-        case "fast":
-          return "1s";
-        case "medium":
-          return "2s";
-        case "slow":
-          return "3s";
+        case 'fast':
+          return '1s'
+        case 'medium':
+          return '2s'
+        case 'slow':
+          return '3s'
         default:
-          return "2s";
+          return '2s'
       }
-    };
+    }
 
     const getTranslateYValue = () => {
-      if (typeof translateY === "number") {
-        return `${translateY}rem`;
-      } else if (typeof translateY === "string") {
-        return `var(--static-space-${translateY})`;
+      if (typeof translateY === 'number') {
+        return `${translateY}rem`
+      } else if (typeof translateY === 'string') {
+        return `var(--static-space-${translateY})`
       }
-      return undefined;
-    };
+      return undefined
+    }
 
-    const translateValue = getTranslateYValue();
+    const translateValue = getTranslateYValue()
 
     const revealStyle: React.CSSProperties = {
       transitionDuration: getSpeedDuration(),
-      transform: isRevealed ? "translateY(0)" : `translateY(${translateValue})`,
+      transform: isRevealed ? 'translateY(0)' : `translateY(${translateValue})`,
       ...style,
-    };
+    }
 
     return (
       <Flex
@@ -84,14 +84,14 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(
         horizontal="center"
         ref={ref}
         style={revealStyle}
-        className={`${styles.revealFx} ${isRevealed ? styles.revealed : styles.hidden} ${className || ""}`}
+        className={`${styles.revealFx} ${isRevealed ? styles.revealed : styles.hidden} ${className || ''}`}
         {...rest}
       >
         {children}
       </Flex>
-    );
-  },
-);
+    )
+  }
+)
 
-RevealFx.displayName = "RevealFx";
-export { RevealFx };
+RevealFx.displayName = 'RevealFx'
+export { RevealFx }

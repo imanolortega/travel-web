@@ -1,16 +1,15 @@
-import "@/once-ui/styles/index.scss";
-import "@/once-ui/tokens/index.scss";
+import '@/once-ui/styles/index.scss'
+import '@/once-ui/tokens/index.scss'
 
-import classNames from "classnames";
+import classNames from 'classnames'
 
-import { Footer, Header, RouteGuard } from "@/components";
-import { baseURL, effects, style } from "@/app/resources";
+import { Footer, Header, RouteGuard } from '@/components'
+import { baseURL, effects, style } from '@/app/resources'
 
-import { Inter } from "next/font/google";
-import { Source_Code_Pro } from "next/font/google";
+import { Inter, Noto_Sans } from 'next/font/google'
 
-import { person, home } from "@/app/resources/content";
-import { Background, Column, Flex, ToastProvider } from "@/once-ui/components";
+import { person, home } from '@/app/resources/content'
+import { Background, Column, Flex, ToastProvider } from '@/once-ui/components'
 
 export async function generateMetadata() {
   return {
@@ -19,11 +18,11 @@ export async function generateMetadata() {
     description: home.description,
     openGraph: {
       title: `${person.firstName}'s Portfolio`,
-      description: "Portfolio website showcasing my work.",
+      description: 'Portfolio website showcasing my work.',
       url: baseURL,
       siteName: `${person.firstName}'s Portfolio`,
-      locale: "en_US",
-      type: "website",
+      locale: 'en_US',
+      type: 'website',
     },
     robots: {
       index: true,
@@ -31,41 +30,28 @@ export async function generateMetadata() {
       googleBot: {
         index: true,
         follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
     },
-  };
+  }
 }
 
 const primary = Inter({
-  variable: "--font-primary",
-  subsets: ["latin"],
-  display: "swap",
-});
+  variable: '--font-primary',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
-type FontConfig = {
-  variable: string;
-};
-
-/*
-	Replace with code for secondary and tertiary fonts
-	from https://once-ui.com/customize
-*/
-const secondary: FontConfig | undefined = undefined;
-const tertiary: FontConfig | undefined = undefined;
-/*
- */
-
-const code = Source_Code_Pro({
-  variable: "--font-code",
-  subsets: ["latin"],
-  display: "swap",
-});
+const secondary = Noto_Sans({
+  variable: '--font-secondary',
+  subsets: ['latin'],
+  display: 'swap',
+})
 
 interface RootLayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 export default async function RootLayout({ children }: RootLayoutProps) {
@@ -85,13 +71,17 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-transition={style.transition}
       className={classNames(
         primary.variable,
-        secondary ? secondary.variable : "",
-        tertiary ? tertiary.variable : "",
-        code.variable,
+        secondary.variable
       )}
     >
       <ToastProvider>
-        <Column style={{ minHeight: "100vh" }} as="body" fillWidth margin="0" padding="0">
+        <Column
+          style={{ minHeight: '100vh' }}
+          as="body"
+          fillWidth
+          margin="0"
+          padding="0"
+        >
           <Background
             mask={{
               cursor: effects.mask.cursor,
@@ -158,5 +148,5 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         </Column>
       </ToastProvider>
     </Flex>
-  );
+  )
 }

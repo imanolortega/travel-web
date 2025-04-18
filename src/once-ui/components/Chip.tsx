@@ -1,20 +1,20 @@
-"use client";
+'use client'
 
-import React, { ReactNode, MouseEventHandler, forwardRef } from "react";
-import classNames from "classnames";
-import { Text, Icon, IconButton, IconButtonProps, Flex } from ".";
-import styles from "./Chip.module.scss";
+import React, { ReactNode, MouseEventHandler, forwardRef } from 'react'
+import classNames from 'classnames'
+import { Text, Icon, IconButton, IconButtonProps, Flex } from '.'
+import styles from './Chip.module.scss'
 
 interface ChipProps extends React.ComponentProps<typeof Flex> {
-  label: string;
-  selected?: boolean;
-  prefixIcon?: string;
-  onRemove?: () => void;
-  onClick?: MouseEventHandler<HTMLDivElement>;
-  children?: ReactNode;
-  iconButtonProps?: Partial<IconButtonProps>;
-  style?: React.CSSProperties;
-  className?: string;
+  label: string
+  selected?: boolean
+  prefixIcon?: string
+  onRemove?: () => void
+  onClick?: MouseEventHandler<HTMLDivElement>
+  children?: ReactNode
+  iconButtonProps?: Partial<IconButtonProps>
+  style?: React.CSSProperties
+  className?: string
 }
 
 const Chip: React.FC<ChipProps> = forwardRef<HTMLDivElement, ChipProps>(
@@ -29,34 +29,34 @@ const Chip: React.FC<ChipProps> = forwardRef<HTMLDivElement, ChipProps>(
       iconButtonProps = {},
       ...rest
     },
-    ref,
+    ref
   ) => {
     const defaultIconButtonProps: IconButtonProps = {
-      icon: "close",
-      variant: "ghost",
-      size: "s",
-      tooltip: "Remove",
+      icon: 'close',
+      variant: 'ghost',
+      size: 's',
+      tooltip: 'Remove',
       onClick: (e) => {
-        e.stopPropagation();
-        if (onRemove) onRemove();
+        e.stopPropagation()
+        if (onRemove) onRemove()
       },
-    };
+    }
 
     const combinedIconButtonProps = {
       ...defaultIconButtonProps,
       ...iconButtonProps,
       onClick: (e: React.MouseEvent<HTMLButtonElement>) => {
-        defaultIconButtonProps.onClick?.(e);
-        iconButtonProps.onClick?.(e);
+        defaultIconButtonProps.onClick?.(e)
+        iconButtonProps.onClick?.(e)
       },
-    };
+    }
 
     const handleKeyDown: React.KeyboardEventHandler<HTMLDivElement> = (e) => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        if (onClick) onClick(e as unknown as React.MouseEvent<HTMLDivElement>);
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        if (onClick) onClick(e as unknown as React.MouseEvent<HTMLDivElement>)
       }
-    };
+    }
 
     return (
       <Flex
@@ -86,16 +86,16 @@ const Chip: React.FC<ChipProps> = forwardRef<HTMLDivElement, ChipProps>(
         {onRemove && (
           <IconButton
             style={{
-              color: "inherit",
+              color: 'inherit',
             }}
             {...combinedIconButtonProps}
           />
         )}
       </Flex>
-    );
-  },
-);
+    )
+  }
+)
 
-Chip.displayName = "Chip";
+Chip.displayName = 'Chip'
 
-export { Chip };
+export { Chip }

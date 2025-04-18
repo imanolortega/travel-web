@@ -1,24 +1,28 @@
-"use client";
+'use client'
 
-import React, { forwardRef } from "react";
+import React, { forwardRef } from 'react'
 
-import { Avatar, AvatarProps, Flex } from ".";
-import styles from "./AvatarGroup.module.scss";
-import classNames from "classnames";
+import { Avatar, AvatarProps, Flex } from '.'
+import styles from './AvatarGroup.module.scss'
+import classNames from 'classnames'
 
 interface AvatarGroupProps extends React.ComponentProps<typeof Flex> {
-  avatars: AvatarProps[];
-  size?: "xs" | "s" | "m" | "l" | "xl";
-  reverse?: boolean;
-  limit?: number;
-  className?: string;
-  style?: React.CSSProperties;
+  avatars: AvatarProps[]
+  size?: 'xs' | 's' | 'm' | 'l' | 'xl'
+  reverse?: boolean
+  limit?: number
+  className?: string
+  style?: React.CSSProperties
 }
 
 const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
-  ({ avatars, size = "m", reverse = false, limit, className, style, ...rest }, ref) => {
-    const displayedAvatars = limit ? avatars.slice(0, limit) : avatars;
-    const remainingCount = limit && avatars.length > limit ? avatars.length - limit : 0;
+  (
+    { avatars, size = 'm', reverse = false, limit, className, style, ...rest },
+    ref
+  ) => {
+    const displayedAvatars = limit ? avatars.slice(0, limit) : avatars
+    const remainingCount =
+      limit && avatars.length > limit ? avatars.length - limit : 0
 
     return (
       <Flex
@@ -55,11 +59,11 @@ const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
           />
         )}
       </Flex>
-    );
-  },
-);
+    )
+  }
+)
 
-AvatarGroup.displayName = "AvatarGroup";
+AvatarGroup.displayName = 'AvatarGroup'
 
-export { AvatarGroup };
-export type { AvatarGroupProps };
+export { AvatarGroup }
+export type { AvatarGroupProps }

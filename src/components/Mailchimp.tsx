@@ -1,56 +1,67 @@
-"use client";
+'use client'
 
-import { mailchimp } from "@/app/resources";
-import { Button, Flex, Heading, Input, Text, Background, Column } from "@/once-ui/components";
-import { useState } from "react";
+import { mailchimp } from '@/app/resources'
+import {
+  Button,
+  Flex,
+  Heading,
+  Input,
+  Text,
+  Background,
+  Column,
+} from '@/once-ui/components'
+import { useState } from 'react'
 
-function debounce<T extends (...args: any[]) => void>(func: T, delay: number): T {
-  let timeout: ReturnType<typeof setTimeout>;
+function debounce<T extends (...args: any[]) => void>(
+  func: T,
+  delay: number
+): T {
+  let timeout: ReturnType<typeof setTimeout>
   return ((...args: Parameters<T>) => {
-    clearTimeout(timeout);
-    timeout = setTimeout(() => func(...args), delay);
-  }) as T;
+    clearTimeout(timeout)
+    timeout = setTimeout(() => func(...args), delay)
+  }) as T
 }
 
 type NewsletterProps = {
-  display: boolean;
-  title: string | JSX.Element;
-  description: string | JSX.Element;
-};
+  display: boolean
+  title: string | JSX.Element
+  description: string | JSX.Element
+}
 
 export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
-  const [email, setEmail] = useState<string>("");
-  const [error, setError] = useState<string>("");
-  const [touched, setTouched] = useState<boolean>(false);
+  const [email, setEmail] = useState<string>('')
+  const [error, setError] = useState<string>('')
+  const [touched, setTouched] = useState<boolean>(false)
 
   const validateEmail = (email: string): boolean => {
-    if (email === "") {
-      return true;
+    if (email === '') {
+      return true
     }
 
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailPattern.test(email);
-  };
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailPattern.test(email)
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    setEmail(value);
+    const value = e.target.value
+    setEmail(value)
 
     if (!validateEmail(value)) {
-      setError("Please enter a valid email address.");
+      setError('Please enter a valid email address.')
     } else {
-      setError("");
+      setError('')
     }
-  };
+  }
 
-  const debouncedHandleChange = debounce(handleChange, 2000);
+  const debouncedHandleChange = debounce(handleChange, 2000)
 
   const handleBlur = () => {
-    setTouched(true);
+    setTouched(true)
     if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
+      setError('Please enter a valid email address.')
     }
-  };
+  }
 
   return (
     <Column
@@ -112,13 +123,17 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
           opacity: mailchimp.effects.lines.opacity as any,
         }}
       />
-      <Heading style={{ position: "relative" }} marginBottom="s" variant="display-strong-xs">
+      <Heading
+        style={{ position: 'relative' }}
+        marginBottom="s"
+        variant="display-strong-xs"
+      >
         {newsletter.title}
       </Heading>
       <Text
         style={{
-          position: "relative",
-          maxWidth: "var(--responsive-width-xs)",
+          position: 'relative',
+          maxWidth: 'var(--responsive-width-xs)',
         }}
         wrap="balance"
         marginBottom="l"
@@ -128,9 +143,9 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
       </Text>
       <form
         style={{
-          width: "100%",
-          display: "flex",
-          justifyContent: "center",
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
         }}
         action={mailchimp.action}
         method="post"
@@ -148,15 +163,15 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
             required
             onChange={(e) => {
               if (error) {
-                handleChange(e);
+                handleChange(e)
               } else {
-                debouncedHandleChange(e);
+                debouncedHandleChange(e)
               }
             }}
             onBlur={handleBlur}
             errorMessage={error}
           />
-          <div style={{ display: "none" }}>
+          <div style={{ display: 'none' }}>
             <input
               type="checkbox"
               readOnly
@@ -167,10 +182,21 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
             />
           </div>
           <div id="mce-responses" className="clearfalse">
-            <div className="response" id="mce-error-response" style={{ display: "none" }}></div>
-            <div className="response" id="mce-success-response" style={{ display: "none" }}></div>
+            <div
+              className="response"
+              id="mce-error-response"
+              style={{ display: 'none' }}
+            ></div>
+            <div
+              className="response"
+              id="mce-success-response"
+              style={{ display: 'none' }}
+            ></div>
           </div>
-          <div aria-hidden="true" style={{ position: "absolute", left: "-5000px" }}>
+          <div
+            aria-hidden="true"
+            style={{ position: 'absolute', left: '-5000px' }}
+          >
             <input
               type="text"
               readOnly
@@ -181,7 +207,12 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
           </div>
           <div className="clear">
             <Flex height="48" vertical="center">
-              <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
+              <Button
+                id="mc-embedded-subscribe"
+                value="Subscribe"
+                size="m"
+                fillWidth
+              >
                 Subscribe
               </Button>
             </Flex>
@@ -189,5 +220,5 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
         </Flex>
       </form>
     </Column>
-  );
-};
+  )
+}

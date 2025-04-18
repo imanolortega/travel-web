@@ -1,33 +1,34 @@
-"use client";
+'use client'
 
-import React, { useState, forwardRef, useImperativeHandle } from "react";
-import { Flex, Icon, Heading, Column } from ".";
-import styles from "./Accordion.module.scss";
+import React, { useState, forwardRef, useImperativeHandle } from 'react'
+import { Flex, Icon, Heading, Column } from '.'
+import styles from './Accordion.module.scss'
 
-interface AccordionProps extends Omit<React.ComponentProps<typeof Flex>, "title"> {
-  title: React.ReactNode;
-  children: React.ReactNode;
-  open?: boolean;
+interface AccordionProps
+  extends Omit<React.ComponentProps<typeof Flex>, 'title'> {
+  title: React.ReactNode
+  children: React.ReactNode
+  open?: boolean
 }
 
 const Accordion: React.FC<AccordionProps> = forwardRef(
   ({ title, children, open = false, ...rest }, ref) => {
-    const [isOpen, setIsOpen] = useState(open);
+    const [isOpen, setIsOpen] = useState(open)
 
     const toggleAccordion = () => {
-      setIsOpen(!isOpen);
-    };
+      setIsOpen(!isOpen)
+    }
 
     useImperativeHandle(ref, () => ({
       ...((ref as React.MutableRefObject<HTMLDivElement>)?.current ?? {}),
       toggle: toggleAccordion,
       open: () => {
-        setIsOpen(true);
+        setIsOpen(true)
       },
       close: () => {
-        setIsOpen(false);
+        setIsOpen(false)
       },
-    }));
+    }))
 
     return (
       <Flex fillWidth direction="column" className={styles.border}>
@@ -51,9 +52,9 @@ const Accordion: React.FC<AccordionProps> = forwardRef(
             name="chevronDown"
             size="m"
             style={{
-              display: "flex",
-              transform: isOpen ? "rotate(180deg)" : "rotate(0deg)",
-              transition: "var(--transition-micro-medium)",
+              display: 'flex',
+              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+              transition: 'var(--transition-micro-medium)',
             }}
           />
         </Flex>
@@ -61,23 +62,29 @@ const Accordion: React.FC<AccordionProps> = forwardRef(
           id="accordion-content"
           fillWidth
           style={{
-            display: "grid",
-            gridTemplateRows: isOpen ? "1fr" : "0fr",
+            display: 'grid',
+            gridTemplateRows: isOpen ? '1fr' : '0fr',
             transition:
-              "grid-template-rows var(--transition-duration-macro-medium) var(--transition-eased)",
+              'grid-template-rows var(--transition-duration-macro-medium) var(--transition-eased)',
           }}
           aria-hidden={!isOpen}
         >
           <Flex fillWidth minHeight={0} overflow="hidden">
-            <Column fillWidth paddingX="20" paddingTop="8" paddingBottom="16" {...rest}>
+            <Column
+              fillWidth
+              paddingX="20"
+              paddingTop="8"
+              paddingBottom="16"
+              {...rest}
+            >
               {children}
             </Column>
           </Flex>
         </Flex>
       </Flex>
-    );
-  },
-);
+    )
+  }
+)
 
-Accordion.displayName = "Accordion";
-export { Accordion };
+Accordion.displayName = 'Accordion'
+export { Accordion }

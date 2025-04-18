@@ -1,28 +1,28 @@
-const baseURL = "demo.magic-portfolio.com";
+const baseURL = 'demo.magic-portfolio.com'
 
 const routes = {
-  "/": true,
-  "/blog": true,
-  "/gallery": true,
-};
+  '/': true,
+  '/blog': true,
+  '/gallery': true,
+}
 
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
-};
+  '/work/automate-design-handovers-with-a-figma-to-code-pipeline': true,
+}
 
 const style = {
-  theme: "dark", // dark | light
-  neutral: "gray", // sand | gray | slate
-  brand: "emerald", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  accent: "orange", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
-  solid: "contrast", // color | contrast
-  solidStyle: "flat", // flat | plastic
-  border: "playful", // rounded | playful | conservative
-  surface: "translucent", // filled | translucent
-  transition: "all", // all | micro | macro
-};
+  theme: 'dark', // dark | light
+  neutral: 'gray', // sand | gray | slate
+  brand: 'emerald', // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  accent: 'orange', // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan
+  solid: 'contrast', // color | contrast
+  solidStyle: 'flat', // flat | plastic
+  border: 'playful', // rounded | playful | conservative
+  surface: 'translucent', // filled | translucent
+  transition: 'all', // all | micro | macro
+}
 
 const effects = {
   mask: {
@@ -38,35 +38,35 @@ const effects = {
     width: 100,
     height: 100,
     tilt: 0,
-    colorStart: "brand-background-strong",
-    colorEnd: "static-transparent",
+    colorStart: 'brand-background-strong',
+    colorEnd: 'static-transparent',
     opacity: 50,
   },
   dots: {
     display: true,
     size: 2,
-    color: "brand-on-background-weak",
+    color: 'brand-on-background-weak',
     opacity: 20,
   },
   lines: {
     display: false,
-    color: "neutral-alpha-weak",
+    color: 'neutral-alpha-weak',
     opacity: 100,
   },
   grid: {
     display: false,
-    color: "neutral-alpha-weak",
+    color: 'neutral-alpha-weak',
     opacity: 100,
   },
-};
+}
 
 const display = {
   location: true,
   time: true,
-};
+}
 
 const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
+  action: 'https://url/subscribe/post?parameters',
   effects: {
     mask: {
       cursor: false,
@@ -81,27 +81,27 @@ const mailchimp = {
       width: 100,
       height: 100,
       tilt: -45,
-      colorStart: "accent-background-strong",
-      colorEnd: "static-transparent",
+      colorStart: 'accent-background-strong',
+      colorEnd: 'static-transparent',
       opacity: 100,
     },
     dots: {
       display: false,
       size: 24,
-      color: "brand-on-background-weak",
+      color: 'brand-on-background-weak',
       opacity: 100,
     },
     lines: {
       display: false,
-      color: "neutral-alpha-weak",
+      color: 'neutral-alpha-weak',
       opacity: 100,
     },
     grid: {
       display: true,
-      color: "neutral-alpha-weak",
+      color: 'neutral-alpha-weak',
       opacity: 100,
     },
   },
-};
+}
 
-export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL };
+export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL }

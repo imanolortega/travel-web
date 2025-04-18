@@ -1,36 +1,50 @@
-"use client";
+'use client'
 
-import React, { useState, useRef, useEffect, forwardRef, ReactNode } from "react";
-import classNames from "classnames";
-import { DropdownWrapper, Flex, Icon, IconButton, Input, InputProps, Option } from ".";
-import inputStyles from "./Input.module.scss";
-import type { OptionProps } from "./Option";
-import type { DropdownWrapperProps } from "./DropdownWrapper";
-import { Placement } from "@floating-ui/react-dom";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  forwardRef,
+  ReactNode,
+} from 'react'
+import classNames from 'classnames'
+import {
+  DropdownWrapper,
+  Flex,
+  Icon,
+  IconButton,
+  Input,
+  InputProps,
+  Option,
+} from '.'
+import inputStyles from './Input.module.scss'
+import type { OptionProps } from './Option'
+import type { DropdownWrapperProps } from './DropdownWrapper'
+import { Placement } from '@floating-ui/react-dom'
 
-type SelectOptionType = Omit<OptionProps, "selected">;
+type SelectOptionType = Omit<OptionProps, 'selected'>
 
 interface SelectProps
-  extends Omit<InputProps, "onSelect" | "value">,
-    Pick<DropdownWrapperProps, "minHeight" | "minWidth" | "maxWidth"> {
-  options: SelectOptionType[];
-  value?: string;
-  emptyState?: ReactNode;
-  onSelect?: (value: string) => void;
-  floatingPlacement?: Placement;
-  searchable?: boolean;
-  className?: string;
-  style?: React.CSSProperties;
+  extends Omit<InputProps, 'onSelect' | 'value'>,
+    Pick<DropdownWrapperProps, 'minHeight' | 'minWidth' | 'maxWidth'> {
+  options: SelectOptionType[]
+  value?: string
+  emptyState?: ReactNode
+  onSelect?: (value: string) => void
+  floatingPlacement?: Placement
+  searchable?: boolean
+  className?: string
+  style?: React.CSSProperties
 }
 
 const Select = forwardRef<HTMLDivElement, SelectProps>(
   (
     {
       options,
-      value = "",
+      value = '',
       onSelect,
       searchable = false,
-      emptyState = "No results",
+      emptyState = 'No results',
       minHeight,
       minWidth,
       maxWidth,
@@ -39,89 +53,98 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
       style,
       ...rest
     },
-    ref,
+    ref
   ) => {
-    const [isFocused, setIsFocused] = useState(false);
-    const [isFilled, setIsFilled] = useState(!!value);
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-    const [highlightedIndex, setHighlightedIndex] = useState<number | null>(() => {
-      if (!options?.length || !value) return null;
-      return options.findIndex((option) => option.value === value);
-    });
-    const [searchQuery, setSearchQuery] = useState("");
-    const selectRef = useRef<HTMLDivElement | null>(null);
-    const clearButtonRef = useRef<HTMLButtonElement>(null);
+    const [isFocused, setIsFocused] = useState(false)
+    const [isFilled, setIsFilled] = useState(!!value)
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+    const [highlightedIndex, setHighlightedIndex] = useState<number | null>(
+      () => {
+        if (!options?.length || !value) return null
+        return options.findIndex((option) => option.value === value)
+      }
+    )
+    const [searchQuery, setSearchQuery] = useState('')
+    const selectRef = useRef<HTMLDivElement | null>(null)
+    const clearButtonRef = useRef<HTMLButtonElement>(null)
 
     const handleFocus = () => {
-      setIsFocused(true);
-    };
+      setIsFocused(true)
+    }
 
     const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
-      if (selectRef.current && !selectRef.current.contains(event.relatedTarget as Node)) {
-        setIsFocused(false);
-        setIsDropdownOpen(false);
+      if (
+        selectRef.current &&
+        !selectRef.current.contains(event.relatedTarget as Node)
+      ) {
+        setIsFocused(false)
+        setIsDropdownOpen(false)
       }
-    };
+    }
 
     const handleSelect = (value: string) => {
-      if (onSelect) onSelect(value);
-      setIsDropdownOpen(false);
-      setIsFilled(true);
-    };
+      if (onSelect) onSelect(value)
+      setIsDropdownOpen(false)
+      setIsFilled(true)
+    }
 
     const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-      if (!isFocused && event.key !== "Enter") return;
+      if (!isFocused && event.key !== 'Enter') return
 
       switch (event.key) {
-        case "Escape":
-          setIsDropdownOpen(false);
-          break;
-        case "ArrowDown":
+        case 'Escape':
+          setIsDropdownOpen(false)
+          break
+        case 'ArrowDown':
           if (!isDropdownOpen) {
-            setIsDropdownOpen(true);
-            break;
+            setIsDropdownOpen(true)
+            break
           }
-          event.preventDefault();
+          event.preventDefault()
           setHighlightedIndex((prevIndex) => {
             const newIndex =
-              prevIndex === null || prevIndex === options.length - 1 ? 0 : prevIndex + 1;
-            return newIndex;
-          });
-          break;
+              prevIndex === null || prevIndex === options.length - 1
+                ? 0
+                : prevIndex + 1
+            return newIndex
+          })
+          break
 
-        case "ArrowUp":
-          event.preventDefault();
+        case 'ArrowUp':
+          event.preventDefault()
           setHighlightedIndex((prevIndex) => {
             const newIndex =
-              prevIndex === null || prevIndex === 0 ? options.length - 1 : prevIndex - 1;
-            return newIndex;
-          });
-          break;
+              prevIndex === null || prevIndex === 0
+                ? options.length - 1
+                : prevIndex - 1
+            return newIndex
+          })
+          break
 
-        case "Enter":
-          event.preventDefault();
+        case 'Enter':
+          event.preventDefault()
           if (highlightedIndex !== null && isDropdownOpen) {
-            handleSelect(options[highlightedIndex].value);
+            handleSelect(options[highlightedIndex].value)
           } else {
-            setIsDropdownOpen(true);
+            setIsDropdownOpen(true)
           }
-          break;
+          break
 
         default:
-          break;
+          break
       }
-    };
+    }
 
     const handleClearSearch = (e: React.MouseEvent) => {
-      e.preventDefault();
-      e.stopPropagation();
-      setSearchQuery("");
+      e.preventDefault()
+      e.stopPropagation()
+      setSearchQuery('')
       // Force focus back to the input after clearing
-      const input = selectRef.current?.querySelector("input");
+      const input = selectRef.current?.querySelector('input')
       if (input) {
-        input.focus();
+        input.focus()
       }
-    };
+    }
 
     useEffect(() => {
       const handleClickOutside = (event: MouseEvent) => {
@@ -130,32 +153,32 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
           !selectRef.current.contains(event.target as Node) &&
           !clearButtonRef.current?.contains(event.target as Node)
         ) {
-          setIsDropdownOpen(false);
+          setIsDropdownOpen(false)
         }
-      };
+      }
 
       const handleFocusOut = (event: FocusEvent) => {
         if (event.target instanceof HTMLInputElement) {
-          handleBlur(event as unknown as React.FocusEvent<HTMLInputElement>);
+          handleBlur(event as unknown as React.FocusEvent<HTMLInputElement>)
         }
-      };
+      }
 
-      document.addEventListener("mousedown", handleClickOutside);
-      document.addEventListener("focusout", handleFocusOut);
+      document.addEventListener('mousedown', handleClickOutside)
+      document.addEventListener('focusout', handleFocusOut)
 
       return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-        document.removeEventListener("focusout", handleFocusOut);
-      };
-    }, []);
+        document.removeEventListener('mousedown', handleClickOutside)
+        document.removeEventListener('focusout', handleFocusOut)
+      }
+    }, [])
 
     return (
       <DropdownWrapper
         fillWidth
         ref={(node) => {
-          selectRef.current = node;
-          if (typeof ref === "function") ref(node);
-          else if (ref) ref.current = node;
+          selectRef.current = node
+          if (typeof ref === 'function') ref(node)
+          else if (ref) ref.current = node
         }}
         isOpen={isDropdownOpen}
         onOpenChange={setIsDropdownOpen}
@@ -165,14 +188,14 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
           <Input
             {...rest}
             style={{
-              textOverflow: "ellipsis",
+              textOverflow: 'ellipsis',
               ...style,
             }}
             value={value}
             onFocus={handleFocus}
             onKeyDown={handleKeyDown}
             readOnly
-            className={classNames("cursor-interactive", "fill-width", {
+            className={classNames('cursor-interactive', 'fill-width', {
               [inputStyles.filled]: isFilled,
               [inputStyles.focused]: isFocused,
               className,
@@ -188,9 +211,9 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
                 <Input
                   data-scaling="90"
                   style={{
-                    marginTop: "-1px",
-                    marginLeft: "-1px",
-                    width: "calc(100% + 2px)",
+                    marginTop: '-1px',
+                    marginLeft: '-1px',
+                    width: 'calc(100% + 2px)',
                   }}
                   labelAsPlaceholder
                   id="search"
@@ -220,15 +243,18 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
             <Flex fillWidth padding="4" direction="column" gap="2">
               {options
                 .filter((option) =>
-                  option.label?.toString().toLowerCase().includes(searchQuery.toLowerCase()),
+                  option.label
+                    ?.toString()
+                    .toLowerCase()
+                    .includes(searchQuery.toLowerCase())
                 )
                 .map((option, index) => (
                   <Option
                     key={option.value}
                     {...option}
                     onClick={() => {
-                      option.onClick?.(option.value);
-                      handleSelect(option.value);
+                      option.onClick?.(option.value)
+                      handleSelect(option.value)
                     }}
                     selected={option.value === value}
                     highlighted={index === highlightedIndex}
@@ -237,9 +263,18 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
                 ))}
               {searchQuery &&
                 options.filter((option) =>
-                  option.label?.toString().toLowerCase().includes(searchQuery.toLowerCase()),
+                  option.label
+                    ?.toString()
+                    .toLowerCase()
+                    .includes(searchQuery.toLowerCase())
                 ).length === 0 && (
-                  <Flex fillWidth vertical="center" horizontal="center" paddingX="16" paddingY="32">
+                  <Flex
+                    fillWidth
+                    vertical="center"
+                    horizontal="center"
+                    paddingX="16"
+                    paddingY="32"
+                  >
                     {emptyState}
                   </Flex>
                 )}
@@ -247,9 +282,9 @@ const Select = forwardRef<HTMLDivElement, SelectProps>(
           </>
         }
       />
-    );
-  },
-);
+    )
+  }
+)
 
-Select.displayName = "Select";
-export { Select };
+Select.displayName = 'Select'
+export { Select }

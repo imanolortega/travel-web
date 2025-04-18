@@ -1,48 +1,48 @@
-"use client";
+'use client'
 
-import { useEffect, useRef } from "react";
-import classNames from "classnames";
-import styles from "./Arrow.module.scss";
-import { Flex } from ".";
+import { useEffect, useRef } from 'react'
+import classNames from 'classnames'
+import styles from './Arrow.module.scss'
+import { Flex } from '.'
 
 interface ArrowProps {
-  trigger: string;
-  scale?: number;
-  color?: "onBackground" | "onSolid";
-  style?: React.CSSProperties;
-  className?: string;
+  trigger: string
+  scale?: number
+  color?: 'onBackground' | 'onSolid'
+  style?: React.CSSProperties
+  className?: string
 }
 
 const Arrow: React.FC<ArrowProps> = ({
   trigger,
   scale = 0.8,
-  color = "onBackground",
+  color = 'onBackground',
   style,
   className,
 }) => {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const triggerElement = document.querySelector(trigger);
+    const triggerElement = document.querySelector(trigger)
 
     if (triggerElement && ref.current) {
       const handleMouseOver = () => {
-        ref.current?.classList.add(styles.active);
-      };
+        ref.current?.classList.add(styles.active)
+      }
 
       const handleMouseOut = () => {
-        ref.current?.classList.remove(styles.active);
-      };
+        ref.current?.classList.remove(styles.active)
+      }
 
-      triggerElement.addEventListener("mouseenter", handleMouseOver);
-      triggerElement.addEventListener("mouseleave", handleMouseOut);
+      triggerElement.addEventListener('mouseenter', handleMouseOver)
+      triggerElement.addEventListener('mouseleave', handleMouseOut)
 
       return () => {
-        triggerElement.removeEventListener("mouseenter", handleMouseOver);
-        triggerElement.removeEventListener("mouseleave", handleMouseOut);
-      };
+        triggerElement.removeEventListener('mouseenter', handleMouseOver)
+        triggerElement.removeEventListener('mouseleave', handleMouseOut)
+      }
     }
-  }, [trigger]);
+  }, [trigger])
 
   return (
     <Flex
@@ -57,11 +57,17 @@ const Arrow: React.FC<ArrowProps> = ({
       }}
     >
       <Flex className={classNames(styles.arrow, styles[color])} height={0.1} />
-      <Flex className={classNames(styles.arrowHead, styles[color])} height={0.0875} />
-      <Flex className={classNames(styles.arrowHead, styles[color])} height={0.0875} />
+      <Flex
+        className={classNames(styles.arrowHead, styles[color])}
+        height={0.0875}
+      />
+      <Flex
+        className={classNames(styles.arrowHead, styles[color])}
+        height={0.0875}
+      />
     </Flex>
-  );
-};
+  )
+}
 
-Arrow.displayName = "Arrow";
-export { Arrow };
+Arrow.displayName = 'Arrow'
+export { Arrow }

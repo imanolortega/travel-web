@@ -1,17 +1,17 @@
-"use client";
+'use client'
 
-import React, { forwardRef, ReactNode } from "react";
-import classNames from "classnames";
+import React, { forwardRef, ReactNode } from 'react'
+import classNames from 'classnames'
 
-import { Flex, Icon } from ".";
+import { Flex, Icon } from '.'
 
 type TooltipProps = {
-  label: ReactNode;
-  prefixIcon?: string;
-  suffixIcon?: string;
-  className?: string;
-  style?: React.CSSProperties;
-};
+  label: ReactNode
+  prefixIcon?: string
+  suffixIcon?: string
+  className?: string
+  style?: React.CSSProperties
+}
 
 const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
   ({ label, prefixIcon, suffixIcon, className, style }, ref) => {
@@ -20,8 +20,8 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         hide="m"
         ref={ref}
         style={{
-          whiteSpace: "nowrap",
-          userSelect: "none",
+          whiteSpace: 'nowrap',
+          userSelect: 'none',
           ...style,
         }}
         vertical="center"
@@ -46,10 +46,10 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         </Flex>
         {suffixIcon && <Icon name={suffixIcon} size="xs" />}
       </Flex>
-    );
-  },
-);
+    )
+  }
+)
 
-Tooltip.displayName = "Tooltip";
+Tooltip.displayName = 'Tooltip'
 
-export { Tooltip };
+export { Tooltip }
