@@ -69,10 +69,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-border={style.border}
       data-surface={style.surface}
       data-transition={style.transition}
-      className={classNames(
-        primary.variable,
-        secondary.variable
-      )}
+      className={classNames(primary.variable, secondary.variable)}
     >
       <ToastProvider>
         <Column

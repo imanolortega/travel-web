@@ -33,7 +33,14 @@ import {
   PiImageDuotone,
 } from 'react-icons/pi'
 
-import { FaDiscord, FaGithub, FaInstagram, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+import {
+  FaDiscord,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+  FaSpotify,
+  FaXTwitter,
+} from 'react-icons/fa6'
 
 export const iconLibrary: Record<string, IconType> = {
   arrowRight: HiArrowRight,
@@ -66,6 +73,7 @@ export const iconLibrary: Record<string, IconType> = {
   openLink: HiOutlineLink,
   person: PiUserCircleDuotone,
   refresh: HiOutlineArrowPath,
+  spotify: FaSpotify,
   warningTriangle: HiExclamationTriangle,
   x: FaXTwitter,
 }

@@ -1,4 +1,4 @@
-import { Column, Flex, Heading } from '@/once-ui/components'
+import { Column, Heading } from '@/once-ui/components'
 import { Mailchimp } from '@/components'
 import { Posts } from '@/components/blog/Posts'
 import { baseURL } from '@/app/resources'

@@ -25,19 +25,24 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: 'Email',
-    icon: 'email',
-    link: 'mailto:imanolrtega@gmail.com',
-  },
-  {
     name: 'Instagram',
     icon: 'instagram',
     link: 'https://www.instagram.com/imanol.oc/',
   },
   {
-    name: 'X',
+    name: 'Spotify',
+    icon: 'spotify',
+    link: 'https://open.spotify.com/user/8x5neqbvq1rcy3qzth38bvpnk?si=5db8c31323ea4791',
+  },
+  {
+    name: 'Twitter',
     icon: 'x',
     link: 'https://x.com/ioc_argentina',
+  },
+  {
+    name: 'Email',
+    icon: 'email',
+    link: 'mailto:imanolrtega@gmail.com',
   },
 ]
 
@@ -70,12 +75,13 @@ const about = {
     title: 'Introduction',
     description: (
       <>
-        Viajando por el país. Actualmente en Manuel B. Gonnet, La Plata, Buenos Aires.
+        Viajando por el país. Actualmente en Manuel B. Gonnet, La Plata, Buenos
+        Aires.
       </>
     ),
   },
   work: {
-    display: false, // set to false to hide this section
+    display: false,
     title: 'Work Experience',
     experiences: [
       {
@@ -93,7 +99,6 @@ const about = {
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: '/images/projects/project-01/cover-01.jpg',
             alt: 'Once UI Project',
@@ -121,7 +126,7 @@ const about = {
     ],
   },
   studies: {
-    display: false, // set to false to hide this section
+    display: false,
     title: 'Studies',
     institutions: [
       {
@@ -135,7 +140,7 @@ const about = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: 'Un lugar adonde ir',
     skills: [
       {
@@ -180,23 +185,18 @@ const blog = {
   label: 'Blog',
   title: 'Diarios de viaje',
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 }
 
 const work = {
   label: 'Work',
   title: 'My projects',
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
 }
 
 const gallery = {
-  label: 'Gallery',
+  label: 'Fotos',
   title: 'My photo gallery',
   description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
   images: [
     {
       src: '/images/gallery/img-01.jpg',
