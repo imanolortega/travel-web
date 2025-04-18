@@ -28,8 +28,8 @@ export default function Post({ post, thumbnail }: PostProps) {
         position="relative"
         mobileDirection="column"
         fillWidth
-        paddingY="12"
-        paddingX="16"
+        paddingY="8"
+        paddingX="8"
         gap="32"
       >
         {post.image && thumbnail && (
@@ -37,7 +37,7 @@ export default function Post({ post, thumbnail }: PostProps) {
             priority
             maxWidth={20}
             className={styles.image}
-            sizes="640px"
+            sizes="480px"
             border="neutral-alpha-weak"
             cursor="interactive"
             radius="m"

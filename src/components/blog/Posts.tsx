@@ -8,7 +8,7 @@ interface PostsProps {
   thumbnail?: boolean
 }
 
-export function Posts({ columns = '1', thumbnail = false }: PostsProps) {
+export function Posts({ columns = '1', thumbnail = true }: PostsProps) {
   const allBlogs = blog.posts
 
   return (
