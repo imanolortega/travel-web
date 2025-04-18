@@ -25,24 +25,19 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
-    name: 'GitHub',
-    icon: 'github',
-    link: 'https://github.com/once-ui-system/nextjs-starter',
+    name: 'Email',
+    icon: 'email',
+    link: 'mailto:imanolrtega@gmail.com',
   },
   {
-    name: 'LinkedIn',
-    icon: 'linkedin',
-    link: 'https://www.linkedin.com/company/once-ui/',
+    name: 'Instagram',
+    icon: 'instagram',
+    link: 'https://www.instagram.com/imanol.oc/',
   },
   {
     name: 'X',
     icon: 'x',
-    link: '',
-  },
-  {
-    name: 'Email',
-    icon: 'email',
-    link: 'mailto:example@gmail.com',
+    link: 'https://x.com/ioc_argentina',
   },
 ]
 
@@ -75,9 +70,7 @@ const about = {
     title: 'Introduction',
     description: (
       <>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel
-        egestas dolor, nec dignissim metus. Donec augue elit, rhoncus ac sodales
-        id, porttitor vitae est. Donec laoreet rutrum libero sed pharetra.
+        Viajando por el país. Actualmente en Manuel B. Gonnet, La Plata, Buenos Aires.
       </>
     ),
   },
