@@ -6,7 +6,7 @@ import classNames from 'classnames'
 import { Footer, Header, RouteGuard } from '@/components'
 import { baseURL, effects, style } from '@/app/resources'
 
-import { Inter, Noto_Sans } from 'next/font/google'
+import { Inter } from 'next/font/google'
 
 import { person, home } from '@/app/resources/content'
 import { Background, Column, Flex, ToastProvider } from '@/once-ui/components'
@@ -44,8 +44,8 @@ const primary = Inter({
   display: 'swap',
 })
 
-const secondary = Noto_Sans({
-  variable: '--font-secondary',
+const secondary = Inter({
+  variable: '--font-primary',
   subsets: ['latin'],
   display: 'swap',
 })
