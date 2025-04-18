@@ -5,7 +5,7 @@ import { baseURL } from '@/app/resources'
 import { blog, person, newsletter } from '@/app/resources/content'
 
 export async function generateMetadata() {
-  const title = blog.title
+  const title = `${blog.title} | Blog`
   const description = blog.description
   const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`
 
@@ -63,7 +63,6 @@ export default function Blog() {
       </Heading>
       <Column fillWidth flex={1}>
         <Posts range={[1, 3]} thumbnail />
-        <Posts range={[4]} columns="2" />
       </Column>
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>

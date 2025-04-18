@@ -12,11 +12,13 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
+  title: <>Suscribite</>,
   description: (
     <>
-      I occasionally write about design, technology, and share thoughts on the
-      intersection of creativity and engineering.
+      Ocasionalmente escribo sobre destinos destacados de mi viaje.
+      <br />
+      <br />
+      Si te interesa, dejame tu email. No hago spam.
     </>
   ),
 }
@@ -66,13 +68,9 @@ const about = {
   avatar: {
     display: true,
   },
-  calendar: {
-    display: true,
-    link: 'https://cal.com',
-  },
   intro: {
     display: true,
-    title: 'Introduction',
+    title: 'Introducción',
     description: (
       <>
         Viajando por el país. Actualmente en Manuel B. Gonnet, La Plata, Buenos
@@ -80,111 +78,36 @@ const about = {
       </>
     ),
   },
-  work: {
-    display: false,
-    title: 'Work Experience',
-    experiences: [
-      {
-        company: 'FLY',
-        timeframe: '2022 - Present',
-        role: 'Senior Design Engineer',
-        achievements: [
-          <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20%
-            increase in user engagement and 30% faster load times.
-          </>,
-          <>
-            Spearheaded the integration of AI tools into design workflows,
-            enabling designers to iterate 50% faster.
-          </>,
-        ],
-        images: [
-          {
-            src: '/images/projects/project-01/cover-01.jpg',
-            alt: 'Once UI Project',
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        company: 'Creativ3',
-        timeframe: '2018 - 2022',
-        role: 'Lead Designer',
-        achievements: [
-          <>
-            Developed a design system that unified the brand across multiple
-            platforms, improving design consistency by 40%.
-          </>,
-          <>
-            Led a cross-functional team to launch a new product line,
-            contributing to a 15% increase in overall company revenue.
-          </>,
-        ],
-        images: [],
-      },
-    ],
-  },
-  studies: {
-    display: false,
-    title: 'Studies',
-    institutions: [
-      {
-        name: 'University of Jakarta',
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: 'Build the Future',
-        description: <>Studied online marketing and personal branding.</>,
-      },
-    ],
-  },
-  technical: {
-    display: true,
-    title: 'Un lugar adonde ir',
-    skills: [
-      {
-        title: 'Diario de viaje II: Trevelin',
-        description: (
-          <>
-            Un poblado en el Valle de Punilla, un cerro sagrado, antiguas
-            tradiciones, leyendas y relatos de seres extraterrestres.
-          </>
-        ),
-        images: [
-          {
-            src: '/images/projects/project-01/cover-02.jpg',
-            alt: 'Project image',
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: 'Diario de viaje: Capilla del Monte',
-        description: (
-          <>
-            Un poblado en el Valle de Punilla, un cerro sagrado, antiguas
-            tradiciones, leyendas y relatos de seres extraterrestres.
-          </>
-        ),
-        images: [
-          {
-            src: '/images/projects/project-01/cover-04.jpg',
-            alt: 'Project image',
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-    ],
-  },
 }
 
 const blog = {
   label: 'Blog',
-  title: 'Diarios de viaje',
-  description: `Read what ${person.name} has been up to recently`,
+  title: 'Un lugar adonde ir',
+  description: 'Un lugar adonde ir es un conjunto de relatos de viaje.',
+  posts: [
+    {
+      title: 'Diario de viaje II: Trevelin',
+      description: (
+        <>
+          Un poblado en el Valle de Punilla, un cerro sagrado, antiguas
+          tradiciones, leyendas y relatos de seres extraterrestres.
+        </>
+      ),
+      image: '/images/gallery/img-02.jpg',
+      slug: 'https://imanolortega.substack.com/p/diario-de-viaje-capilla-del-monte',
+    },
+    {
+      title: 'Diario de viaje: Capilla del Monte',
+      description: (
+        <>
+          Un poblado en el Valle de Punilla, un cerro sagrado, antiguas
+          tradiciones, leyendas y relatos de seres extraterrestres.
+        </>
+      ),
+      image: '/images/gallery/img-02.jpg',
+      slug: 'https://imanolortega.substack.com/p/diario-de-viaje-capilla-del-monte',
+    },
+  ],
 }
 
 const work = {
@@ -195,8 +118,8 @@ const work = {
 
 const gallery = {
   label: 'Fotos',
-  title: 'My photo gallery',
-  description: `A photo collection by ${person.name}`,
+  title: 'Fotos',
+  description: `Fotos de mi viaje por el país`,
   images: [
     {
       src: '/images/gallery/img-01.jpg',

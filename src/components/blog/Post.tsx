@@ -10,23 +10,19 @@ import {
   Text,
 } from '@/once-ui/components'
 import styles from './Posts.module.scss'
-import { formatDate } from '@/app/utils/formatDate'
-
 interface PostProps {
   post: any
   thumbnail: boolean
 }
 
 export default function Post({ post, thumbnail }: PostProps) {
-  const tags = post.metadata.tag.split(',').map((tag: string) => tag.trim())
-
   return (
     <SmartLink
       fillWidth
       className={styles.hover}
       unstyled
       key={post.slug}
-      href={`/blog/${post.slug}`}
+      href={post.slug}
     >
       <Flex
         position="relative"
@@ -36,7 +32,7 @@ export default function Post({ post, thumbnail }: PostProps) {
         paddingX="16"
         gap="32"
       >
-        {post.metadata.image && thumbnail && (
+        {post.image && thumbnail && (
           <SmartImage
             priority
             maxWidth={20}
@@ -45,28 +41,18 @@ export default function Post({ post, thumbnail }: PostProps) {
             border="neutral-alpha-weak"
             cursor="interactive"
             radius="m"
-            src={post.metadata.image}
-            alt={'Thumbnail of ' + post.metadata.title}
+            src={post.image}
+            alt={'Thumbnail of ' + post.title}
             aspectRatio="16 / 9"
           />
         )}
         <Column position="relative" fillWidth gap="8" vertical="center">
-          <Heading as="h2" variant="heading-strong-l" wrap="balance">
-            {post.metadata.title}
+          <Heading as="h2" variant="heading-strong-xl" wrap="balance">
+            {post.title}
           </Heading>
-          <Text variant="label-default-s" onBackground="neutral-weak">
-            {post.metadata.publishedAt &&
-              formatDate(post.metadata.publishedAt, false)}
+          <Text variant="body-default-m" onBackground="neutral-weak">
+            {post.description}
           </Text>
-          {tags.length > 0 && (
-            <Flex gap="8">
-              {tags.map((tag: string, index: number) =>
-                index < 3 ? (
-                  <Tag key={index} label={tag} variant="neutral" />
-                ) : null
-              )}
-            </Flex>
-          )}
         </Column>
       </Flex>
     </SmartLink>
