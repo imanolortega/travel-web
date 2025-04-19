@@ -94,7 +94,7 @@ const blog = {
           tradiciones, leyendas y relatos de seres extraterrestres.
         </>
       ),
-      image: '/images/gallery/img-02.jpg',
+      image: '/images/trevelin/dragon-rojo.jpg',
       slug: 'https://imanolortega.substack.com/p/diario-de-viaje-capilla-del-monte',
     },
     {
