@@ -59,7 +59,11 @@ export default function Blog() {
           }),
         }}
       />
-      <Heading className={styles.textAlign} marginBottom="l" variant="display-strong-s">
+      <Heading
+        className={styles.textAlign}
+        marginBottom="l"
+        variant="display-strong-s"
+      >
         {blog.title}
       </Heading>
       <Column fillWidth flex={1}>

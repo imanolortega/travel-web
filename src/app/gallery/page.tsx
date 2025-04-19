@@ -61,7 +61,7 @@ export default function Gallery() {
           }),
         }}
       />
-      <Heading marginBottom="l" variant="display-strong-s" align='center'>
+      <Heading marginBottom="l" variant="display-strong-s" align="center">
         Fotografías
       </Heading>
       <MasonryGrid />
