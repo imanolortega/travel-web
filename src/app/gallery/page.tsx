@@ -1,7 +1,8 @@
-import { Flex } from '@/once-ui/components'
+import { Column, Flex, Heading } from '@/once-ui/components'
 import MasonryGrid from '@/components/gallery/MasonryGrid'
 import { baseURL } from '@/app/resources'
 import { gallery, person } from '@/app/resources/content'
+import styles from '@/components/about/about.module.scss'
 
 export async function generateMetadata() {
   const title = gallery.title
@@ -34,7 +35,7 @@ export async function generateMetadata() {
 
 export default function Gallery() {
   return (
-    <Flex fillWidth>
+    <Column maxWidth="l">
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -61,7 +62,10 @@ export default function Gallery() {
           }),
         }}
       />
+      <Heading marginBottom="l" variant="display-strong-s" align='center'>
+        Fotografías
+      </Heading>
       <MasonryGrid />
-    </Flex>
+    </Column>
   )
 }

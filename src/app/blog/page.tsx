@@ -3,6 +3,7 @@ import { Mailchimp } from '@/components'
 import { Posts } from '@/components/blog/Posts'
 import { baseURL } from '@/app/resources'
 import { blog, person, newsletter } from '@/app/resources/content'
+import styles from '@/components/about/about.module.scss'
 
 export async function generateMetadata() {
   const title = `${blog.title} | Blog`
@@ -58,7 +59,7 @@ export default function Blog() {
           }),
         }}
       />
-      <Heading marginBottom="l" variant="display-strong-s">
+      <Heading className={styles.textAlign} marginBottom="l" variant="display-strong-s">
         {blog.title}
       </Heading>
       <Column fillWidth flex={1}>

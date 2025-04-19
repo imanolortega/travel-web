@@ -5,8 +5,6 @@ import {
   Flex,
   Heading,
   IconButton,
-  SmartImage,
-  Text,
 } from '@/once-ui/components'
 import { baseURL } from '@/app/resources'
 import styles from '@/components/about/about.module.scss'
@@ -143,6 +141,7 @@ export default function Home() {
               id={blog.title}
               variant="display-strong-s"
               marginBottom="40"
+              className={styles.textAlign}
             >
               {blog.title}
             </Heading>
