@@ -7,9 +7,9 @@ import {
   IconButton,
 } from '@/once-ui/components'
 import { baseURL } from '@/app/resources'
-import styles from '@/components/about/about.module.scss'
 import { person, about, social, blog } from '@/app/resources/content'
 import { Posts } from '@/components/blog/Posts'
+import styles from '@/components/about/about.module.scss'
 
 export async function generateMetadata() {
   const title = about.title

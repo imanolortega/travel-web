@@ -1,8 +1,7 @@
-import { Column, Flex, Heading } from '@/once-ui/components'
-import MasonryGrid from '@/components/gallery/MasonryGrid'
 import { baseURL } from '@/app/resources'
+import { Column, Heading } from '@/once-ui/components'
 import { gallery, person } from '@/app/resources/content'
-import styles from '@/components/about/about.module.scss'
+import MasonryGrid from '@/components/gallery/MasonryGrid'
 
 export async function generateMetadata() {
   const title = gallery.title
