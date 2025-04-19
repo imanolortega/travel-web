@@ -7,7 +7,7 @@ import { Footer, Header, RouteGuard } from '@/components'
 import { baseURL, effects, style } from '@/app/resources'
 
 import { Inter } from 'next/font/google'
-import { GeistSans } from 'geist/font/sans';
+import { GeistSans } from 'geist/font/sans'
 
 import { person, home } from '@/app/resources/content'
 import { Background, Column, Flex, ToastProvider } from '@/once-ui/components'
@@ -18,10 +18,10 @@ export async function generateMetadata() {
     title: home.title,
     description: home.description,
     openGraph: {
-      title: `${person.firstName}'s Portfolio`,
-      description: 'Portfolio website showcasing my work.',
+      title: home.title,
+      description: home.description,
       url: baseURL,
-      siteName: `${person.firstName}'s Portfolio`,
+      siteName: home.title,
       locale: 'en_US',
       type: 'website',
     },
@@ -44,7 +44,6 @@ const primary = Inter({
   subsets: ['latin'],
   display: 'swap',
 })
-
 
 interface RootLayoutProps {
   children: React.ReactNode

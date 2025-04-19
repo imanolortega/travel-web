@@ -1,5 +1,3 @@
-import { InlineCode } from '@/once-ui/components'
-
 const person = {
   firstName: 'Imanol',
   lastName: 'Ortega Carabajal',
@@ -8,6 +6,11 @@ const person = {
   },
   role: 'Viajando',
   avatar: '/images/avatar.jpg',
+}
+
+const home = {
+  title: 'Imanol Ortega Carabajal',
+  description: 'Viajando y escribiendo sobre Argentina.',
 }
 
 const newsletter = {
@@ -48,20 +51,6 @@ const social = [
   },
 ]
 
-const home = {
-  label: 'Home',
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Design engineer and builder</>,
-  subline: (
-    <>
-      I'm Selene, a design engineer at <InlineCode>FLY</InlineCode>, where I
-      craft intuitive
-      <br /> user experiences. After hours, I build my own projects.
-    </>
-  ),
-}
-
 const about = {
   label: 'Inicio',
   title: 'Inicio',
@@ -72,11 +61,10 @@ const about = {
     display: true,
     title: 'Introducción',
     description: (
-      <><p>
-        Viajando y escribiendo sobre Argentina.
-      </p>
-        <p>Actualmente en Gonnet, La Plata, Buenos
-          Aires.</p></>
+      <>
+        <p>Viajando y escribiendo sobre Argentina.</p>
+        <p>Actualmente en Gonnet, La Plata, Buenos Aires.</p>
+      </>
     ),
   },
 }
@@ -90,8 +78,8 @@ const blog = {
       title: 'Diario de viaje II: Trevelin',
       description: (
         <>
-          Un poblado en el Valle de Punilla, un cerro sagrado, antiguas
-          tradiciones, leyendas y relatos de seres extraterrestres.
+          El Pueblo del Molino, la Conquista del Desierto y la Colonia Galesa de
+          Chubut.
         </>
       ),
       image: '/images/trevelin/dragon-rojo.jpg',
@@ -109,12 +97,6 @@ const blog = {
       slug: 'https://imanolortega.substack.com/p/diario-de-viaje-capilla-del-monte',
     },
   ],
-}
-
-const work = {
-  label: 'Work',
-  title: 'My projects',
-  description: `Design and dev projects by ${person.name}`,
 }
 
 const gallery = {
@@ -195,4 +177,4 @@ const gallery = {
   ],
 }
 
-export { person, social, newsletter, home, about, blog, work, gallery }
+export { about, blog, gallery, home, newsletter, person, social }
