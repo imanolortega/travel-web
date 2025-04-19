@@ -32,12 +32,6 @@ src/app/resources/config
 src/app/resources/content
 ```
 
-**6. Create blog posts / projects**
-
-```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
-```
-
 # **Features**
 
 ## **Once UI**
