@@ -72,10 +72,11 @@ const about = {
     display: true,
     title: 'Introducción',
     description: (
-      <>
-        Viajando por el país. Actualmente en Manuel B. Gonnet, La Plata, Buenos
-        Aires.
-      </>
+      <><p>
+        Viajando y escribiendo sobre Argentina.
+      </p>
+        <p>Actualmente en Gonnet, La Plata, Buenos
+          Aires.</p></>
     ),
   },
 }
@@ -104,7 +105,7 @@ const blog = {
           tradiciones, leyendas y relatos de seres extraterrestres.
         </>
       ),
-      image: '/images/gallery/img-02.jpg',
+      image: '/images/capilla/uritorco.jpg',
       slug: 'https://imanolortega.substack.com/p/diario-de-viaje-capilla-del-monte',
     },
   ],

@@ -7,6 +7,7 @@ import { Footer, Header, RouteGuard } from '@/components'
 import { baseURL, effects, style } from '@/app/resources'
 
 import { Inter } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans';
 
 import { person, home } from '@/app/resources/content'
 import { Background, Column, Flex, ToastProvider } from '@/once-ui/components'
@@ -44,11 +45,6 @@ const primary = Inter({
   display: 'swap',
 })
 
-const secondary = Inter({
-  variable: '--font-primary',
-  subsets: ['latin'],
-  display: 'swap',
-})
 
 interface RootLayoutProps {
   children: React.ReactNode
@@ -69,7 +65,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-border={style.border}
       data-surface={style.surface}
       data-transition={style.transition}
-      className={classNames(primary.variable, secondary.variable)}
+      className={classNames(primary.variable, GeistSans.variable)}
     >
       <ToastProvider>
         <Column

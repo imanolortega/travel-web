@@ -83,7 +83,7 @@ export default function Home() {
             vertical="center"
             marginBottom="32"
           >
-            <Heading className={styles.textAlign} variant="display-strong-m">
+            <Heading className={`${styles.textName} ${styles.textAlign}`} variant="display-strong-m">
               {person.name}
             </Heading>
             {social.length > 0 && (

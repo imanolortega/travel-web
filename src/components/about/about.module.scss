@@ -12,6 +12,11 @@
   top: var(--static-space-64);
 }
 
+.textName {
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 @media (--s) {
   .avatar {
     top: auto;
