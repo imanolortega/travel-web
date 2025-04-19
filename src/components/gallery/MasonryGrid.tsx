@@ -1,11 +1,11 @@
 'use client'
 
 import 'photoswipe/style.css'
+import { gallery } from '@/app/resources/content'
+import { SmartImage } from '@/once-ui/components'
 import { useEffect } from 'react'
 import PhotoSwipeLightbox from 'photoswipe/lightbox'
-import { SmartImage } from '@/once-ui/components'
 import styles from './Gallery.module.scss'
-import { gallery } from '@/app/resources/content'
 
 export default function MasonryGrid() {
   const images = gallery?.images || []
