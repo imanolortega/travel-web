@@ -15,7 +15,7 @@ const newsletter = {
   title: <>Suscribite</>,
   description: (
     <>
-      Ocasionalmente escribo sobre destinos destacados de mi viaje.
+      Escribo sobre destinos destacados de mi viaje.
       <br />
       <br />
       Si te interesa, dejame tu email. No hago spam.

@@ -1,14 +1,23 @@
 .masonryGrid {
-  display: flex;
-  margin-left: calc(-1 * var(--static-space-16));
   width: 100%;
-}
+  column-count: 4;
+  column-gap: 1rem;
 
-.masonryGridColumn {
-  padding-left: var(--static-space-16);
-  background-clip: padding-box;
-}
+  @media (max-width: 1440px) {
+    column-count: 3;
+  }
 
-.gridItem {
-  margin-bottom: var(--static-space-16);
+  @media (max-width: 1024px) {
+    column-count: 2;
+  }
+
+  @media (max-width: 560px) {
+    column-count: 1;
+  }
+
+  .gridItem {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+    cursor: zoom-in;
+  }
 }
