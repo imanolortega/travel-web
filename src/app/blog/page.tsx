@@ -64,7 +64,14 @@ export default function Blog() {
       <Column fillWidth flex={1}>
         <Posts range={[1, 3]} thumbnail />
       </Column>
-      {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      <Column paddingTop="l" gap="m">
+        <iframe
+          src="https://imanolortega.substack.com/embed"
+          width="100%"
+          height="320"
+          style={{ border: 'none', borderRadius: '1rem' }}
+        />
+      </Column>
     </Column>
   )
 }
