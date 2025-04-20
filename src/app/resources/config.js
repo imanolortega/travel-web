@@ -65,4 +65,4 @@ const display = {
   time: true,
 }
 
-export { routes, protectedRoutes, effects, style, display, mailchimp, baseURL }
+export { routes, protectedRoutes, effects, style, display, baseURL }
