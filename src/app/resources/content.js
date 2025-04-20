@@ -72,7 +72,7 @@ const about = {
 const blog = {
   label: 'Blog',
   title: 'Un lugar adonde ir',
-  description: 'Crónicas de mi viaje por el país.',
+  description: 'Crónicas de viaje por pueblos y ciudades argentinas.',
   posts: [
     {
       title: 'Diario de viaje II: Trevelin',
@@ -105,7 +105,7 @@ const gallery = {
   label: 'Fotos',
   title: 'Fotografías',
   description:
-    'Todas las fotografías fueron tomadas durante los últimos meses con una cámara Sony Alpha 7 III por mí, a excepción de las mencionadas.',
+    'Todas las fotografías fueron tomadas durante los últimos meses con una cámara Sony Alpha 7 III. Son de mi autoría a excepción de las mencionadas.',
   images: [
     {
       id: 1,
