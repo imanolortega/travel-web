@@ -34,9 +34,9 @@ export default function Post({ post, thumbnail }: PostProps) {
         {post.image && thumbnail && (
           <SmartImage
             priority
-            maxWidth={20}
+            //maxWidth={20}
             className={styles.image}
-            sizes="480px"
+            sizes="640px"
             border="neutral-alpha-weak"
             cursor="interactive"
             radius="m"
