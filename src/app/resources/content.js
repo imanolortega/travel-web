@@ -62,7 +62,8 @@ const about = {
     title: 'Introducción',
     description: (
       <>
-        Viajando y escribiendo sobre Argentina. Actualmente en Gonnet, La Plata, Buenos Aires.
+        Viajando y escribiendo sobre Argentina. Actualmente en Gonnet, La Plata,
+        Buenos Aires.
       </>
     ),
   },
@@ -83,6 +84,7 @@ const blog = {
       ),
       image: '/images/trevelin/dragon-rojo.jpg',
       slug: 'https://imanolortega.substack.com/p/diario-de-viaje-capilla-del-monte',
+      id: 0,
     },
     {
       title: 'Diario de viaje: Capilla del Monte',
@@ -94,14 +96,16 @@ const blog = {
       ),
       image: '/images/capilla/uritorco.jpg',
       slug: 'https://imanolortega.substack.com/p/diario-de-viaje-capilla-del-monte',
+      id: 1,
     },
   ],
 }
 
 const gallery = {
   label: 'Fotos',
-  title: 'Fotos',
-  description: `Fotos de mi viaje por el país`,
+  title: 'Fotografías',
+  description:
+    'Todas las fotografías fueron tomadas durante los últimos meses con una cámara Sony Alpha 7 III por mí, a excepción de las mencionadas.',
   images: [
     {
       id: 1,

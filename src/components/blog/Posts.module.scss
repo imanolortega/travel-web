@@ -1,7 +1,9 @@
-.hover {
-  transition: var(--transition-micro-medium);
+@media (--s) {
+  .hover {
+    transition: var(--transition-micro-medium);
 
-  &:hover {
-    transform: translateX(var(--static-space-8));
+    &:hover {
+      transform: translateX(var(--static-space-8));
+    }
   }
 }

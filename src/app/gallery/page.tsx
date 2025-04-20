@@ -62,8 +62,18 @@ export default function Gallery() {
         }}
       />
       <Heading marginBottom="l" variant="display-strong-s" align="center">
-        Fotografías
+        {gallery.title}
       </Heading>
+      <Column
+        textVariant="body-default-l"
+        align="center"
+        fillWidth
+        paddingX="l"
+        gap="m"
+        marginBottom="80"
+      >
+        {gallery.description}
+      </Column>
       <MasonryGrid />
     </Column>
   )

@@ -22,7 +22,7 @@ export function Posts({ columns = '1', thumbnail = true }: PostsProps) {
           gap="m"
         >
           {allBlogs.map((post) => (
-            <Post key={post.slug} post={post} thumbnail={thumbnail} />
+            <Post key={post.id} post={post} thumbnail={thumbnail} />
           ))}
         </Grid>
       )}

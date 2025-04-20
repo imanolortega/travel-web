@@ -86,7 +86,7 @@ export default function Home() {
             <Heading
               className={styles.textAlign}
               variant="display-strong-m"
-              marginBottom='m'
+              marginBottom="m"
             >
               {person.name}
             </Heading>
@@ -147,16 +147,9 @@ export default function Home() {
               marginBottom="40"
               className={styles.textAlign}
             >
-              {blog.title}
+              Crónicas de viaje
             </Heading>
-            <Column
-              textVariant="body-default-l"
-              fillWidth
-              gap="m"
-              marginBottom="l"
-            >
-              {blog.description}
-            </Column>
+
             <Column fillWidth gap="l">
               <Posts />
             </Column>
