@@ -14,7 +14,7 @@ import styles from '@/components/about/about.module.scss'
 export async function generateMetadata() {
   const title = about.title
   const description = about.description
-  const ogImage = `https://${baseURL}/og?title=${encodeURIComponent(title)}`
+  const ogImage = `https://${baseURL}/images/cover.jpg`
 
   return {
     title,
