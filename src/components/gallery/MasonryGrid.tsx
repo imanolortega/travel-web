@@ -23,6 +23,24 @@ export default function MasonryGrid() {
       pswpModule: () => import('photoswipe'),
     })
 
+    lightbox.on('uiRegister', () => {
+      lightbox?.pswp?.ui?.registerElement({
+        name: 'custom-caption',
+        order: 9,
+        isButton: false,
+        appendTo: 'root',
+        html: '',
+        onInit: (el, pswp) => {
+          pswp.on('change', () => {
+            const currSlideEl = pswp?.currSlide?.data.element
+            const img = currSlideEl?.querySelector('img')
+            const caption = img?.alt || ''
+            el.innerHTML = caption
+          })
+        },
+      })
+    })
+
     lightbox.init()
     return () => lightbox.destroy()
   }, [])
@@ -45,7 +63,7 @@ export default function MasonryGrid() {
               sizes="(max-width: 560px) 100vw, (max-width: 1024px) 50vw, (max-width: 1440px) 33vw, 25vw"
               radius="m"
               aspectRatio={
-                image.orientation === 'horizontal' ? '16 / 9' : '9 / 16'
+                image.orientation === 'horizontal' ? '3 / 2' : '2 / 3'
               }
               src={image.src}
               alt={image.alt}

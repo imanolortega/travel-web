@@ -75,3 +75,18 @@ a:not(.button) {
 ::-webkit-scrollbar-corner {
   background-color: var(--static-transparent);
 }
+
+.pswp__custom-caption {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80%;
+  background: var(--page-background);
+  color: white;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 0.2rem;
+  text-align: center;
+  z-index: 1000;
+}
