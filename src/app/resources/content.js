@@ -62,8 +62,7 @@ const about = {
     title: 'Introducción',
     description: (
       <>
-        <p>Viajando y escribiendo sobre Argentina.</p>
-        <p>Actualmente en Gonnet, La Plata, Buenos Aires.</p>
+        Viajando y escribiendo sobre Argentina. Actualmente en Gonnet, La Plata, Buenos Aires.
       </>
     ),
   },
@@ -72,7 +71,7 @@ const about = {
 const blog = {
   label: 'Blog',
   title: 'Un lugar adonde ir',
-  description: 'Un lugar adonde ir es un conjunto de relatos de viaje.',
+  description: 'Crónicas de mi viaje por el país.',
   posts: [
     {
       title: 'Diario de viaje II: Trevelin',

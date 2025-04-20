@@ -6,7 +6,6 @@ import {
   Heading,
   SmartImage,
   SmartLink,
-  Tag,
   Text,
 } from '@/once-ui/components'
 import styles from './Posts.module.scss'
