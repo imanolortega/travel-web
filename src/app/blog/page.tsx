@@ -60,9 +60,9 @@ export default function Blog() {
         }}
       />
       <Heading
-        className={styles.textAlign}
         marginBottom="l"
         variant="display-strong-s"
+        align='center'
       >
         {blog.title}
       </Heading>
