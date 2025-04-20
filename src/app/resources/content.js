@@ -322,8 +322,8 @@ const gallery = {
     },
     {
       id: 37,
-      src: '/images/gallery/caba.jpg',
-      alt: 'Calle de Palermo',
+      src: '/images/gallery/chubut-querencia.jpg',
+      alt: 'Chubut Querencia',
       orientation: 'vertical',
     },
     {
