@@ -83,7 +83,7 @@ const blog = {
         </>
       ),
       image: '/images/trevelin/dragon-rojo.jpg',
-      slug: 'https://imanolortega.substack.com/p/diario-de-viaje-capilla-del-monte',
+      slug: 'https://imanolortega.substack.com/p/diario-de-viaje-ii-trevelin',
       id: 0,
     },
     {
