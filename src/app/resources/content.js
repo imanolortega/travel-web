@@ -107,9 +107,13 @@ const blog = {
 
 const gallery = {
   label: 'Fotos',
-  title: 'Fotografías',
+  title: 'Fotos del camino',
   description:
-    'Todas las fotografías fueron tomadas durante los últimos meses con una Sony Alpha 7 III. Son de mi autoría a excepción de las mencionadas.',
+    (<>
+      Todas las fotografías fueron tomadas durante los últimos meses con una Sony Alpha 7 III.
+      <br/>
+      Son de mi autoría a excepción de las mencionadas.
+    </>),
   images: [
     {
       id: 1,
