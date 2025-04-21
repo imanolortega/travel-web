@@ -114,7 +114,7 @@ const gallery = {
     {
       id: 1,
       src: '/images/gallery/caballo-trevelin-1.jpg',
-      alt: 'Un caballo en Trevelin.',
+      alt: 'Un caballo solitario en la Ruta Nacional 71 en Trevelin.',
       orientation: 'vertical',
     },
     {
@@ -144,7 +144,7 @@ const gallery = {
     {
       id: 6,
       src: '/images/gallery/magagna.jpg',
-      alt: 'Formaciones rocosas cuando baja la marea en Magagna.',
+      alt: 'Formaciones rocosas cuando desciende la marea en Magagna.',
       orientation: 'vertical',
     },
     {
@@ -168,19 +168,19 @@ const gallery = {
     {
       id: 10,
       src: '/images/gallery/zamba-lago-puelo-1.jpg',
-      alt: 'Zamba el gato naranja de Sofi.',
+      alt: 'Zamba el gato naranja de Sofi Vedovaldi, en Puelo.',
       orientation: 'vertical',
     },
     {
       id: 11,
       src: '/images/gallery/lago-rosario-1.jpg',
-      alt: 'Lago Rosario.',
+      alt: 'Lago Rosario, Chubut.',
       orientation: 'horizontal',
     },
     {
       id: 12,
       src: '/images/gallery/caba.jpg',
-      alt: 'Una calle de Palermo.',
+      alt: 'Palermo, CABA.',
       orientation: 'vertical',
     },
     {
@@ -216,7 +216,7 @@ const gallery = {
     {
       id: 18,
       src: '/images/gallery/primos-madryn.jpg',
-      alt: 'Mis primos, Lichi e Ivo, en Puerto Madryn.',
+      alt: 'Mis primos queridos, Lichi e Ivo, en Puerto Madryn.',
       orientation: 'horizontal',
     },
     {
@@ -264,7 +264,7 @@ const gallery = {
     {
       id: 26,
       src: '/images/gallery/cerro-radal.jpg',
-      alt: 'Ovejas en el Cerro Radal de Lago Puelo.',
+      alt: 'En el Cerro Radal de Lago Puelo.',
       orientation: 'vertical',
     },
     {
@@ -282,7 +282,7 @@ const gallery = {
     {
       id: 29,
       src: '/images/gallery/yy-draig-goch-trevelin.jpg',
-      alt: 'El Dragon Rojo de Trevelin.',
+      alt: 'El Dragon Rojo Galés en Trevelin.',
       orientation: 'horizontal',
     },
     {
