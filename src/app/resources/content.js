@@ -306,14 +306,14 @@ const gallery = {
     },
     {
       id: 32,
-      src: '/images/gallery/lago-puelo-1-2.jpg',
+      src: '/images/gallery/tuli-y-sergio.jpg',
       alt: 'Estela y Sergio en Lago Puelo.',
       orientation: 'horizontal',
     },
     {
       id: 33,
       src: '/images/gallery/caballo-trevelin.jpg',
-      alt: 'El caballo de Trevelin.',
+      alt: 'El caballo solitario de Trevelin.',
       orientation: 'vertical',
     },
     {

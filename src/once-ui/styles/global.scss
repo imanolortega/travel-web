@@ -82,6 +82,7 @@ a:not(.button) {
   left: 50%;
   transform: translateX(-50%);
   max-width: 80%;
+  opacity: 0.75 !important;
   background: var(--page-background);
   color: white;
   font-size: 14px;
