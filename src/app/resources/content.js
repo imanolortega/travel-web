@@ -258,7 +258,7 @@ const gallery = {
     },
     {
       id: 24,
-      src: '/images/gallery/la-plata.jpg',
+      src: '/images/gallery/altos-san-lorenzo.jpg',
       alt: 'Aniversario de La Patulo Rave en Altos de San Lorenzo, La Plata. Fotografía de Bianca Rizzi.',
       orientation: 'vertical',
     },
@@ -421,7 +421,7 @@ const gallery = {
     {
       id: 48,
       src: '/images/cover.jpg',
-      alt: 'Sobre la Ruta Nacional 71 cerca del Parque Nacional Los Alerce.',
+      alt: 'Sobre la Ruta Nacional 71 cerca del Parque Nacional Los Alerces.',
       orientation: 'horizontal',
     },
   ],
