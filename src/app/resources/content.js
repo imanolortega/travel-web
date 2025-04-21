@@ -252,7 +252,7 @@ const gallery = {
     },
     {
       id: 23,
-      src: '/images/gallery/la-plata-1.jpg',
+      src: '/images/gallery/republica-gonnet.jpg',
       alt: 'República de los Niños en Gonnet.',
       orientation: 'vertical',
     },
