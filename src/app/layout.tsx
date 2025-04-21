@@ -9,7 +9,7 @@ import { baseURL, effects, style } from '@/app/resources'
 import { Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 
-import { person, home } from '@/app/resources/content'
+import { home } from '@/app/resources/content'
 import { Background, Column, Flex, ToastProvider } from '@/once-ui/components'
 
 export async function generateMetadata() {

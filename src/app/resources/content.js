@@ -1,3 +1,6 @@
+const description =
+  'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.'
+
 const person = {
   firstName: 'Imanol',
   lastName: 'Ortega Carabajal',
@@ -10,7 +13,7 @@ const person = {
 
 const home = {
   title: 'Imanol Ortega Carabajal',
-  description: 'Viajando y escribiendo sobre Argentina.',
+  description: description,
 }
 
 const newsletter = {
@@ -57,6 +60,7 @@ const about = {
   avatar: {
     display: true,
   },
+  description: description,
   intro: {
     display: true,
     title: 'Introducción',
@@ -105,7 +109,7 @@ const gallery = {
   label: 'Fotos',
   title: 'Fotografías',
   description:
-    'Todas las fotografías fueron tomadas durante los últimos meses con una cámara Sony Alpha 7 III. Son de mi autoría a excepción de las mencionadas.',
+    'Todas las fotografías fueron tomadas durante los últimos meses con una Sony Alpha 7 III. Son de mi autoría a excepción de las mencionadas.',
   images: [
     {
       id: 1,
