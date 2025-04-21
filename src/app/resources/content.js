@@ -82,8 +82,8 @@ const blog = {
       title: 'Diario de viaje II: Trevelin',
       description: (
         <>
-          El Pueblo del Molino, la Conquista del Desierto y la Colonia Galesa
-          del Chubut.
+          El Pueblo del Molino en la cordillera, la Colonia Galesa del Chubut y
+          las campañas militares del Estado argentino en la Patagonia.
         </>
       ),
       image: '/images/trevelin/dragon-rojo.jpg',
