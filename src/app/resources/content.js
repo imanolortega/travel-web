@@ -381,11 +381,23 @@ const gallery = {
       alt: 'Felipe y Bianca en Gonnet.',
       orientation: 'vertical',
     },
+    // {
+    //   id: 45,
+    //   src: '/images/gallery/san-martin-gonnet.jpg',
+    //   alt: 'San Martín de la República de los Niños.',
+    //   orientation: 'horizontal',
+    // },
     {
-      id: 45,
-      src: '/images/gallery/san-martin-gonnet.jpg',
-      alt: 'San Martín de la República de los Niños.',
-      orientation: 'horizontal',
+      id: 47,
+      src: '/images/gallery/tia-sandra.jpg',
+      alt: 'Mi tía Sandra en Tres Arroyos. Fotografía de Bianca Rizzi.',
+      orientation: 'vertical',
+    },
+    {
+      id: 49,
+      src: '/images/gallery/juli-y-marian.jpg',
+      alt: 'Juli y Mariano en Tres Arroyos. Fotografía de Bianca Rizzi.',
+      orientation: 'vertical',
     },
     {
       id: 46,
@@ -394,9 +406,9 @@ const gallery = {
       orientation: 'horizontal',
     },
     {
-      id: 47,
-      src: '/images/gallery/tia-sandra.jpg',
-      alt: 'Mi tía Sandra en Tres Arroyos. Fotografía de Bianca Rizzi.',
+      id: 48,
+      src: '/images/gallery/tios-queridos.jpg',
+      alt: 'Zarita, la salchica de Delfi.',
       orientation: 'vertical',
     },
     {
