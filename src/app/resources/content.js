@@ -56,7 +56,7 @@ const social = [
 
 const about = {
   label: 'Inicio',
-  title: 'Inicio',
+  title: 'Imanol Ortega Carabajal | Inicio',
   avatar: {
     display: true,
   },
@@ -222,7 +222,7 @@ const gallery = {
     {
       id: 18,
       src: '/images/gallery/primos-madryn.jpg',
-      alt: 'Mis primos queridos, Lichi e Ivo, en Puerto Madryn.',
+      alt: 'Mis primos queridos, Lichi e Ivo, en Playa Paraná, Puerto Madryn.',
       orientation: 'horizontal',
     },
     {
