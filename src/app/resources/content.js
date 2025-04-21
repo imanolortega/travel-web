@@ -387,6 +387,24 @@ const gallery = {
       alt: 'San Martín de la República de los Niños.',
       orientation: 'horizontal',
     },
+    {
+      id: 46,
+      src: '/images/gallery/sofi-en-rio-azul.jpg',
+      alt: 'Sofi en Río Azul, Lago Puelo.',
+      orientation: 'horizontal',
+    },
+    {
+      id: 47,
+      src: '/images/gallery/tia-sandra.jpg',
+      alt: 'Mi tía Sandra en Tres Arroyos. Fotografía de Bianca Rizzi.',
+      orientation: 'vertical',
+    },
+    {
+      id: 48,
+      src: '/images/gallery/tios-queridos.jpg',
+      alt: 'Mis tíos queridos, Sandra y Gustavo, en Tres Arroyos. Fotografía de Bianca Rizzi.',
+      orientation: 'horizontal',
+    },
   ],
 }
 
