@@ -408,13 +408,19 @@ const gallery = {
     {
       id: 48,
       src: '/images/gallery/zarita.jpg',
-      alt: 'Zarita, la salchica de Delfi.',
+      alt: 'Zara, la salchicha de Delfi.',
       orientation: 'vertical',
     },
     {
       id: 48,
       src: '/images/gallery/tios-queridos.jpg',
       alt: 'Mis tíos queridos, Sandra y Gustavo, en Tres Arroyos. Fotografía de Bianca Rizzi.',
+      orientation: 'horizontal',
+    },
+    {
+      id: 48,
+      src: '/images/cover.jpg',
+      alt: 'Sobre la Ruta Nacional 71 cerca del Parque Nacional Los Alerce.',
       orientation: 'horizontal',
     },
   ],
