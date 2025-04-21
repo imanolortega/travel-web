@@ -208,9 +208,9 @@ const gallery = {
       orientation: 'horizontal',
     },
     {
-      id: 16,
-      src: '/images/gallery/nant-fach-mill-trevelin-6.jpg',
-      alt: 'La casa de los Evans en el Nant Fach Mill.',
+      id: 18,
+      src: '/images/gallery/primos-madryn.jpg',
+      alt: 'Mis primos queridos, Lichi e Ivo, en Playa Paraná, Puerto Madryn.',
       orientation: 'horizontal',
     },
     {
@@ -220,9 +220,9 @@ const gallery = {
       orientation: 'vertical',
     },
     {
-      id: 18,
-      src: '/images/gallery/primos-madryn.jpg',
-      alt: 'Mis primos queridos, Lichi e Ivo, en Playa Paraná, Puerto Madryn.',
+      id: 16,
+      src: '/images/gallery/nant-fach-mill-trevelin-6.jpg',
+      alt: 'La casa de los Evans en el Nant Fach Mill.',
       orientation: 'horizontal',
     },
     {
@@ -298,9 +298,9 @@ const gallery = {
       orientation: 'vertical',
     },
     {
-      id: 31,
-      src: '/images/gallery/magagna-1-2.jpg',
-      alt: 'Playa Magagna.',
+      id: 35,
+      src: '/images/gallery/marcha-24-de-marzo.jpg',
+      alt: 'Marcha del 24 de marzo en Capital Federal.',
       orientation: 'vertical',
     },
     {
@@ -322,9 +322,9 @@ const gallery = {
       orientation: 'horizontal',
     },
     {
-      id: 35,
-      src: '/images/gallery/marcha-24-de-marzo.jpg',
-      alt: 'Marcha del 24 de marzo en Capital Federal.',
+      id: 31,
+      src: '/images/gallery/magagna-1-2.jpg',
+      alt: 'Playa Magagna.',
       orientation: 'vertical',
     },
     {
@@ -381,12 +381,12 @@ const gallery = {
       alt: 'Felipe y Bianca en Gonnet.',
       orientation: 'vertical',
     },
-    // {
-    //   id: 45,
-    //   src: '/images/gallery/san-martin-gonnet.jpg',
-    //   alt: 'San Martín de la República de los Niños.',
-    //   orientation: 'horizontal',
-    // },
+    {
+      id: 45,
+      src: '/images/gallery/san-martin-gonnet.jpg',
+      alt: 'San Martín de la República de los Niños.',
+      orientation: 'horizontal',
+    },
     {
       id: 47,
       src: '/images/gallery/tia-sandra.jpg',
@@ -407,7 +407,7 @@ const gallery = {
     },
     {
       id: 48,
-      src: '/images/gallery/tios-queridos.jpg',
+      src: '/images/gallery/zarita.jpg',
       alt: 'Zarita, la salchica de Delfi.',
       orientation: 'vertical',
     },
