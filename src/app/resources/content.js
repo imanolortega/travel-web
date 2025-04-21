@@ -108,7 +108,7 @@ const blog = {
 const gallery = {
   label: 'Fotos',
   title: 'Fotos del camino',
-  gallery: 'Galería de fotos. Fotografías de mi viaje por Argentina.',
+  description_og: 'Galería de fotos. Fotografías de mi viaje por Argentina.',
   description: (
     <>
       Todas las fotografías fueron tomadas durante los últimos meses con una

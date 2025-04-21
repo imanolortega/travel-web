@@ -5,7 +5,7 @@ import MasonryGrid from '@/components/gallery/MasonryGrid'
 
 export async function generateMetadata() {
   const title = gallery.title
-  const description = gallery.description
+  const description = gallery.description_og
   const ogImage = `https://${baseURL}/images/cover.jpg`
 
   return {
