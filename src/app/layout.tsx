@@ -1,5 +1,6 @@
 import '@/once-ui/styles/index.scss'
 import '@/once-ui/tokens/index.scss'
+import { Analytics } from '@vercel/analytics/react'
 
 import classNames from 'classnames'
 
@@ -75,6 +76,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-transition={style.transition}
       className={classNames(primary.variable, GeistSans.variable)}
     >
+      <Analytics />
       <ToastProvider>
         <Column
           style={{ minHeight: '100vh' }}
