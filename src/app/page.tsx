@@ -12,7 +12,7 @@ import { Posts } from '@/components/blog/Posts'
 import styles from '@/components/about/about.module.scss'
 
 export async function generateMetadata() {
-  const title = about.title
+  const title = `${about.title} | Imanol Ortega Carabajal`
   const description = about.description
   const ogImage = `https://${baseURL}/images/cover.jpg`
 

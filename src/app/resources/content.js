@@ -56,7 +56,7 @@ const social = [
 
 const about = {
   label: 'Inicio',
-  title: 'Imanol Ortega Carabajal | Inicio',
+  title: 'Inicio',
   avatar: {
     display: true,
   },
