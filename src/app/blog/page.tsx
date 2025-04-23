@@ -4,7 +4,7 @@ import { Column, Heading } from '@/once-ui/components'
 import { Posts } from '@/components/blog/Posts'
 
 export async function generateMetadata() {
-  const title = `${blog.title} | Blog`
+  const title = `${blog.title} | Imanol Ortega Carabajal`
   const description = blog.description
   const ogImage = `https://${baseURL}/images/cover.jpg`
 

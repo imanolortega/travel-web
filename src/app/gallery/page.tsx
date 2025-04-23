@@ -4,7 +4,7 @@ import { gallery, person } from '@/app/resources/content'
 import MasonryGrid from '@/components/gallery/MasonryGrid'
 
 export async function generateMetadata() {
-  const title = gallery.title
+  const title = `${gallery.title} | Imanol Ortega Carabajal`
   const description = gallery.description_og
   const ogImage = `https://${baseURL}/images/cover.jpg`
 
