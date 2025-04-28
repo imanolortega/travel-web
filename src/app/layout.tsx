@@ -14,46 +14,16 @@ import { GeistSans } from 'geist/font/sans'
 
 import { Background, Column, Flex, ToastProvider } from '@/once-ui/components'
 
-export async function generateMetadata() {
-  const ogImage = `https://${baseURL}/images/cover.jpg`
-  const title = 'Inicio'
-  const description = about.description
+import { Meta } from '@/once-ui/modules'
 
-  return {
-    openGraph: {
-      title: title,
-      description: description,
-      url: baseURL,
-      siteName: title,
-      locale: 'en_US',
-      type: 'website',
-      images: [
-        {
-          url: ogImage,
-          alt: title,
-        },
-      ],
-    },
-    metadataBase: new URL(`https://${baseURL}`),
-    generator: 'Next.js',
-    referrer: 'origin-when-cross-origin',
-    title: {
-      template: '%s | Imanol Ortega Carabajal',
-      default: title,
-    },
-    description: description,
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        'max-video-preview': -1,
-        'max-image-preview': 'large',
-        'max-snippet': -1,
-      },
-    },
-  }
+export async function generateMetadata() {
+  return Meta.generate({
+    title: about.title,
+    description: about.description,
+    baseURL: baseURL,
+    path: about.path,
+    image: about.image,
+  })
 }
 
 const primary = Inter({

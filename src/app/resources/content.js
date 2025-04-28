@@ -1,3 +1,5 @@
+import path from 'path'
+
 const description =
   'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.'
 
@@ -55,11 +57,12 @@ const social = [
 
 const about = {
   label: 'Inicio',
-  title: 'Inicio',
+  title: 'Inicio | Imanol Ortega Carabajal',
   avatar: {
     display: true,
   },
   description: description,
+  path: '/',
   intro: {
     display: true,
     title: 'Introducción',
@@ -76,6 +79,7 @@ const blog = {
   label: 'Blog',
   title: 'Un lugar adonde ir',
   description: 'Crónicas del viaje a través de pueblos y ciudades argentinas.',
+  path: '/blog',
   posts: [
     {
       title: 'Diario de viaje II: Trevelin',
@@ -107,6 +111,7 @@ const blog = {
 const gallery = {
   label: 'Fotos',
   title: 'Fotos del camino',
+  path: '/gallery',
   description_og: 'Galería de fotos. Fotografías de mi viaje por Argentina.',
   description: (
     <>

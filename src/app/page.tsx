@@ -7,63 +7,35 @@ import {
   IconButton,
 } from '@/once-ui/components'
 import { baseURL } from '@/app/resources'
+import { Meta, Schema } from '@/once-ui/modules'
 import { person, about, social, blog } from '@/app/resources/content'
 import { Posts } from '@/components/blog/Posts'
-import styles from '@/components/about/about.module.scss'
 import React from 'react'
+import styles from '@/components/about/about.module.scss'
 
 export async function generateMetadata() {
-  const title = about.title
-  const description = about.description
-  const ogImage = `https://${baseURL}/images/cover.jpg`
-
-  return {
-    openGraph: {
-      title,
-      description,
-      locale: 'en_US',
-      siteName: title,
-      type: 'website',
-      url: `https://${baseURL}`,
-      images: [
-        {
-          url: ogImage,
-          width: 1920,
-          height: 1280,
-          alt: title,
-        },
-      ],
-    },
-    title,
-    description,
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [ogImage],
-    },
-  }
+  return Meta.generate({
+    title: about.title,
+    description: about.description,
+    baseURL: baseURL,
+    path: about.path,
+  })
 }
 
 export default function Home() {
   return (
     <Column maxWidth="m">
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Person',
-            name: person.name,
-            jobTitle: person.role,
-            description: about.intro.description,
-            url: `https://${baseURL}/`,
-            image: `${baseURL}/images/${person.avatar}`,
-            sameAs: social
-              .filter((item) => item.link && !item.link.startsWith('mailto:'))
-              .map((item) => item.link),
-          }),
+      <Schema
+        as="webPage"
+        baseURL={baseURL}
+        path={about.path}
+        title={about.title}
+        description={about.description}
+        image={`${baseURL}/og?title=${encodeURIComponent(about.title)}`}
+        author={{
+          name: person.name,
+          url: `${baseURL}${about.path}`,
+          image: `${baseURL}${person.avatar}`,
         }}
       />
       <Flex fillWidth mobileDirection="column" horizontal="center">

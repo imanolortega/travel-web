@@ -1,64 +1,32 @@
+import { about, blog, person } from '@/app/resources/content'
 import { baseURL } from '@/app/resources'
-import { blog, person } from '@/app/resources/content'
 import { Column, Heading } from '@/once-ui/components'
+import { Meta, Schema } from '@/once-ui/modules'
 import { Posts } from '@/components/blog/Posts'
 
 export async function generateMetadata() {
-  const title = `${blog.title} | Imanol Ortega Carabajal`
-  const description = blog.description
-  const ogImage = `https://${baseURL}/images/cover.jpg`
-
-  return {
-    openGraph: {
-      title,
-      description,
-      locale: 'en_US',
-      siteName: title,
-      type: 'website',
-      url: `https://${baseURL}`,
-      images: [
-        {
-          url: ogImage,
-          width: 1920,
-          height: 1280,
-          alt: title,
-        },
-      ],
-    },
-    title,
-    description,
-    twitter: {
-      card: 'summary_large_image',
-      title,
-      description,
-      images: [ogImage],
-    },
-  }
+  return Meta.generate({
+    title: blog.title,
+    description: blog.description,
+    baseURL: baseURL,
+    path: blog.path,
+  })
 }
 
 export default function Blog() {
   return (
     <Column maxWidth="s">
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Blog',
-            headline: blog.title,
-            description: blog.description,
-            url: `https://${baseURL}/blog`,
-            image: `${baseURL}/og?title=${encodeURIComponent(blog.title)}`,
-            author: {
-              '@type': 'Person',
-              name: person.name,
-              image: {
-                '@type': 'ImageObject',
-                url: `${baseURL}${person.avatar}`,
-              },
-            },
-          }),
+      <Schema
+        as="webPage"
+        baseURL={baseURL}
+        path={blog.path}
+        title={blog.title}
+        description={blog.description}
+        image={`${baseURL}/og?title=${encodeURIComponent(blog.title)}`}
+        author={{
+          name: person.name,
+          url: `${baseURL}${blog.path}`,
+          image: `${baseURL}${person.avatar}`,
         }}
       />
       <Heading marginBottom="l" variant="display-strong-s" align="center">
