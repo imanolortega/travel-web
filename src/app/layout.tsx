@@ -21,13 +21,13 @@ export async function generateMetadata() {
 
   return {
     metadataBase: new URL(`https://${baseURL}`),
-    title: home.title,
+    title: title,
     description: home.description,
     openGraph: {
-      title: home.title,
+      title: title,
       description: home.description,
       url: baseURL,
-      siteName: home.title,
+      siteName: title,
       locale: 'en_US',
       type: 'website',
       images: [
