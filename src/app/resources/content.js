@@ -378,8 +378,8 @@ const gallery = {
     },
     {
       id: 44,
-      src: '/images/gallery/feli-bianca.jpg',
-      alt: 'Felipe y Bianca en Gonnet.',
+      src: '/images/gallery/nacho-en-baires.jpg',
+      alt: 'Con Nacho en Baires.',
       orientation: 'vertical',
     },
     {
