@@ -8,13 +8,24 @@ import {
   SmartLink,
   Text,
 } from '@/once-ui/components'
+import { useEffect, useState } from 'react'
 import styles from './Posts.module.scss'
+
 interface PostProps {
   post: any
   thumbnail: boolean
 }
 
 export default function Post({ post, thumbnail }: PostProps) {
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false)
+    }, 1000)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <SmartLink
       fillWidth
@@ -34,7 +45,6 @@ export default function Post({ post, thumbnail }: PostProps) {
         {post.image && thumbnail && (
           <SmartImage
             priority
-            //maxWidth={20}
             className={styles.image}
             sizes="640px"
             border="neutral-alpha-weak"
@@ -43,6 +53,7 @@ export default function Post({ post, thumbnail }: PostProps) {
             src={post.image}
             alt={'Thumbnail of ' + post.title}
             aspectRatio="16 / 9"
+            isLoading={loading}
           />
         )}
         <Column position="relative" fillWidth gap="8" vertical="center">

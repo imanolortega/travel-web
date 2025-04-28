@@ -1,4 +1,4 @@
-import { Flex, IconButton, SmartLink, Text } from '@/once-ui/components'
+import { Flex, IconButton, Text } from '@/once-ui/components'
 import { person, social } from '@/app/resources/content'
 import styles from './Footer.module.scss'
 
