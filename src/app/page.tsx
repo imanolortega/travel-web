@@ -12,38 +12,38 @@ import { Posts } from '@/components/blog/Posts'
 import styles from '@/components/about/about.module.scss'
 import React from 'react'
 
-// export async function generateMetadata() {
-//   const title = about.title
-//   const description = about.description
-//   const ogImage = `https://${baseURL}/images/cover.jpg`
+export async function generateMetadata() {
+  const title = about.title
+  const description = about.description
+  const ogImage = `https://${baseURL}/images/cover.jpg`
 
-//   return {
-//     openGraph: {
-//       title,
-//       description,
-//       locale: 'en_US',
-//       siteName: title,
-//       type: 'website',
-//       url: `https://${baseURL}`,
-//       images: [
-//         {
-//           url: ogImage,
-//           width: 1920,
-//           height: 1280,
-//           alt: title,
-//         },
-//       ],
-//     },
-//     title,
-//     description,
-//     twitter: {
-//       card: 'summary_large_image',
-//       title,
-//       description,
-//       images: [ogImage],
-//     },
-//   }
-// }
+  return {
+    openGraph: {
+      title,
+      description,
+      locale: 'en_US',
+      siteName: title,
+      type: 'website',
+      url: `https://${baseURL}`,
+      images: [
+        {
+          url: ogImage,
+          width: 1920,
+          height: 1280,
+          alt: title,
+        },
+      ],
+    },
+    title,
+    description,
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+  }
+}
 
 export default function Home() {
   return (

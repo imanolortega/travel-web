@@ -3,38 +3,38 @@ import { blog, person } from '@/app/resources/content'
 import { Column, Heading } from '@/once-ui/components'
 import { Posts } from '@/components/blog/Posts'
 
-// export async function generateMetadata() {
-//   const title = `${blog.title} | Imanol Ortega Carabajal`
-//   const description = blog.description
-//   const ogImage = `https://${baseURL}/images/cover.jpg`
+export async function generateMetadata() {
+  const title = `${blog.title} | Imanol Ortega Carabajal`
+  const description = blog.description
+  const ogImage = `https://${baseURL}/images/cover.jpg`
 
-//   return {
-//     openGraph: {
-//       title,
-//       description,
-//       locale: 'en_US',
-//       siteName: title,
-//       type: 'website',
-//       url: `https://${baseURL}`,
-//       images: [
-//         {
-//           url: ogImage,
-//           width: 1920,
-//           height: 1280,
-//           alt: title,
-//         },
-//       ],
-//     },
-//     title,
-//     description,
-//     twitter: {
-//       card: 'summary_large_image',
-//       title,
-//       description,
-//       images: [ogImage],
-//     },
-//   }
-// }
+  return {
+    openGraph: {
+      title,
+      description,
+      locale: 'en_US',
+      siteName: title,
+      type: 'website',
+      url: `https://${baseURL}`,
+      images: [
+        {
+          url: ogImage,
+          width: 1920,
+          height: 1280,
+          alt: title,
+        },
+      ],
+    },
+    title,
+    description,
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [ogImage],
+    },
+  }
+}
 
 export default function Blog() {
   return (
