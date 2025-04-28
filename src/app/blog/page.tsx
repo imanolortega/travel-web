@@ -9,20 +9,24 @@ export async function generateMetadata() {
   const ogImage = `https://${baseURL}/images/cover.jpg`
 
   return {
-    title,
-    description,
     openGraph: {
       title,
       description,
+      locale: 'en_US',
+      siteName: title,
       type: 'website',
-      url: `https://${baseURL}/blog`,
+      url: `https://${baseURL}`,
       images: [
         {
           url: ogImage,
+          width: 1920,
+          height: 1280,
           alt: title,
         },
       ],
     },
+    title,
+    description,
     twitter: {
       card: 'summary_large_image',
       title,

@@ -13,25 +13,29 @@ import styles from '@/components/about/about.module.scss'
 import React from 'react'
 
 export async function generateMetadata() {
-  const title = `${about.title} | Imanol Ortega Carabajal`
+  const title = about.title
   const description = about.description
   const ogImage = `https://${baseURL}/images/cover.jpg`
 
   return {
-    title,
-    description,
     openGraph: {
       title,
       description,
+      locale: 'en_US',
+      siteName: title,
       type: 'website',
-      url: `https://${baseURL}/`,
+      url: `https://${baseURL}`,
       images: [
         {
           url: ogImage,
+          width: 1920,
+          height: 1280,
           alt: title,
         },
       ],
     },
+    title,
+    description,
     twitter: {
       card: 'summary_large_image',
       title,

@@ -7,25 +7,22 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import classNames from 'classnames'
 
 import { Footer, Header, RouteGuard } from '@/components'
-import { baseURL, effects, style } from '@/app/resources'
+import { about, baseURL, effects, style } from '@/app/resources'
 
 import { Inter } from 'next/font/google'
 import { GeistSans } from 'geist/font/sans'
 
-import { home } from '@/app/resources/content'
 import { Background, Column, Flex, ToastProvider } from '@/once-ui/components'
 
 export async function generateMetadata() {
   const ogImage = `https://${baseURL}/images/cover.jpg`
-  const title = home.title
+  const title = 'Inicio'
+  const description = about.description
 
   return {
-    metadataBase: new URL(`https://${baseURL}`),
-    title: title,
-    description: home.description,
     openGraph: {
       title: title,
-      description: home.description,
+      description: description,
       url: baseURL,
       siteName: title,
       locale: 'en_US',
@@ -37,6 +34,14 @@ export async function generateMetadata() {
         },
       ],
     },
+    metadataBase: new URL(`https://${baseURL}`),
+    generator: 'Next.js',
+    referrer: 'origin-when-cross-origin',
+    title: {
+      template: '%s | Imanol Ortega Carabajal',
+      default: title,
+    },
+    description: description,
     robots: {
       index: true,
       follow: true,

@@ -11,11 +11,6 @@ const person = {
   avatar: '/images/avatar.jpg',
 }
 
-const home = {
-  title: 'Imanol Ortega Carabajal',
-  description: description,
-}
-
 const newsletter = {
   display: true,
   title: <>Suscribite</>,
@@ -431,4 +426,4 @@ const gallery = {
   ],
 }
 
-export { about, blog, gallery, home, newsletter, person, social }
+export { about, blog, gallery, newsletter, person, social }
