@@ -10,6 +10,7 @@ import { baseURL } from '@/app/resources'
 import { person, about, social, blog } from '@/app/resources/content'
 import { Posts } from '@/components/blog/Posts'
 import styles from '@/components/about/about.module.scss'
+import React from 'react'
 
 export async function generateMetadata() {
   const title = `${about.title} | Imanol Ortega Carabajal`
@@ -103,10 +104,9 @@ export default function Home() {
                 {social.map(
                   (item) =>
                     item.link && (
-                      <>
+                      <React.Fragment key={item.id}>
                         <Button
                           className="s-flex-hide"
-                          key={item.name}
                           href={item.link}
                           prefixIcon={item.icon}
                           label={item.name}
@@ -116,12 +116,11 @@ export default function Home() {
                         <IconButton
                           className="s-flex-show"
                           size="l"
-                          key={`${item.name}-icon`}
                           href={item.link}
                           icon={item.icon}
                           variant="secondary"
                         />
-                      </>
+                      </React.Fragment>
                     )
                 )}
               </Flex>

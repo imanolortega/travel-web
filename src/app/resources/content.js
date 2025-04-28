@@ -33,21 +33,25 @@ const social = [
   // Links are automatically displayed.
   // Import new icons in /once-ui/icons.ts
   {
+    id: 1,
     name: 'Instagram',
     icon: 'instagram',
     link: 'https://www.instagram.com/imanol.oc/',
   },
   {
+    id: 2,
     name: 'Spotify',
     icon: 'spotify',
     link: 'https://open.spotify.com/user/8x5neqbvq1rcy3qzth38bvpnk?si=5db8c31323ea4791',
   },
   {
+    id: 3,
     name: 'Twitter',
     icon: 'x',
     link: 'https://x.com/ioc_argentina',
   },
   {
+    id: 4,
     name: 'Email',
     icon: 'email',
     link: 'mailto:imanolrtega@gmail.com',

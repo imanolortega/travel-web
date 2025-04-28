@@ -32,7 +32,7 @@ export const Footer = () => {
             (item) =>
               item.link && (
                 <IconButton
-                  key={item.name}
+                  key={item.id}
                   href={item.link}
                   icon={item.icon}
                   tooltip={item.name}
