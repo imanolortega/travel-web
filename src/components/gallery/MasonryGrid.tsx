@@ -4,10 +4,12 @@ import 'photoswipe/style.css'
 import { gallery } from '@/app/resources/content'
 import { SmartImage } from '@/once-ui/components'
 import { useEffect } from 'react'
+import { useLoadingDelay } from '@/app/utils/useLoadingDelay'
 import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import styles from './Gallery.module.scss'
 
 export default function MasonryGrid() {
+  const loading = useLoadingDelay(1000)
   const images = gallery?.images || []
 
   const getSizeByOrientation = (orientation: string) => {
@@ -68,6 +70,7 @@ export default function MasonryGrid() {
               src={image.src}
               alt={image.alt}
               className={styles.gridItem}
+              isLoading={loading}
             />
           </a>
         )

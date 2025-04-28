@@ -8,8 +8,8 @@ import {
   SmartLink,
   Text,
 } from '@/once-ui/components'
-import { useEffect, useState } from 'react'
 import styles from './Posts.module.scss'
+import { useLoadingDelay } from '@/app/utils/useLoadingDelay'
 
 interface PostProps {
   post: any
@@ -17,14 +17,7 @@ interface PostProps {
 }
 
 export default function Post({ post, thumbnail }: PostProps) {
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-    return () => clearTimeout(timer)
-  }, [])
+  const loading = useLoadingDelay(1000)
 
   return (
     <SmartLink
