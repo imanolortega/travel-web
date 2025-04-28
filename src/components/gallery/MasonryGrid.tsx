@@ -9,7 +9,7 @@ import PhotoSwipeLightbox from 'photoswipe/lightbox'
 import styles from './Gallery.module.scss'
 
 export default function MasonryGrid() {
-  const loading = useLoadingDelay(1000)
+  const loading = useLoadingDelay(1500)
   const images = gallery?.images || []
 
   const getSizeByOrientation = (orientation: string) => {
