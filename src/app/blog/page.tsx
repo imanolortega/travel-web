@@ -1,5 +1,5 @@
-import { about, blog, person } from '@/app/resources/content'
 import { baseURL } from '@/app/resources'
+import { blog, person } from '@/app/resources/content'
 import { Column, Heading } from '@/once-ui/components'
 import { Meta, Schema } from '@/once-ui/modules'
 import { Posts } from '@/components/blog/Posts'

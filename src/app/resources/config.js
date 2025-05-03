@@ -1,4 +1,4 @@
-const baseURL = 'imanolortega.com'
+const baseURL = 'https://www.imanolortega.com/'
 
 const routes = {
   '/': true,

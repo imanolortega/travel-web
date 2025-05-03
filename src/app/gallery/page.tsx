@@ -1,9 +1,8 @@
 import { baseURL } from '@/app/resources'
 import { Column, Heading } from '@/once-ui/components'
 import { gallery, person } from '@/app/resources/content'
-import MasonryGrid from '@/components/gallery/MasonryGrid'
-
 import { Meta, Schema } from '@/once-ui/modules'
+import MasonryGrid from '@/components/gallery/MasonryGrid'
 
 export async function generateMetadata() {
   return Meta.generate({

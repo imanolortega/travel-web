@@ -1,20 +1,15 @@
 import '@/once-ui/styles/index.scss'
 import '@/once-ui/tokens/index.scss'
-import { Analytics } from '@vercel/analytics/react'
-import { GoogleAnalytics } from '@next/third-parties/google'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-
-import classNames from 'classnames'
-
-import { Footer, Header, RouteGuard } from '@/components'
 import { about, baseURL, effects, style } from '@/app/resources'
-
-import { Inter } from 'next/font/google'
-import { GeistSans } from 'geist/font/sans'
-
+import { Analytics } from '@vercel/analytics/react'
 import { Background, Column, Flex, ToastProvider } from '@/once-ui/components'
-
+import { Footer, Header, RouteGuard } from '@/components'
+import { GeistSans } from 'geist/font/sans'
+import { GoogleAnalytics } from '@next/third-parties/google'
+import { Inter } from 'next/font/google'
 import { Meta } from '@/once-ui/modules'
+import { SpeedInsights } from '@vercel/speed-insights/next'
+import classNames from 'classnames'
 
 export async function generateMetadata() {
   return Meta.generate({

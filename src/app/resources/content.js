@@ -1,5 +1,3 @@
-import path from 'path'
-
 const description =
   'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.'
 
@@ -244,7 +242,7 @@ const gallery = {
     },
     {
       id: 21,
-      src: '/images/gallery/floki-lago-puelo.jpg',
+      src: '/images/gallery/el-oso.jpg',
       alt: 'Floki en Lago Puelo.',
       orientation: 'vertical',
     },
