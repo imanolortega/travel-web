@@ -66,8 +66,7 @@ const about = {
     title: 'Introducción',
     description: (
       <>
-        Viajando y escribiendo sobre Argentina. Actualmente en Gonnet, La Plata,
-        Buenos Aires.
+        Viajando y escribiendo sobre Argentina. Actualmente en Lago Puelo, Chubut.
       </>
     ),
   },
