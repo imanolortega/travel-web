@@ -355,8 +355,8 @@ const gallery = {
     },
     {
       id: 40,
-      src: '/images/gallery/tres-arroyos-2.jpg',
-      alt: 'Delfi, tía Sandra y Bianca en Tres Arroyos.',
+      src: '/images/gallery/maraton-en-trevelin.jpg',
+      alt: 'Maratón en Trevelin.',
       orientation: 'horizontal',
     },
     {
@@ -391,8 +391,8 @@ const gallery = {
     },
     {
       id: 47,
-      src: '/images/gallery/tia-sandra.jpg',
-      alt: 'Mi tía Sandra en Tres Arroyos. Fotografía de Bianca Rizzi.',
+      src: '/images/gallery/tio-marcelo.jpg',
+      alt: 'Con mi tío Marcelo en la Feria del Libro de Buenos Aires. Fotografía de Lisandro López.',
       orientation: 'vertical',
     },
     {
@@ -415,8 +415,8 @@ const gallery = {
     },
     {
       id: 49,
-      src: '/images/gallery/tios-queridos.jpg',
-      alt: 'Mis tíos queridos, Sandra y Gustavo, en Tres Arroyos. Fotografía de Bianca Rizzi.',
+      src: '/images/gallery/lago-puelo-nuboso.jpg',
+      alt: 'Domingo puelense.',
       orientation: 'horizontal',
     },
     {
