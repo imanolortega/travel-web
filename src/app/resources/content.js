@@ -112,8 +112,7 @@ const gallery = {
   description_og: 'Galería de fotos. Fotografías de mi viaje por Argentina.',
   description: (
     <>
-      Todas las fotografías fueron tomadas durante los últimos meses con una
-      Sony Alpha 7 III.
+      Todas las fotografías fueron tomadas durante los últimos meses con una cámara Sony Alpha 7 III y un lente 28-70mm F3.5-5.6.
       <br />
       Son de mi autoría a excepción de las mencionadas.
     </>
@@ -247,8 +246,8 @@ const gallery = {
     },
     {
       id: 22,
-      src: '/images/gallery/familia-tres-arroyos.jpg',
-      alt: 'Con mi familia querida en Tres Arroyos. Fotografía de Constanza Rizzi.',
+      src: '/images/gallery/javi-amanda.jpg',
+      alt: 'Javi y Amanda en Lago Puelo.',
       orientation: 'horizontal',
     },
     {
