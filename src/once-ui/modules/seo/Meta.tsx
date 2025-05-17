@@ -1,4 +1,4 @@
-import type { Metadata as NextMetadata } from "next";
+import type { Metadata as NextMetadata } from 'next';
 
 export interface Alternate {
   href: string;
@@ -10,7 +10,7 @@ export interface MetaProps {
   description: string;
   baseURL: string;
   path?: string;
-  type?: "website" | "article";
+  type?: 'website' | 'article';
   image?: string;
   publishedTime?: string;
   author?: {
@@ -28,8 +28,8 @@ export function generateMetadata({
   title,
   description,
   baseURL,
-  path = "",
-  type = "website",
+  path = '',
+  type = 'website',
   image,
   publishedTime,
   author,
@@ -39,23 +39,23 @@ export function generateMetadata({
   nofollow,
   alternates,
 }: MetaProps): NextMetadata {
-  const normalizedBaseURL = baseURL.endsWith("/") ? baseURL.slice(0, -1) : baseURL;
-  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  const normalizedBaseURL = baseURL.endsWith('/') ? baseURL.slice(0, -1) : baseURL;
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
 
   const ogImage = image
-    ? `${image.startsWith("/") ? image : `/${image}`}`
+    ? `${image.startsWith('/') ? image : `/${image}`}`
     : `/og?title=${encodeURIComponent(title)}`;
 
   const url = canonical || `${normalizedBaseURL}${normalizedPath}`;
 
   let robotsContent = robots;
   if (!robotsContent && (noindex || nofollow)) {
-    robotsContent = `${noindex ? "noindex" : "index"},${nofollow ? "nofollow" : "follow"}`;
+    robotsContent = `${noindex ? 'noindex' : 'index'},${nofollow ? 'nofollow' : 'follow'}`;
   }
 
   return {
     metadataBase: new URL(
-      normalizedBaseURL.startsWith("https://") ? normalizedBaseURL : `https://${normalizedBaseURL}`,
+      normalizedBaseURL.startsWith('https://') ? normalizedBaseURL : `https://${normalizedBaseURL}`,
     ),
     title,
     description,
@@ -63,7 +63,7 @@ export function generateMetadata({
       title,
       description,
       type,
-      ...(publishedTime && type === "article" ? { publishedTime } : {}),
+      ...(publishedTime && type === 'article' ? { publishedTime } : {}),
       url,
       images: [
         {
@@ -73,7 +73,7 @@ export function generateMetadata({
       ],
     },
     twitter: {
-      card: "summary_large_image",
+      card: 'summary_large_image',
       title,
       description,
       images: [ogImage],
