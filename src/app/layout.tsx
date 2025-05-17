@@ -10,14 +10,18 @@ import { Inter } from 'next/font/google'
 import { Meta } from '@/once-ui/modules'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import classNames from 'classnames'
+import { meta } from './resources/config'
 
 export async function generateMetadata() {
   return Meta.generate({
-    title: about.title,
-    description: about.description,
+    title: meta.home.title,
+    description: meta.home.description,
     baseURL: baseURL,
-    path: about.path,
-    image: about.image,
+    path: meta.home.path,
+    canonical: meta.home.canonical,
+    image: meta.home.image,
+    robots: meta.home.robots,
+    alternates: meta.home.alternates,
   })
 }
 

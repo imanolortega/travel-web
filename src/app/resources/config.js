@@ -65,4 +65,19 @@ const display = {
   time: true,
 }
 
-export { routes, protectedRoutes, effects, style, display, baseURL }
+// metadata for pages
+const meta = {
+  home: {
+    path: '/',
+    title: 'Imanol Ortega Carabajal | Crónicas de viajes',
+    description:
+      'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.',
+    image: '/images/avatar.jpg',
+    canonical: 'https://www.imanolortega.com',
+    robots: 'index,follow',
+    alternates: [{ href: 'https://www.imanolortega.com', hrefLang: 'en' }],
+  },
+  // add more routes and reference them in page.tsx
+}
+
+export { baseURL, display, effects, meta, protectedRoutes, routes, style }

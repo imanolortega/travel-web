@@ -66,7 +66,8 @@ const about = {
     title: 'Introducción',
     description: (
       <>
-        Viajando y escribiendo sobre Argentina. Actualmente en Lago Puelo, Chubut.
+        Viajando y escribiendo sobre Argentina. Actualmente en Lago Puelo,
+        Chubut.
       </>
     ),
   },
@@ -112,7 +113,8 @@ const gallery = {
   description_og: 'Galería de fotos. Fotografías de mi viaje por Argentina.',
   description: (
     <>
-      Todas las fotografías fueron tomadas durante los últimos meses con una cámara Sony Alpha 7 III y un lente 28-70mm F3.5-5.6.
+      Todas las fotografías fueron tomadas durante los últimos meses con una
+      cámara Sony Alpha 7 III y un lente 28-70mm F3.5-5.6.
       <br />
       Son de mi autoría a excepción de las mencionadas.
     </>
