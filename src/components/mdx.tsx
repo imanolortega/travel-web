@@ -1,31 +1,29 @@
-import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc'
-import React, { ReactNode } from 'react'
+import { MDXRemote, MDXRemoteProps } from 'next-mdx-remote/rsc';
+import React, { ReactNode } from 'react';
 
-import { SmartImage, SmartLink, Text } from '@/once-ui/components'
-import { CodeBlock } from '@/once-ui/modules'
-import { HeadingLink } from '@/components'
+import { SmartImage, SmartLink, Text } from '@/once-ui/components';
+import { CodeBlock } from '@/once-ui/modules';
+import { HeadingLink } from '@/components';
 
-import { TextProps } from '@/once-ui/interfaces'
-import { SmartImageProps } from '@/once-ui/components/SmartImage'
+import { TextProps } from '@/once-ui/interfaces';
+import { SmartImageProps } from '@/once-ui/components/SmartImage';
 
 type TableProps = {
   data: {
-    headers: string[]
-    rows: string[][]
-  }
-}
+    headers: string[];
+    rows: string[][];
+  };
+};
 
 function Table({ data }: TableProps) {
-  const headers = data.headers.map((header, index) => (
-    <th key={index}>{header}</th>
-  ))
+  const headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
   const rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
         <td key={cellIndex}>{cell}</td>
       ))}
     </tr>
-  ))
+  ));
 
   return (
     <table>
@@ -34,13 +32,13 @@ function Table({ data }: TableProps) {
       </thead>
       <tbody>{rows}</tbody>
     </table>
-  )
+  );
 }
 
 type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & {
-  href: string
-  children: ReactNode
-}
+  href: string;
+  children: ReactNode;
+};
 
 function CustomLink({ href, children, ...props }: CustomLinkProps) {
   if (href.startsWith('/')) {
@@ -48,7 +46,7 @@ function CustomLink({ href, children, ...props }: CustomLinkProps) {
       <SmartLink href={href} {...props}>
         {children}
       </SmartLink>
-    )
+    );
   }
 
   if (href.startsWith('#')) {
@@ -56,24 +54,20 @@ function CustomLink({ href, children, ...props }: CustomLinkProps) {
       <a href={href} {...props}>
         {children}
       </a>
-    )
+    );
   }
 
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" {...props}>
       {children}
     </a>
-  )
+  );
 }
 
-function createImage({
-  alt,
-  src,
-  ...props
-}: SmartImageProps & { src: string }) {
+function createImage({ alt, src, ...props }: SmartImageProps & { src: string }) {
   if (!src) {
-    console.error("SmartImage requires a valid 'src' property.")
-    return null
+    console.error("SmartImage requires a valid 'src' property.");
+    return null;
   }
 
   return (
@@ -86,7 +80,7 @@ function createImage({
       src={src}
       {...props}
     />
-  )
+  );
 }
 
 function slugify(str: string): string {
@@ -97,12 +91,12 @@ function slugify(str: string): string {
     .replace(/\s+/g, '-') // Replace spaces with -
     .replace(/&/g, '-and-') // Replace & with 'and'
     .replace(/[^\w\-]+/g, '') // Remove all non-word characters except for -
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/\-\-+/g, '-'); // Replace multiple - with single -
 }
 
 function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
   const CustomHeading = ({ children, ...props }: TextProps) => {
-    const slug = slugify(children as string)
+    const slug = slugify(children as string);
     return (
       <HeadingLink
         style={{
@@ -115,12 +109,12 @@ function createHeading(level: 1 | 2 | 3 | 4 | 5 | 6) {
       >
         {children}
       </HeadingLink>
-    )
-  }
+    );
+  };
 
-  CustomHeading.displayName = `Heading${level}`
+  CustomHeading.displayName = `Heading${level}`;
 
-  return CustomHeading
+  return CustomHeading;
 }
 
 function createParagraph({ children }: TextProps) {
@@ -134,7 +128,7 @@ function createParagraph({ children }: TextProps) {
     >
       {children}
     </Text>
-  )
+  );
 }
 
 const components = {
@@ -149,18 +143,15 @@ const components = {
   a: CustomLink as any,
   Table,
   CodeBlock,
-}
+};
 
 type CustomMDXProps = MDXRemoteProps & {
-  components?: typeof components
-}
+  components?: typeof components;
+};
 
 export function CustomMDX(props: CustomMDXProps) {
   return (
     // @ts-ignore: Suppressing type error for MDXRemote usage
-    <MDXRemote
-      {...props}
-      components={{ ...components, ...(props.components || {}) }}
-    />
-  )
+    <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
+  );
 }

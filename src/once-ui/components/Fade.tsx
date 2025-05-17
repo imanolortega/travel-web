@@ -1,29 +1,29 @@
-'use client'
+'use client';
 
-import React, { forwardRef, ReactNode } from 'react'
-import styles from './Fade.module.scss'
+import React, { forwardRef, ReactNode } from 'react';
+import styles from './Fade.module.scss';
 
-import { Flex } from '.'
-import { ColorScheme, ColorWeight, SpacingToken } from '../types'
+import { Flex } from '.';
+import { ColorScheme, ColorWeight, SpacingToken } from '../types';
 
 type BaseColor =
   | `${ColorScheme}-${ColorWeight}`
   | `${ColorScheme}-alpha-${ColorWeight}`
   | 'surface'
   | 'overlay'
-  | 'page'
+  | 'page';
 
 interface FadeProps extends React.ComponentProps<typeof Flex> {
-  className?: string
-  to?: 'bottom' | 'top' | 'left' | 'right'
-  base?: BaseColor
-  blur?: number
+  className?: string;
+  to?: 'bottom' | 'top' | 'left' | 'right';
+  base?: BaseColor;
+  blur?: number;
   pattern?: {
-    display?: boolean
-    size?: SpacingToken
-  }
-  style?: React.CSSProperties
-  children?: ReactNode
+    display?: boolean;
+    size?: SpacingToken;
+  };
+  style?: React.CSSProperties;
+  children?: ReactNode;
 }
 
 const Fade = forwardRef<HTMLDivElement, FadeProps>(
@@ -39,21 +39,19 @@ const Fade = forwardRef<HTMLDivElement, FadeProps>(
       children,
       ...rest
     },
-    ref
+    ref,
   ) => {
     const getBaseVar = (base: BaseColor) => {
-      if (base === 'page') return 'var(--page-background)'
-      if (base === 'surface') return 'var(--surface-background)'
-      if (base === 'overlay') return 'var(--backdrop)'
+      if (base === 'page') return 'var(--page-background)';
+      if (base === 'surface') return 'var(--surface-background)';
+      if (base === 'overlay') return 'var(--backdrop)';
 
-      const [scheme, weight] = base.includes('alpha')
-        ? base.split('-alpha-')
-        : base.split('-')
+      const [scheme, weight] = base.includes('alpha') ? base.split('-alpha-') : base.split('-');
 
       return base.includes('alpha')
         ? `var(--${scheme}-alpha-${weight})`
-        : `var(--${scheme}-background-${weight})`
-    }
+        : `var(--${scheme}-background-${weight})`;
+    };
 
     return (
       <Flex
@@ -82,9 +80,9 @@ const Fade = forwardRef<HTMLDivElement, FadeProps>(
       >
         {children}
       </Flex>
-    )
-  }
-)
+    );
+  },
+);
 
-Fade.displayName = 'Fade'
-export { Fade }
+Fade.displayName = 'Fade';
+export { Fade };

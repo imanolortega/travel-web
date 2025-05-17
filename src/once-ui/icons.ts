@@ -1,4 +1,4 @@
-import { IconType } from 'react-icons'
+import { IconType } from 'react-icons';
 
 import {
   HiChevronUp,
@@ -23,7 +23,7 @@ import {
   HiArrowRight,
   HiOutlineEye,
   HiOutlineEyeSlash,
-} from 'react-icons/hi2'
+} from 'react-icons/hi2';
 
 import {
   PiHouseDuotone,
@@ -31,7 +31,7 @@ import {
   PiGridFourDuotone,
   PiBookBookmarkDuotone,
   PiImageDuotone,
-} from 'react-icons/pi'
+} from 'react-icons/pi';
 
 import {
   FaDiscord,
@@ -40,7 +40,7 @@ import {
   FaLinkedin,
   FaSpotify,
   FaXTwitter,
-} from 'react-icons/fa6'
+} from 'react-icons/fa6';
 
 export const iconLibrary: Record<string, IconType> = {
   arrowRight: HiArrowRight,
@@ -76,4 +76,4 @@ export const iconLibrary: Record<string, IconType> = {
   spotify: FaSpotify,
   warningTriangle: HiExclamationTriangle,
   x: FaXTwitter,
-}
+};

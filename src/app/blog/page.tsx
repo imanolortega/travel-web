@@ -1,8 +1,8 @@
-import { baseURL } from '@/app/resources'
-import { blog, person } from '@/app/resources/content'
-import { Column, Heading } from '@/once-ui/components'
-import { Meta, Schema } from '@/once-ui/modules'
-import { Posts } from '@/components/blog/Posts'
+import { baseURL } from '@/app/resources';
+import { blog, person } from '@/app/resources/content';
+import { Column, Heading } from '@/once-ui/components';
+import { Meta, Schema } from '@/once-ui/modules';
+import { Posts } from '@/components/blog/Posts';
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -10,7 +10,7 @@ export async function generateMetadata() {
     description: blog.description,
     baseURL: baseURL,
     path: blog.path,
-  })
+  });
 }
 
 export default function Blog() {
@@ -32,13 +32,7 @@ export default function Blog() {
       <Heading marginBottom="l" variant="display-strong-s" align="center">
         {blog.title}
       </Heading>
-      <Column
-        textVariant="body-default-l"
-        align="center"
-        fillWidth
-        gap="m"
-        marginBottom="80"
-      >
+      <Column textVariant="body-default-l" align="center" fillWidth gap="m" marginBottom="80">
         {blog.description}
       </Column>
       <Column fillWidth flex={1}>
@@ -53,5 +47,5 @@ export default function Blog() {
         />
       </Column>
     </Column>
-  )
+  );
 }

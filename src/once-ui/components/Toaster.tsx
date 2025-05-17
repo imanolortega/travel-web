@@ -1,38 +1,32 @@
-'use client'
+'use client';
 
-import React, { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
-import { Flex, Toast } from '.'
-import styles from './Toaster.module.scss'
+import React, { useEffect, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { Flex, Toast } from '.';
+import styles from './Toaster.module.scss';
 
 interface ToasterProps {
   toasts: {
-    id: string
-    variant: 'success' | 'danger'
-    message: string
-    action?: React.ReactNode
-  }[]
-  removeToast: (id: string) => void
+    id: string;
+    variant: 'success' | 'danger';
+    message: string;
+    action?: React.ReactNode;
+  }[];
+  removeToast: (id: string) => void;
 }
 
 const Toaster: React.FC<ToasterProps> = ({ toasts, removeToast }) => {
-  const [mounted, setMounted] = useState(false)
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true)
-    return () => setMounted(false)
-  }, [])
+    setMounted(true);
+    return () => setMounted(false);
+  }, []);
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   return createPortal(
-    <Flex
-      zIndex={10}
-      fillWidth
-      direction="column"
-      maxWidth={32}
-      className={styles.toastContainer}
-    >
+    <Flex zIndex={10} fillWidth direction="column" maxWidth={32} className={styles.toastContainer}>
       {toasts.map((toast, index, array) => (
         <Flex
           padding="4"
@@ -57,9 +51,9 @@ const Toaster: React.FC<ToasterProps> = ({ toasts, removeToast }) => {
         </Flex>
       ))}
     </Flex>,
-    document.body
-  )
-}
+    document.body,
+  );
+};
 
-Toaster.displayName = 'Toaster'
-export { Toaster }
+Toaster.displayName = 'Toaster';
+export { Toaster };

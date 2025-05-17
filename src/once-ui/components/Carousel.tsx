@@ -1,19 +1,19 @@
-'use client'
+'use client';
 
-import { Flex, RevealFx, Scroller, SmartImage } from '@/once-ui/components'
-import { useEffect, useState, useRef } from 'react'
+import { Flex, RevealFx, Scroller, SmartImage } from '@/once-ui/components';
+import { useEffect, useState, useRef } from 'react';
 
 interface Image {
-  src: string
-  alt: string
+  src: string;
+  alt: string;
 }
 
 interface CarouselProps extends React.ComponentProps<typeof Flex> {
-  images: Image[]
-  indicator?: 'line' | 'thumbnail'
-  aspectRatio?: string
-  sizes?: string
-  revealedByDefault?: boolean
+  images: Image[];
+  indicator?: 'line' | 'thumbnail';
+  aspectRatio?: string;
+  sizes?: string;
+  revealedByDefault?: boolean;
 }
 
 const Carousel: React.FC<CarouselProps> = ({
@@ -24,57 +24,57 @@ const Carousel: React.FC<CarouselProps> = ({
   revealedByDefault = false,
   ...rest
 }) => {
-  const [activeIndex, setActiveIndex] = useState<number>(0)
-  const [isTransitioning, setIsTransitioning] = useState(revealedByDefault)
-  const [initialTransition, setInitialTransition] = useState(revealedByDefault)
-  const nextImageRef = useRef<HTMLImageElement | null>(null)
-  const transitionTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined)
+  const [activeIndex, setActiveIndex] = useState<number>(0);
+  const [isTransitioning, setIsTransitioning] = useState(revealedByDefault);
+  const [initialTransition, setInitialTransition] = useState(revealedByDefault);
+  const nextImageRef = useRef<HTMLImageElement | null>(null);
+  const transitionTimeoutRef = useRef<NodeJS.Timeout | undefined>(undefined);
 
   const preloadNextImage = (nextIndex: number) => {
     if (nextIndex >= 0 && nextIndex < images.length) {
-      nextImageRef.current = new Image()
-      nextImageRef.current.src = images[nextIndex].src
+      nextImageRef.current = new Image();
+      nextImageRef.current.src = images[nextIndex].src;
     }
-  }
+  };
 
   const handleImageClick = () => {
     if (images.length > 1) {
-      const nextIndex = (activeIndex + 1) % images.length
-      handleControlClick(nextIndex)
+      const nextIndex = (activeIndex + 1) % images.length;
+      handleControlClick(nextIndex);
     }
-  }
+  };
 
   const handleControlClick = (nextIndex: number) => {
     if (nextIndex !== activeIndex && !transitionTimeoutRef.current) {
-      preloadNextImage(nextIndex)
+      preloadNextImage(nextIndex);
 
-      setIsTransitioning(false)
+      setIsTransitioning(false);
 
       transitionTimeoutRef.current = setTimeout(() => {
-        setActiveIndex(nextIndex)
+        setActiveIndex(nextIndex);
 
         setTimeout(() => {
-          setIsTransitioning(true)
-          transitionTimeoutRef.current = undefined
-        }, 300)
-      }, 800)
+          setIsTransitioning(true);
+          transitionTimeoutRef.current = undefined;
+        }, 300);
+      }, 800);
     }
-  }
+  };
 
   useEffect(() => {
     if (!revealedByDefault && !initialTransition) {
-      setIsTransitioning(true)
-      setInitialTransition(true)
+      setIsTransitioning(true);
+      setInitialTransition(true);
     }
     return () => {
       if (transitionTimeoutRef.current) {
-        clearTimeout(transitionTimeoutRef.current)
+        clearTimeout(transitionTimeoutRef.current);
       }
-    }
-  }, [revealedByDefault, initialTransition])
+    };
+  }, [revealedByDefault, initialTransition]);
 
   if (images.length === 0) {
-    return null
+    return null;
   }
 
   return (
@@ -129,10 +129,7 @@ const Carousel: React.FC<CarouselProps> = ({
                 <Flex
                   key={index}
                   style={{
-                    border:
-                      activeIndex === index
-                        ? '2px solid var(--brand-solid-strong)'
-                        : 'none',
+                    border: activeIndex === index ? '2px solid var(--brand-solid-strong)' : 'none',
                     borderRadius: 'var(--radius-m-nest-4)',
                     transition: 'border 0.3s ease',
                   }}
@@ -157,8 +154,8 @@ const Carousel: React.FC<CarouselProps> = ({
         </>
       )}
     </Flex>
-  )
-}
+  );
+};
 
-Carousel.displayName = 'Carousel'
-export { Carousel }
+Carousel.displayName = 'Carousel';
+export { Carousel };

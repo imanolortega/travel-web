@@ -1,15 +1,14 @@
-const description =
-  'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.'
+const description = 'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.';
 
 const person = {
   firstName: 'Imanol',
   lastName: 'Ortega Carabajal',
   get name() {
-    return `${this.firstName} ${this.lastName}`
+    return `${this.firstName} ${this.lastName}`;
   },
   role: 'Viajando',
   avatar: '/images/avatar.jpg',
-}
+};
 
 const newsletter = {
   display: true,
@@ -22,7 +21,7 @@ const newsletter = {
       Si te interesa, dejame tu email. No hago spam.
     </>
   ),
-}
+};
 
 const social = [
   // Links are automatically displayed.
@@ -51,7 +50,7 @@ const social = [
     icon: 'email',
     link: 'mailto:imanolrtega@gmail.com',
   },
-]
+];
 
 const about = {
   label: 'Inicio',
@@ -64,14 +63,9 @@ const about = {
   intro: {
     display: true,
     title: 'Introducción',
-    description: (
-      <>
-        Viajando y escribiendo sobre Argentina. Actualmente en Lago Puelo,
-        Chubut.
-      </>
-    ),
+    description: <>Viajando y escribiendo sobre Argentina. Actualmente en Lago Puelo, Chubut.</>,
   },
-}
+};
 
 const blog = {
   label: 'Blog',
@@ -83,8 +77,8 @@ const blog = {
       title: 'Diario de viaje II: Trevelin',
       description: (
         <>
-          El Pueblo del Molino en la cordillera, la Colonia Galesa del Chubut y
-          las campañas militares del Estado argentino en la Patagonia.
+          El Pueblo del Molino en la cordillera, la Colonia Galesa del Chubut y las campañas
+          militares del Estado argentino en la Patagonia.
         </>
       ),
       image: '/images/trevelin/dragon-rojo.jpg',
@@ -95,8 +89,8 @@ const blog = {
       title: 'Diario de viaje: Capilla del Monte',
       description: (
         <>
-          Un poblado en el Valle de Punilla, un cerro sagrado, antiguas
-          tradiciones, leyendas y relatos de seres extraterrestres.
+          Un poblado en el Valle de Punilla, un cerro sagrado, antiguas tradiciones, leyendas y
+          relatos de seres extraterrestres.
         </>
       ),
       image: '/images/capilla/uritorco.jpg',
@@ -104,7 +98,7 @@ const blog = {
       id: 1,
     },
   ],
-}
+};
 
 const gallery = {
   label: 'Fotos',
@@ -113,8 +107,8 @@ const gallery = {
   description_og: 'Galería de fotos. Fotografías de mi viaje por Argentina.',
   description: (
     <>
-      Todas las fotografías fueron tomadas durante los últimos meses con una
-      cámara Sony Alpha 7 III y un lente 28-70mm F3.5-5.6.
+      Todas las fotografías fueron tomadas durante los últimos meses con una cámara Sony Alpha 7 III
+      y un lente 28-70mm F3.5-5.6.
       <br />
       Son de mi autoría a excepción de las mencionadas.
     </>
@@ -427,6 +421,6 @@ const gallery = {
       orientation: 'horizontal',
     },
   ],
-}
+};
 
-export { about, blog, gallery, newsletter, person, social }
+export { about, blog, gallery, newsletter, person, social };

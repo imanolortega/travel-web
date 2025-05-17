@@ -1,65 +1,57 @@
-'use client'
+'use client';
 
-import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
-import { Fade, Flex, ToggleButton } from '@/once-ui/components'
-import styles from '@/components/Header.module.scss'
+import { Fade, Flex, ToggleButton } from '@/once-ui/components';
+import styles from '@/components/Header.module.scss';
 
-import { routes } from '@/app/resources'
-import { about, blog, gallery } from '@/app/resources/content'
+import { routes } from '@/app/resources';
+import { about, blog, gallery } from '@/app/resources/content';
 
 type TimeDisplayProps = {
-  timeZone: string
-  locale?: string
-}
+  timeZone: string;
+  locale?: string;
+};
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({
   timeZone = 'America/Argentina/Buenos_Aires',
   locale = 'es-AR',
 }) => {
-  const [currentTime, setCurrentTime] = useState('')
+  const [currentTime, setCurrentTime] = useState('');
 
   useEffect(() => {
     const updateTime = () => {
-      const now = new Date()
+      const now = new Date();
       const options: Intl.DateTimeFormatOptions = {
         timeZone,
         hour: '2-digit',
         minute: '2-digit',
         second: '2-digit',
         hour12: false,
-      }
-      const timeString = new Intl.DateTimeFormat(locale, options).format(now)
-      setCurrentTime(timeString)
-    }
+      };
+      const timeString = new Intl.DateTimeFormat(locale, options).format(now);
+      setCurrentTime(timeString);
+    };
 
-    updateTime()
-    const intervalId = setInterval(updateTime, 1000)
+    updateTime();
+    const intervalId = setInterval(updateTime, 1000);
 
-    return () => clearInterval(intervalId)
-  }, [timeZone, locale])
+    return () => clearInterval(intervalId);
+  }, [timeZone, locale]);
 
-  return <>{currentTime}</>
-}
+  return <>{currentTime}</>;
+};
 
-export default TimeDisplay
+export default TimeDisplay;
 
 export const Header = () => {
-  const pathname = usePathname() ?? ''
+  const pathname = usePathname() ?? '';
 
   return (
     <>
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade
-        show="s"
-        fillWidth
-        position="fixed"
-        bottom="0"
-        to="top"
-        height="80"
-        zIndex={9}
-      />
+      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
       <Flex
         fitHeight
         className={styles.position}
@@ -69,12 +61,7 @@ export const Header = () => {
         padding="8"
         horizontal="center"
       >
-        <Flex
-          paddingLeft="12"
-          fillWidth
-          vertical="center"
-          textVariant="body-default-s"
-        ></Flex>
+        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s"></Flex>
         <Flex fillWidth horizontal="center">
           <Flex
             background="surface"
@@ -142,5 +129,5 @@ export const Header = () => {
         <Flex fillWidth horizontal="end" vertical="center"></Flex>
       </Flex>
     </>
-  )
-}
+  );
+};

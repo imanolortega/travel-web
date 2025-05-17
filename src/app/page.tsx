@@ -1,17 +1,10 @@
-import {
-  Avatar,
-  Button,
-  Column,
-  Flex,
-  Heading,
-  IconButton,
-} from '@/once-ui/components'
-import { baseURL } from '@/app/resources'
-import { Meta, Schema } from '@/once-ui/modules'
-import { person, about, social, blog } from '@/app/resources/content'
-import { Posts } from '@/components/blog/Posts'
-import React from 'react'
-import styles from '@/components/about/about.module.scss'
+import { Avatar, Button, Column, Flex, Heading, IconButton } from '@/once-ui/components';
+import { baseURL } from '@/app/resources';
+import { Meta, Schema } from '@/once-ui/modules';
+import { person, about, social, blog } from '@/app/resources/content';
+import { Posts } from '@/components/blog/Posts';
+import React from 'react';
+import styles from '@/components/about/about.module.scss';
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -19,7 +12,7 @@ export async function generateMetadata() {
     description: about.description,
     baseURL: baseURL,
     path: about.path,
-  })
+  });
 }
 
 export default function Home() {
@@ -60,11 +53,7 @@ export default function Home() {
             vertical="center"
             marginBottom="32"
           >
-            <Heading
-              className={styles.textAlign}
-              variant="display-strong-m"
-              marginBottom="m"
-            >
+            <Heading className={styles.textAlign} variant="display-strong-m" marginBottom="m">
               {person.name}
             </Heading>
             {social.length > 0 && (
@@ -97,19 +86,14 @@ export default function Home() {
                           variant="secondary"
                         />
                       </React.Fragment>
-                    )
+                    ),
                 )}
               </Flex>
             )}
           </Column>
 
           {about.intro.display && (
-            <Column
-              textVariant="body-default-l"
-              fillWidth
-              gap="m"
-              marginBottom="80"
-            >
+            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="80">
               {about.intro.description}
             </Column>
           )}
@@ -132,5 +116,5 @@ export default function Home() {
         </Column>
       </Flex>
     </Column>
-  )
+  );
 }

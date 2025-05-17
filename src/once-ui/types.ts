@@ -16,15 +16,15 @@ export type StaticSpacingToken =
   | '80'
   | '104'
   | '128'
-  | '160'
+  | '160';
 
-export type TShirtSizes = 'xs' | 's' | 'm' | 'l' | 'xl'
+export type TShirtSizes = 'xs' | 's' | 'm' | 'l' | 'xl';
 
-export type ResponsiveSpacingToken = TShirtSizes
+export type ResponsiveSpacingToken = TShirtSizes;
 
-export type ShadowSize = TShirtSizes
+export type ShadowSize = TShirtSizes;
 
-export type SpacingToken = StaticSpacingToken | ResponsiveSpacingToken
+export type SpacingToken = StaticSpacingToken | ResponsiveSpacingToken;
 
 export type ColorScheme =
   | 'neutral'
@@ -33,23 +33,23 @@ export type ColorScheme =
   | 'info'
   | 'danger'
   | 'warning'
-  | 'success'
+  | 'success';
 
-export type ColorCategory = 'on-solid' | 'on-background'
+export type ColorCategory = 'on-solid' | 'on-background';
 
-export type ColorWeight = 'weak' | 'medium' | 'strong'
+export type ColorWeight = 'weak' | 'medium' | 'strong';
 
-export type RadiusSize = TShirtSizes | 'full'
+export type RadiusSize = TShirtSizes | 'full';
 
-export type RadiusNest = '4' | '8'
+export type RadiusNest = '4' | '8';
 
-export type TextType = 'body' | 'heading' | 'display' | 'label' | 'code'
+export type TextType = 'body' | 'heading' | 'display' | 'label' | 'code';
 
-export type TextWeight = 'default' | 'strong'
+export type TextWeight = 'default' | 'strong';
 
-export type TextSize = TShirtSizes
+export type TextSize = TShirtSizes;
 
-export type TextVariant = `${TextType}-${TextWeight}-${TextSize}`
+export type TextVariant = `${TextType}-${TextWeight}-${TextSize}`;
 
 export type gridColumns =
   | '1'
@@ -75,7 +75,7 @@ export type gridColumns =
   | 9
   | 10
   | 11
-  | 12
+  | 12;
 
 export type flex =
   | '0'
@@ -103,4 +103,4 @@ export type flex =
   | 9
   | 10
   | 11
-  | 12
+  | 12;

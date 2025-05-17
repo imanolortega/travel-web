@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, {
   useState,
@@ -6,46 +6,46 @@ import React, {
   ChangeEventHandler,
   FocusEventHandler,
   forwardRef,
-} from 'react'
+} from 'react';
 
-import { Flex, Chip, Input, InputProps } from '.'
+import { Flex, Chip, Input, InputProps } from '.';
 
 interface TagInputProps extends Omit<InputProps, 'onChange' | 'value'> {
-  value: string[]
-  onChange: (value: string[]) => void
+  value: string[];
+  onChange: (value: string[]) => void;
 }
 
 const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
   ({ value, onChange, label, placeholder, ...inputProps }, ref) => {
-    const [inputValue, setInputValue] = useState('')
-    const [isFocused, setIsFocused] = useState(false)
+    const [inputValue, setInputValue] = useState('');
+    const [isFocused, setIsFocused] = useState(false);
 
     const handleInputChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-      setInputValue(e.target.value)
-    }
+      setInputValue(e.target.value);
+    };
 
     const handleKeyDown: KeyboardEventHandler<HTMLInputElement> = (e) => {
       if (e.key === 'Enter' || e.key === ',') {
-        e.preventDefault()
+        e.preventDefault();
         if (inputValue.trim()) {
-          onChange([...value, inputValue.trim()])
-          setInputValue('')
+          onChange([...value, inputValue.trim()]);
+          setInputValue('');
         }
       }
-    }
+    };
 
     const handleRemoveTag = (index: number) => {
-      const newValue = value.filter((_, i) => i !== index)
-      onChange(newValue)
-    }
+      const newValue = value.filter((_, i) => i !== index);
+      onChange(newValue);
+    };
 
     const handleFocus: FocusEventHandler<HTMLInputElement> = () => {
-      setIsFocused(true)
-    }
+      setIsFocused(true);
+    };
 
     const handleBlur: FocusEventHandler<HTMLInputElement> = (e) => {
-      setIsFocused(false)
-    }
+      setIsFocused(false);
+    };
 
     return (
       <Input
@@ -84,11 +84,11 @@ const TagInput = forwardRef<HTMLInputElement, TagInputProps>(
           </Flex>
         )}
       </Input>
-    )
-  }
-)
+    );
+  },
+);
 
-TagInput.displayName = 'TagInput'
+TagInput.displayName = 'TagInput';
 
-export { TagInput }
-export type { TagInputProps }
+export { TagInput };
+export type { TagInputProps };

@@ -1,8 +1,8 @@
-import { baseURL } from '@/app/resources'
-import { Column, Heading } from '@/once-ui/components'
-import { gallery, person } from '@/app/resources/content'
-import { Meta, Schema } from '@/once-ui/modules'
-import MasonryGrid from '@/components/gallery/MasonryGrid'
+import { baseURL } from '@/app/resources';
+import { Column, Heading } from '@/once-ui/components';
+import { gallery, person } from '@/app/resources/content';
+import { Meta, Schema } from '@/once-ui/modules';
+import MasonryGrid from '@/components/gallery/MasonryGrid';
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -11,7 +11,7 @@ export async function generateMetadata() {
     baseURL: baseURL,
     image: `${baseURL}/og?title=${encodeURIComponent(gallery.title)}`,
     path: gallery.path,
-  })
+  });
 }
 
 export default function Gallery() {
@@ -45,5 +45,5 @@ export default function Gallery() {
       </Column>
       <MasonryGrid />
     </Column>
-  )
+  );
 }

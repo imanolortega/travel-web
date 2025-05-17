@@ -1,41 +1,38 @@
-'use client'
+'use client';
 
-import React from 'react'
-import { Column, Flex, Text } from '@/once-ui/components'
-import styles from './about.module.scss'
+import React from 'react';
+import { Column, Flex, Text } from '@/once-ui/components';
+import styles from './about.module.scss';
 
 interface TableOfContentsProps {
   structure: {
-    title: string
-    display: boolean
-    items: string[]
-  }[]
+    title: string;
+    display: boolean;
+    items: string[];
+  }[];
   about: {
     tableOfContent: {
-      display: boolean
-      subItems: boolean
-    }
-  }
+      display: boolean;
+      subItems: boolean;
+    };
+  };
 }
 
-const TableOfContents: React.FC<TableOfContentsProps> = ({
-  structure,
-  about,
-}) => {
+const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) => {
   const scrollTo = (id: string, offset: number) => {
-    const element = document.getElementById(id)
+    const element = document.getElementById(id);
     if (element) {
-      const elementPosition = element.getBoundingClientRect().top
-      const offsetPosition = elementPosition + window.scrollY - offset
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
 
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth',
-      })
+      });
     }
-  }
+  };
 
-  if (!about.tableOfContent.display) return null
+  if (!about.tableOfContent.display) return null;
 
   return (
     <Column
@@ -77,11 +74,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
                     vertical="center"
                     onClick={() => scrollTo(item, 80)}
                   >
-                    <Flex
-                      height="1"
-                      minWidth="8"
-                      background="neutral-strong"
-                    ></Flex>
+                    <Flex height="1" minWidth="8" background="neutral-strong"></Flex>
                     <Text>{item}</Text>
                   </Flex>
                 ))}
@@ -90,7 +83,7 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({
           </Column>
         ))}
     </Column>
-  )
-}
+  );
+};
 
-export default TableOfContents
+export default TableOfContents;

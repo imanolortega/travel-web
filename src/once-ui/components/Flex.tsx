@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
-import classNames from 'classnames'
-import { CSSProperties, forwardRef } from 'react'
+import classNames from 'classnames';
+import { CSSProperties, forwardRef } from 'react';
 
 import {
   CommonProps,
@@ -11,8 +11,8 @@ import {
   SizeProps,
   SpacingProps,
   StyleProps,
-} from '../interfaces'
-import { ColorScheme, ColorWeight, SpacingToken, TextVariant } from '../types'
+} from '../interfaces';
+import { ColorScheme, ColorWeight, SpacingToken, TextVariant } from '../types';
 
 interface ComponentProps
   extends FlexProps,
@@ -110,64 +110,59 @@ const Flex = forwardRef<HTMLDivElement, ComponentProps>(
       children,
       ...rest
     },
-    ref
+    ref,
   ) => {
     if (onBackground && onSolid) {
       console.warn(
-        "You cannot use both 'onBackground' and 'onSolid' props simultaneously. Only one will be applied."
-      )
+        "You cannot use both 'onBackground' and 'onSolid' props simultaneously. Only one will be applied.",
+      );
     }
 
     if (background && solid) {
       console.warn(
-        "You cannot use both 'background' and 'solid' props simultaneously. Only one will be applied."
-      )
+        "You cannot use both 'background' and 'solid' props simultaneously. Only one will be applied.",
+      );
     }
 
     const getVariantClasses = (variant: TextVariant) => {
-      const [fontType, weight, size] = variant.split('-')
-      return [`font-${fontType}`, `font-${weight}`, `font-${size}`]
-    }
+      const [fontType, weight, size] = variant.split('-');
+      return [`font-${fontType}`, `font-${weight}`, `font-${size}`];
+    };
 
-    const sizeClass = textSize ? `font-${textSize}` : ''
-    const weightClass = textWeight ? `font-${textWeight}` : ''
+    const sizeClass = textSize ? `font-${textSize}` : '';
+    const weightClass = textWeight ? `font-${textWeight}` : '';
 
-    const variantClasses = textVariant
-      ? getVariantClasses(textVariant)
-      : [sizeClass, weightClass]
+    const variantClasses = textVariant ? getVariantClasses(textVariant) : [sizeClass, weightClass];
 
-    let colorClass = ''
+    let colorClass = '';
     if (onBackground) {
-      const [scheme, weight] = onBackground.split('-') as [
-        ColorScheme,
-        ColorWeight,
-      ]
-      colorClass = `${scheme}-on-background-${weight}`
+      const [scheme, weight] = onBackground.split('-') as [ColorScheme, ColorWeight];
+      colorClass = `${scheme}-on-background-${weight}`;
     } else if (onSolid) {
-      const [scheme, weight] = onSolid.split('-') as [ColorScheme, ColorWeight]
-      colorClass = `${scheme}-on-solid-${weight}`
+      const [scheme, weight] = onSolid.split('-') as [ColorScheme, ColorWeight];
+      colorClass = `${scheme}-on-solid-${weight}`;
     }
 
     const generateDynamicClass = (type: string, value: string | undefined) => {
-      if (!value) return undefined
+      if (!value) return undefined;
 
       if (value === 'transparent') {
-        return `transparent-border`
+        return `transparent-border`;
       }
 
       if (['surface', 'page', 'overlay'].includes(value)) {
-        return `${value}-${type}`
+        return `${value}-${type}`;
       }
 
-      const parts = value.split('-')
+      const parts = value.split('-');
       if (parts.includes('alpha')) {
-        const [scheme, , weight] = parts
-        return `${scheme}-${type}-alpha-${weight}`
+        const [scheme, , weight] = parts;
+        return `${scheme}-${type}-alpha-${weight}`;
       }
 
-      const [scheme, weight] = value.split('-') as [ColorScheme, ColorWeight]
-      return `${scheme}-${type}-${weight}`
-    }
+      const [scheme, weight] = value.split('-') as [ColorScheme, ColorWeight];
+      return `${scheme}-${type}-${weight}`;
+    };
 
     const classes = classNames(
       inline ? 'display-inline-flex' : 'display-flex',
@@ -198,14 +193,13 @@ const Flex = forwardRef<HTMLDivElement, ComponentProps>(
       generateDynamicClass('solid', solid),
       generateDynamicClass(
         'border',
-        border || borderTop || borderRight || borderBottom || borderLeft
+        border || borderTop || borderRight || borderBottom || borderLeft,
       ),
       (border || borderTop || borderRight || borderBottom || borderLeft) &&
         !borderStyle &&
         'border-solid',
       border && !borderWidth && 'border-1',
-      (borderTop || borderRight || borderBottom || borderLeft) &&
-        'border-reset',
+      (borderTop || borderRight || borderBottom || borderLeft) && 'border-reset',
       borderTop && 'border-top-1',
       borderRight && 'border-right-1',
       borderBottom && 'border-bottom-1',
@@ -235,15 +229,11 @@ const Flex = forwardRef<HTMLDivElement, ComponentProps>(
       overflowY && `overflow-y-${overflowY}`,
       flex && `flex-${flex}`,
       horizontal &&
-        (direction === 'row' ||
-        direction === 'row-reverse' ||
-        direction === undefined
+        (direction === 'row' || direction === 'row-reverse' || direction === undefined
           ? `justify-${horizontal}`
           : `align-${horizontal}`),
       vertical &&
-        (direction === 'row' ||
-        direction === 'row-reverse' ||
-        direction === undefined
+        (direction === 'row' || direction === 'row-reverse' || direction === undefined
           ? `align-${vertical}`
           : `justify-${vertical}`),
       center && 'center',
@@ -262,15 +252,15 @@ const Flex = forwardRef<HTMLDivElement, ComponentProps>(
       cursor && `cursor-${cursor}`,
       colorClass,
       className,
-      ...variantClasses
-    )
+      ...variantClasses,
+    );
 
     const parseDimension = (
       value: number | SpacingToken | undefined,
-      type: 'width' | 'height'
+      type: 'width' | 'height',
     ): string | undefined => {
-      if (value === undefined) return undefined
-      if (typeof value === 'number') return `${value}rem`
+      if (value === undefined) return undefined;
+      if (typeof value === 'number') return `${value}rem`;
       if (
         [
           '0',
@@ -293,13 +283,13 @@ const Flex = forwardRef<HTMLDivElement, ComponentProps>(
           '160',
         ].includes(value)
       ) {
-        return `var(--static-space-${value})`
+        return `var(--static-space-${value})`;
       }
       if (['xs', 's', 'm', 'l', 'xl'].includes(value)) {
-        return `var(--responsive-${type}-${value})`
+        return `var(--responsive-${type}-${value})`;
       }
-      return undefined
-    }
+      return undefined;
+    };
 
     const combinedStyle: CSSProperties = {
       maxWidth: parseDimension(maxWidth, 'width'),
@@ -311,15 +301,15 @@ const Flex = forwardRef<HTMLDivElement, ComponentProps>(
       aspectRatio: aspectRatio,
       textAlign: align,
       ...style,
-    }
+    };
 
     return (
       <Component ref={ref} className={classes} style={combinedStyle} {...rest}>
         {children}
       </Component>
-    )
-  }
-)
+    );
+  },
+);
 
-Flex.displayName = 'Flex'
-export { Flex }
+Flex.displayName = 'Flex';
+export { Flex };

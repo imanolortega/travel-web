@@ -1,32 +1,19 @@
-'use client'
+'use client';
 
-import {
-  Column,
-  Flex,
-  Heading,
-  SmartImage,
-  SmartLink,
-  Text,
-} from '@/once-ui/components'
-import styles from './Posts.module.scss'
-import { useLoadingDelay } from '@/app/utils/useLoadingDelay'
+import { Column, Flex, Heading, SmartImage, SmartLink, Text } from '@/once-ui/components';
+import styles from './Posts.module.scss';
+import { useLoadingDelay } from '@/app/utils/useLoadingDelay';
 
 interface PostProps {
-  post: any
-  thumbnail: boolean
+  post: any;
+  thumbnail: boolean;
 }
 
 export default function Post({ post, thumbnail }: PostProps) {
-  const loading = useLoadingDelay(1000)
+  const loading = useLoadingDelay(1000);
 
   return (
-    <SmartLink
-      fillWidth
-      className={styles.hover}
-      unstyled
-      key={post.slug}
-      href={post.slug}
-    >
+    <SmartLink fillWidth className={styles.hover} unstyled key={post.slug} href={post.slug}>
       <Flex
         position="relative"
         mobileDirection="column"
@@ -59,5 +46,5 @@ export default function Post({ post, thumbnail }: PostProps) {
         </Column>
       </Flex>
     </SmartLink>
-  )
+  );
 }

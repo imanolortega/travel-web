@@ -1,34 +1,33 @@
-'use client'
+'use client';
 
-import React, { useState, forwardRef, useImperativeHandle } from 'react'
-import { Flex, Icon, Heading, Column } from '.'
-import styles from './Accordion.module.scss'
+import React, { useState, forwardRef, useImperativeHandle } from 'react';
+import { Flex, Icon, Heading, Column } from '.';
+import styles from './Accordion.module.scss';
 
-interface AccordionProps
-  extends Omit<React.ComponentProps<typeof Flex>, 'title'> {
-  title: React.ReactNode
-  children: React.ReactNode
-  open?: boolean
+interface AccordionProps extends Omit<React.ComponentProps<typeof Flex>, 'title'> {
+  title: React.ReactNode;
+  children: React.ReactNode;
+  open?: boolean;
 }
 
 const Accordion: React.FC<AccordionProps> = forwardRef(
   ({ title, children, open = false, ...rest }, ref) => {
-    const [isOpen, setIsOpen] = useState(open)
+    const [isOpen, setIsOpen] = useState(open);
 
     const toggleAccordion = () => {
-      setIsOpen(!isOpen)
-    }
+      setIsOpen(!isOpen);
+    };
 
     useImperativeHandle(ref, () => ({
       ...((ref as React.MutableRefObject<HTMLDivElement>)?.current ?? {}),
       toggle: toggleAccordion,
       open: () => {
-        setIsOpen(true)
+        setIsOpen(true);
       },
       close: () => {
-        setIsOpen(false)
+        setIsOpen(false);
       },
-    }))
+    }));
 
     return (
       <Flex fillWidth direction="column" className={styles.border}>
@@ -70,21 +69,15 @@ const Accordion: React.FC<AccordionProps> = forwardRef(
           aria-hidden={!isOpen}
         >
           <Flex fillWidth minHeight={0} overflow="hidden">
-            <Column
-              fillWidth
-              paddingX="20"
-              paddingTop="8"
-              paddingBottom="16"
-              {...rest}
-            >
+            <Column fillWidth paddingX="20" paddingTop="8" paddingBottom="16" {...rest}>
               {children}
             </Column>
           </Flex>
         </Flex>
       </Flex>
-    )
-  }
-)
+    );
+  },
+);
 
-Accordion.displayName = 'Accordion'
-export { Accordion }
+Accordion.displayName = 'Accordion';
+export { Accordion };

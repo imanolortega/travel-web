@@ -1,20 +1,20 @@
-import Link from 'next/link'
-import React, { ReactNode, forwardRef } from 'react'
+import Link from 'next/link';
+import React, { ReactNode, forwardRef } from 'react';
 
 interface ElementTypeProps {
-  href?: string
-  children: ReactNode
-  className?: string
-  style?: React.CSSProperties
-  [key: string]: any
+  href?: string;
+  children: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
+  [key: string]: any;
 }
 
-const isExternalLink = (url: string) => /^https?:\/\//.test(url)
+const isExternalLink = (url: string) => /^https?:\/\//.test(url);
 
 const ElementType = forwardRef<HTMLElement, ElementTypeProps>(
   ({ href, children, className, style, ...props }, ref) => {
     if (href) {
-      const isExternal = isExternalLink(href)
+      const isExternal = isExternalLink(href);
       if (isExternal) {
         return (
           <a
@@ -28,7 +28,7 @@ const ElementType = forwardRef<HTMLElement, ElementTypeProps>(
           >
             {children}
           </a>
-        )
+        );
       }
       return (
         <Link
@@ -40,7 +40,7 @@ const ElementType = forwardRef<HTMLElement, ElementTypeProps>(
         >
           {children}
         </Link>
-      )
+      );
     }
     return (
       <button
@@ -51,9 +51,9 @@ const ElementType = forwardRef<HTMLElement, ElementTypeProps>(
       >
         {children}
       </button>
-    )
-  }
-)
+    );
+  },
+);
 
-ElementType.displayName = 'ElementType'
-export { ElementType }
+ElementType.displayName = 'ElementType';
+export { ElementType };
