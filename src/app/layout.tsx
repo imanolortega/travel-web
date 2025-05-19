@@ -56,7 +56,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <title>{meta.home.title}</title>
         <meta name="description" content={meta.home.description} />
         <meta name="canonical" content={`${baseURL}${meta.home.path}`} />
-        <meta name="image" property="og:image" content="/images/og/cover-imanol-ortega.jpg" />
+        <meta name="image" property="og:image" content={`${baseURL}${meta.home.image}`} />
         <meta name="og:title" content={meta.home.description} />
         <meta name="og:type" content="website" />
         <meta name="og:site_name" content={meta.home.title} />
