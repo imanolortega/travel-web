@@ -69,6 +69,7 @@ const display = {
 const meta = {
   home: {
     path: '/',
+    name: 'Imanol Ortega Carabajal',
     title: 'Imanol Ortega Carabajal | Crónicas de viajes',
     description: 'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.',
     image: '/images/cover.jpg',

@@ -62,7 +62,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <meta name="og:site_name" content={meta.home.title} />
         <meta name="og:description" content={meta.home.description} />
         <meta name="og:image" content={`${baseURL}${meta.home.image}`} />
-        <meta name="og:image:alt" content={`${meta.person.name}'s portfolio.`} />
+        <meta name="og:image:alt" content={`${meta.home.name}'s portfolio.`} />
         <meta name="og:url" content={`${baseURL}${meta.home.path}`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={meta.home.description} />
