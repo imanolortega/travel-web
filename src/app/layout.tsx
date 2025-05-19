@@ -52,6 +52,23 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       data-transition={style.transition}
       className={classNames(primary.variable, GeistSans.variable)}
     >
+      <head>
+        <title>{meta.home.title}</title>
+        <meta name="description" content={meta.home.description} />
+        <meta name="canonical" content={`${baseURL}${meta.home.path}`} />
+        <meta name="image" property="og:image" content="/images/og/cover-imanol-ortega.jpg" />
+        <meta name="og:title" content={meta.home.description} />
+        <meta name="og:type" content="website" />
+        <meta name="og:site_name" content={meta.home.title} />
+        <meta name="og:description" content={meta.home.description} />
+        <meta name="og:image" content={`${baseURL}${meta.home.image}`} />
+        <meta name="og:image:alt" content={`${meta.person.name}'s portfolio.`} />
+        <meta name="og:url" content={`${baseURL}${meta.home.path}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={meta.home.description} />
+        <meta name="twitter:description" content={meta.home.description} />
+        <meta name="twitter:image" content={`${baseURL}${meta.home.image}`} />
+      </head>
       <Analytics />
       <SpeedInsights />
       <GoogleAnalytics gaId="G-SZLNLGY5NV" />

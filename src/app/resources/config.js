@@ -71,7 +71,7 @@ const meta = {
     path: '/',
     title: 'Imanol Ortega Carabajal | Crónicas de viajes',
     description: 'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.',
-    image: '/images/avatar.jpg',
+    image: '/images/cover.jpg',
     canonical: 'https://www.imanolortega.com',
     robots: 'index,follow',
     alternates: [{ href: 'https://www.imanolortega.com', hrefLang: 'en' }],
