@@ -42,7 +42,7 @@ const social = [
     id: 3,
     name: 'Twitter',
     icon: 'x',
-    link: 'https://x.com/ioc_argentina',
+    link: 'https://x.com/imanolrtega',
   },
   {
     id: 4,
