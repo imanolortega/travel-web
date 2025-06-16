@@ -63,7 +63,7 @@ const about = {
   intro: {
     display: true,
     title: 'Introducción',
-    description: <>Viajando y escribiendo sobre Argentina. Actualmente en Lago Puelo, Chubut.</>,
+    description: <>Viajando, capturando y escribiendo sobre Argentina. Actualmente en Lago Puelo, Chubut.</>,
   },
 };
 
@@ -344,8 +344,8 @@ const gallery = {
     },
     {
       id: 39,
-      src: '/images/gallery/lago-puelo.jpg',
-      alt: 'Lago Puelo.',
+      src: '/images/gallery/currumahuida.jpg',
+      alt: 'Lago Puelo desde el Currumahuida.',
       orientation: 'vertical',
     },
     {
@@ -362,7 +362,7 @@ const gallery = {
     },
     {
       id: 42,
-      src: '/images/gallery/lago-puelo-2.jpg',
+      src: '/images/gallery/lago-puelo.jpg',
       alt: 'Lago Puelo.',
       orientation: 'vertical',
     },
