@@ -224,8 +224,8 @@ const gallery = {
     },
     {
       id: 19,
-      src: '/images/gallery/magagna-1.jpg',
-      alt: 'Formaciones rocosas en Magagna.',
+      src: '/images/gallery/cascada-del-motoco.jpg',
+      alt: 'Cascada del Motoco en Lago Puelo.',
       orientation: 'vertical',
     },
     {
@@ -332,8 +332,8 @@ const gallery = {
     },
     {
       id: 37,
-      src: '/images/gallery/chubut-querencia.jpg',
-      alt: 'Chubut, querencia.',
+      src: '/images/gallery/saltos-rio-blanco.jpg',
+      alt: 'Saltos del Río Blanco.',
       orientation: 'vertical',
     },
     {
@@ -355,9 +355,9 @@ const gallery = {
       orientation: 'horizontal',
     },
     {
-      id: 41,
-      src: '/images/gallery/lago-puelo-1.jpg',
-      alt: 'Lago Puelo.',
+      id: 19,
+      src: '/images/gallery/magagna-1.jpg',
+      alt: 'Formaciones rocosas en Magagna.',
       orientation: 'vertical',
     },
     {
