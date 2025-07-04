@@ -35,8 +35,10 @@ interface CommonProps {
   arrowIcon?: boolean;
 }
 
-export type ButtonProps = CommonProps & React.ButtonHTMLAttributes<HTMLButtonElement>;
-export type AnchorProps = CommonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+export type ButtonProps = CommonProps &
+  React.ButtonHTMLAttributes<HTMLButtonElement>;
+export type AnchorProps = CommonProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const Button = forwardRef<HTMLButtonElement, ButtonProps | AnchorProps>(
   (

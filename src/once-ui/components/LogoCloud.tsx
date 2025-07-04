@@ -22,8 +22,20 @@ const ANIMATION_DURATION = 5000;
 const STAGGER_DELAY = 25;
 
 const LogoCloud = forwardRef<HTMLDivElement, LogoCloudProps>(
-  ({ logos, className, style, limit = 6, rotationInterval = ANIMATION_DURATION, ...rest }, ref) => {
-    const [visibleLogos, setVisibleLogos] = useState<LogoProps[]>(() => logos.slice(0, limit));
+  (
+    {
+      logos,
+      className,
+      style,
+      limit = 6,
+      rotationInterval = ANIMATION_DURATION,
+      ...rest
+    },
+    ref,
+  ) => {
+    const [visibleLogos, setVisibleLogos] = useState<LogoProps[]>(() =>
+      logos.slice(0, limit),
+    );
     const [key, setKey] = useState(0);
 
     useEffect(() => {
@@ -35,7 +47,9 @@ const LogoCloud = forwardRef<HTMLDivElement, LogoCloudProps>(
       const interval = setInterval(
         () => {
           setVisibleLogos((currentLogos) => {
-            const currentIndices = currentLogos.map((logo) => logos.findIndex((l) => l === logo));
+            const currentIndices = currentLogos.map((logo) =>
+              logos.findIndex((l) => l === logo),
+            );
 
             const nextIndices = currentIndices
               .map((index) => (index + 1) % logos.length)
@@ -53,7 +67,12 @@ const LogoCloud = forwardRef<HTMLDivElement, LogoCloudProps>(
     }, [logos, limit, rotationInterval]);
 
     return (
-      <Grid ref={ref} className={classNames(styles.container, className)} style={style} {...rest}>
+      <Grid
+        ref={ref}
+        className={classNames(styles.container, className)}
+        style={style}
+        {...rest}
+      >
         {visibleLogos.map((logo, index) => (
           <Flex
             key={`${key}-${index}`}

@@ -18,7 +18,12 @@ const StyleOverlay = forwardRef<HTMLDivElement, StyleOverlayProps>(
 
     return (
       <Flex ref={ref}>
-        <IconButton variant="primary" onClick={togglePanel} icon="sparkle" {...iconButtonProps} />
+        <IconButton
+          variant="primary"
+          onClick={togglePanel}
+          icon="sparkle"
+          {...iconButtonProps}
+        />
         <Flex
           as="aside"
           zIndex={3}
@@ -40,7 +45,13 @@ const StyleOverlay = forwardRef<HTMLDivElement, StyleOverlayProps>(
           {...rest}
         >
           <StylePanel fill overflowY="scroll" padding="8" />
-          <Flex position="absolute" paddingTop="8" paddingRight="12" top="0" right="0">
+          <Flex
+            position="absolute"
+            paddingTop="8"
+            paddingRight="12"
+            top="0"
+            right="0"
+          >
             <Background
               position="absolute"
               top="0"

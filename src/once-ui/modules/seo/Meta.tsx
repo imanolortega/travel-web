@@ -39,7 +39,9 @@ export function generateMetadata({
   nofollow,
   alternates,
 }: MetaProps): NextMetadata {
-  const normalizedBaseURL = baseURL.endsWith('/') ? baseURL.slice(0, -1) : baseURL;
+  const normalizedBaseURL = baseURL.endsWith('/')
+    ? baseURL.slice(0, -1)
+    : baseURL;
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
 
   const ogImage = image
@@ -55,7 +57,9 @@ export function generateMetadata({
 
   return {
     metadataBase: new URL(
-      normalizedBaseURL.startsWith('https://') ? normalizedBaseURL : `https://${normalizedBaseURL}`,
+      normalizedBaseURL.startsWith('https://')
+        ? normalizedBaseURL
+        : `https://${normalizedBaseURL}`,
     ),
     title,
     description,
@@ -84,7 +88,9 @@ export function generateMetadata({
       ? {
           alternates: {
             canonical: url,
-            languages: Object.fromEntries(alternates.map((alt) => [alt.hrefLang, alt.href])),
+            languages: Object.fromEntries(
+              alternates.map((alt) => [alt.hrefLang, alt.href]),
+            ),
           },
         }
       : {}),

@@ -28,12 +28,27 @@ interface StatusIndicatorProps extends React.ComponentProps<typeof Flex> {
 }
 
 const StatusIndicator = forwardRef<HTMLDivElement, StatusIndicatorProps>(
-  ({ size, color, ariaLabel = `${color} status indicator`, className, style, ...rest }, ref) => {
+  (
+    {
+      size,
+      color,
+      ariaLabel = `${color} status indicator`,
+      className,
+      style,
+      ...rest
+    },
+    ref,
+  ) => {
     return (
       <Flex
         ref={ref}
         style={style}
-        className={classNames(styles.statusIndicator, styles[size], styles[color], className)}
+        className={classNames(
+          styles.statusIndicator,
+          styles[size],
+          styles[color],
+          className,
+        )}
         aria-label={ariaLabel}
         radius="full"
         {...rest}

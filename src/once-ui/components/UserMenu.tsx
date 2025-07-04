@@ -42,7 +42,11 @@ const UserMenu: React.FC<UserMenuProps> = ({
           cursor="interactive"
           border={selected ? 'neutral-medium' : 'transparent'}
           background={selected ? 'neutral-strong' : 'transparent'}
-          className={classNames(className || '', selected ? styles.selected : '', styles.wrapper)}
+          className={classNames(
+            className || '',
+            selected ? styles.selected : '',
+            styles.wrapper,
+          )}
           style={style}
         >
           <User {...userProps} />

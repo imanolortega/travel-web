@@ -46,7 +46,9 @@ const Fade = forwardRef<HTMLDivElement, FadeProps>(
       if (base === 'surface') return 'var(--surface-background)';
       if (base === 'overlay') return 'var(--backdrop)';
 
-      const [scheme, weight] = base.includes('alpha') ? base.split('-alpha-') : base.split('-');
+      const [scheme, weight] = base.includes('alpha')
+        ? base.split('-alpha-')
+        : base.split('-');
 
       return base.includes('alpha')
         ? `var(--${scheme}-alpha-${weight})`

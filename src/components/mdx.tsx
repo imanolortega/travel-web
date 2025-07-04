@@ -16,7 +16,9 @@ type TableProps = {
 };
 
 function Table({ data }: TableProps) {
-  const headers = data.headers.map((header, index) => <th key={index}>{header}</th>);
+  const headers = data.headers.map((header, index) => (
+    <th key={index}>{header}</th>
+  ));
   const rows = data.rows.map((row, index) => (
     <tr key={index}>
       {row.map((cell, cellIndex) => (
@@ -64,7 +66,11 @@ function CustomLink({ href, children, ...props }: CustomLinkProps) {
   );
 }
 
-function createImage({ alt, src, ...props }: SmartImageProps & { src: string }) {
+function createImage({
+  alt,
+  src,
+  ...props
+}: SmartImageProps & { src: string }) {
   if (!src) {
     console.error("SmartImage requires a valid 'src' property.");
     return null;
@@ -152,6 +158,9 @@ type CustomMDXProps = MDXRemoteProps & {
 export function CustomMDX(props: CustomMDXProps) {
   return (
     // @ts-ignore: Suppressing type error for MDXRemote usage
-    <MDXRemote {...props} components={{ ...components, ...(props.components || {}) }} />
+    <MDXRemote
+      {...props}
+      components={{ ...components, ...(props.components || {}) }}
+    />
   );
 }

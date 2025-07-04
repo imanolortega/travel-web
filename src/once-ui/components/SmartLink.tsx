@@ -18,7 +18,8 @@ interface CommonProps {
   className?: string;
 }
 
-export type SmartLinkProps = CommonProps & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+export type SmartLinkProps = CommonProps &
+  React.AnchorHTMLAttributes<HTMLAnchorElement>;
 
 const SmartLink = forwardRef<HTMLAnchorElement, SmartLinkProps>(
   (
@@ -47,11 +48,15 @@ const SmartLink = forwardRef<HTMLAnchorElement, SmartLinkProps>(
 
     const commonProps = {
       ref,
-      className: classNames(className, 'align-items-center display-inline-flex g-8 radius-s', {
-        'fill-width': fillWidth,
-        'fit-width': !fillWidth,
-        'px-4 mx-4': !unstyled,
-      }),
+      className: classNames(
+        className,
+        'align-items-center display-inline-flex g-8 radius-s',
+        {
+          'fill-width': fillWidth,
+          'fit-width': !fillWidth,
+          'px-4 mx-4': !unstyled,
+        },
+      ),
       style: !unstyled
         ? {
             ...(selected && {

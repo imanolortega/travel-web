@@ -65,7 +65,9 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ) => {
     const [isFocused, setIsFocused] = useState(false);
     const [isFilled, setIsFilled] = useState(!!props.value);
-    const [validationError, setValidationError] = useState<ReactNode | null>(null);
+    const [validationError, setValidationError] = useState<ReactNode | null>(
+      null,
+    );
     const [height, setHeight] = useState<number | undefined>(undefined);
     const textareaRef = React.useRef<HTMLTextAreaElement>(null);
     const debouncedValue = useDebounce(props.value, 1000);
@@ -163,7 +165,11 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           className={classNames(
             styles.base,
             lines !== 'auto' && styles.textareaBase,
-            radius === 'none' ? 'radius-none' : radius ? `radius-l-${radius}` : 'radius-l',
+            radius === 'none'
+              ? 'radius-none'
+              : radius
+                ? `radius-l-${radius}`
+                : 'radius-l',
           )}
         >
           {hasPrefix && (
@@ -220,7 +226,12 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         </Flex>
         {displayError && errorMessage !== false && (
           <Flex paddingX="16">
-            <Text as="span" id={`${id}-error`} variant="body-default-s" onBackground="danger-weak">
+            <Text
+              as="span"
+              id={`${id}-error`}
+              variant="body-default-s"
+              onBackground="danger-weak"
+            >
               {displayError}
             </Text>
           </Flex>

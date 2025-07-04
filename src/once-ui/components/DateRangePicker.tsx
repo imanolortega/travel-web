@@ -8,7 +8,8 @@ export interface DateRange {
   endDate: Date | undefined;
 }
 
-export interface DateRangePickerProps extends Omit<React.ComponentProps<typeof Flex>, 'onChange'> {
+export interface DateRangePickerProps
+  extends Omit<React.ComponentProps<typeof Flex>, 'onChange'> {
   value?: DateRange;
   onChange?: (range: DateRange) => void;
   minDate?: Date;
@@ -43,7 +44,10 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({
   }, [value]);
 
   const handleDateChange = (date: Date) => {
-    if (!internalValue.startDate || (internalValue.startDate && internalValue.endDate)) {
+    if (
+      !internalValue.startDate ||
+      (internalValue.startDate && internalValue.endDate)
+    ) {
       // Start new selection
       const newRange = {
         startDate: date,
@@ -85,10 +89,14 @@ const DateRangePicker: React.FC<DateRangePickerProps> = ({
   };
 
   const getPreviewRange = () => {
-    if (!internalValue.startDate || internalValue.endDate || !hoveredDate) return null;
+    if (!internalValue.startDate || internalValue.endDate || !hoveredDate)
+      return null;
     return {
       startDate: internalValue.startDate,
-      endDate: hoveredDate > internalValue.startDate ? hoveredDate : internalValue.startDate,
+      endDate:
+        hoveredDate > internalValue.startDate
+          ? hoveredDate
+          : internalValue.startDate,
       isPreview: true,
     };
   };

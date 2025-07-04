@@ -1,4 +1,11 @@
-import { Avatar, Button, Column, Flex, Heading, IconButton } from '@/once-ui/components';
+import {
+  Avatar,
+  Button,
+  Column,
+  Flex,
+  Heading,
+  IconButton,
+} from '@/once-ui/components';
 import { baseURL } from '@/app/resources';
 import { Meta, Schema } from '@/once-ui/modules';
 import { person, about, social, blog } from '@/app/resources/content';
@@ -53,7 +60,11 @@ export default function Home() {
             vertical="center"
             marginBottom="32"
           >
-            <Heading className={styles.textAlign} variant="display-strong-m" marginBottom="m">
+            <Heading
+              className={styles.textAlign}
+              variant="display-strong-m"
+              marginBottom="m"
+            >
               {person.name}
             </Heading>
             {social.length > 0 && (
@@ -93,7 +104,12 @@ export default function Home() {
           </Column>
 
           {about.intro.display && (
-            <Column textVariant="body-default-l" fillWidth gap="m" marginBottom="80">
+            <Column
+              textVariant="body-default-l"
+              fillWidth
+              gap="m"
+              marginBottom="80"
+            >
               {about.intro.description}
             </Column>
           )}

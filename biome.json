@@ -1,40 +1,36 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
-  "vcs": {
-    "enabled": false,
-    "clientKind": "git",
-    "useIgnoreFile": false
-  },
-  "files": {
-    "ignoreUnknown": false,
-    "ignore": [
-      "**/node_modules/**",
-      "**/.next/**",
-      "**/.vercel/**",
-      "**/.turbo/**",
-      "**/.output/**",
-      "**/.cache/**",
-      "**/coverage/**",
-      "**/public/**",
-      "**/out/**"
-    ]
-  },
+  "$schema": "https://biomejs.dev/schemas/2.0.5/schema.json",
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineWidth": 100
-  },
-  "organizeImports": {
-    "enabled": true
+    "lineWidth": 80
   },
   "linter": {
     "enabled": true,
-    "rules": { "recommended": true }
+    "rules": {
+      "recommended": true
+    }
+  },
+  "files": {
+    "includes": [
+      "src/**/*.js",
+      "src/**/*.jsx",
+      "src/**/*.ts",
+      "src/**/*.tsx",
+      "src/**/*.json",
+      "src/**/*.css",
+      "src/**/*.scss",
+      "src/**/*.html",
+      "src/**/*.md"
+    ]
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "single"
+      "quoteStyle": "single",
+      "indentStyle": "space",
+      "indentWidth": 2,
+      "lineWidth": 80
     }
   }
 }

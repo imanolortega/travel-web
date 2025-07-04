@@ -49,7 +49,10 @@ const Icon = forwardRef<HTMLDivElement, IconProps>(
     let colorClass = 'color-inherit';
 
     if (onBackground) {
-      const [scheme, weight] = onBackground.split('-') as [ColorScheme, ColorWeight];
+      const [scheme, weight] = onBackground.split('-') as [
+        ColorScheme,
+        ColorWeight,
+      ];
       colorClass = `${scheme}-on-background-${weight}`;
     } else if (onSolid) {
       const [scheme, weight] = onSolid.split('-') as [ColorScheme, ColorWeight];
@@ -89,7 +92,11 @@ const Icon = forwardRef<HTMLDivElement, IconProps>(
       >
         <IconComponent />
         {tooltip && isTooltipVisible && (
-          <Flex position="absolute" zIndex={1} className={iconStyles[tooltipPosition]}>
+          <Flex
+            position="absolute"
+            zIndex={1}
+            className={iconStyles[tooltipPosition]}
+          >
             <Tooltip label={tooltip} />
           </Flex>
         )}

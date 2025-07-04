@@ -26,7 +26,10 @@ const sizeMapping: Record<'xs' | 's' | 'm' | 'l' | 'xl', number> = {
   xl: 160,
 };
 
-const statusIndicatorSizeMapping: Record<'xs' | 's' | 'm' | 'l' | 'xl', 's' | 'm' | 'l'> = {
+const statusIndicatorSizeMapping: Record<
+  'xs' | 's' | 'm' | 'l' | 'xl',
+  's' | 'm' | 'l'
+> = {
   xs: 's',
   s: 's',
   m: 'm',
@@ -35,7 +38,20 @@ const statusIndicatorSizeMapping: Record<'xs' | 's' | 'm' | 'l' | 'xl', 's' | 'm
 };
 
 const Avatar = forwardRef<HTMLDivElement, AvatarProps>(
-  ({ size = 'm', value, src, loading, empty, statusIndicator, className, style, ...rest }, ref) => {
+  (
+    {
+      size = 'm',
+      value,
+      src,
+      loading,
+      empty,
+      statusIndicator,
+      className,
+      style,
+      ...rest
+    },
+    ref,
+  ) => {
     const isEmpty = empty || (!src && !value);
 
     if (value && src) {

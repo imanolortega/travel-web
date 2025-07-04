@@ -15,7 +15,10 @@ interface BadgeProps extends React.ComponentProps<typeof Flex> {
 }
 
 const Badge = forwardRef<HTMLDivElement | HTMLAnchorElement, BadgeProps>(
-  ({ title, icon, arrow = true, children, href, effect = true, ...rest }, ref) => {
+  (
+    { title, icon, arrow = true, children, href, effect = true, ...rest },
+    ref,
+  ) => {
     const content = (
       <Flex
         id="badge"
@@ -30,7 +33,14 @@ const Badge = forwardRef<HTMLDivElement | HTMLAnchorElement, BadgeProps>(
         shadow="l"
         {...rest}
       >
-        {icon && <Icon className="mr-8" size="s" name={icon} onBackground="brand-medium" />}
+        {icon && (
+          <Icon
+            className="mr-8"
+            size="s"
+            name={icon}
+            onBackground="brand-medium"
+          />
+        )}
         {title && (
           <Text onBackground="brand-strong" variant="label-strong-s">
             {title}

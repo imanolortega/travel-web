@@ -16,9 +16,13 @@ interface AvatarGroupProps extends React.ComponentProps<typeof Flex> {
 }
 
 const AvatarGroup = forwardRef<HTMLDivElement, AvatarGroupProps>(
-  ({ avatars, size = 'm', reverse = false, limit, className, style, ...rest }, ref) => {
+  (
+    { avatars, size = 'm', reverse = false, limit, className, style, ...rest },
+    ref,
+  ) => {
     const displayedAvatars = limit ? avatars.slice(0, limit) : avatars;
-    const remainingCount = limit && avatars.length > limit ? avatars.length - limit : 0;
+    const remainingCount =
+      limit && avatars.length > limit ? avatars.length - limit : 0;
 
     return (
       <Flex

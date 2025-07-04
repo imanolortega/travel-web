@@ -5,7 +5,14 @@ import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import './CodeHighlight.css';
 import styles from './CodeBlock.module.scss';
 
-import { Flex, Button, IconButton, Scroller, Row, StyleOverlay } from '@/once-ui/components';
+import {
+  Flex,
+  Button,
+  IconButton,
+  Scroller,
+  Row,
+  StyleOverlay,
+} from '@/once-ui/components';
 
 import Prism from 'prismjs';
 import 'prismjs/plugins/line-highlight/prism-line-highlight';
@@ -108,7 +115,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
   };
 
   const handleContent = (selectedLabel: string) => {
-    const index = codeInstances.findIndex((instance) => instance.label === selectedLabel);
+    const index = codeInstances.findIndex(
+      (instance) => instance.label === selectedLabel,
+    );
     if (index !== -1) {
       setSelectedInstance(index);
     }
@@ -152,7 +161,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
                     className="mr-2"
                     weight="default"
                     size="s"
-                    variant={selectedInstance === index ? 'secondary' : 'tertiary'}
+                    variant={
+                      selectedInstance === index ? 'secondary' : 'tertiary'
+                    }
                     label={instance.label}
                     onClick={() => {
                       setSelectedInstance(index);
@@ -227,7 +238,9 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
           overflowY="auto"
         >
           {Array.isArray(codePreview)
-            ? codePreview.map((item, index) => <React.Fragment key={index}>{item}</React.Fragment>)
+            ? codePreview.map((item, index) => (
+                <React.Fragment key={index}>{item}</React.Fragment>
+              ))
             : codePreview}
         </Flex>
       )}
@@ -246,13 +259,21 @@ const CodeBlock: React.FC<CodeBlockProps> = ({
               className={classNames(styles.pre, `language-${language}`)}
               tabIndex={-1}
             >
-              <code ref={codeRef} className={classNames(styles.code, `language-${language}`)}>
+              <code
+                ref={codeRef}
+                className={classNames(styles.code, `language-${language}`)}
+              >
                 {typeof code === 'string' ? code : code.content}
               </code>
             </pre>
           </Flex>
           {compact && copyButton && (
-            <Flex paddingX="8" paddingY="4" className={styles.compactCopy} zIndex={1}>
+            <Flex
+              paddingX="8"
+              paddingY="4"
+              className={styles.compactCopy}
+              zIndex={1}
+            >
               <IconButton
                 tooltip="Copy"
                 tooltipPosition="left"

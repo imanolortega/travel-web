@@ -32,7 +32,13 @@ export default function Blog() {
       <Heading marginBottom="l" variant="display-strong-s" align="center">
         {blog.title}
       </Heading>
-      <Column textVariant="body-default-l" align="center" fillWidth gap="m" marginBottom="80">
+      <Column
+        textVariant="body-default-l"
+        align="center"
+        fillWidth
+        gap="m"
+        marginBottom="80"
+      >
         {blog.description}
       </Column>
       <Column fillWidth flex={1}>

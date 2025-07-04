@@ -3,7 +3,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { Input, DropdownWrapper, Flex, DatePicker } from '.';
 
-interface DateInputProps extends Omit<React.ComponentProps<typeof Input>, 'onChange' | 'value'> {
+interface DateInputProps
+  extends Omit<React.ComponentProps<typeof Input>, 'onChange' | 'value'> {
   id: string;
   label: string;
   value?: Date;
@@ -42,7 +43,9 @@ export const DateInput: React.FC<DateInputProps> = ({
   ...rest
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [inputValue, setInputValue] = useState(value ? formatDate(value, timePicker) : '');
+  const [inputValue, setInputValue] = useState(
+    value ? formatDate(value, timePicker) : '',
+  );
 
   useEffect(() => {
     if (value) {
@@ -83,7 +86,11 @@ export const DateInput: React.FC<DateInputProps> = ({
 
   const dropdown = (
     <Flex padding="20">
-      <DatePicker value={value} onChange={handleDateChange} timePicker={timePicker} />
+      <DatePicker
+        value={value}
+        onChange={handleDateChange}
+        timePicker={timePicker}
+      />
     </Flex>
   );
 

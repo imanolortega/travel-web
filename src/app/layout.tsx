@@ -56,7 +56,11 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <title>{meta.home.title}</title>
         <meta name="description" content={meta.home.description} />
         <meta name="canonical" content={`${baseURL}${meta.home.path}`} />
-        <meta name="image" property="og:image" content={`${baseURL}${meta.home.image}`} />
+        <meta
+          name="image"
+          property="og:image"
+          content={`${baseURL}${meta.home.image}`}
+        />
         <meta name="og:title" content={meta.home.description} />
         <meta name="og:type" content="website" />
         <meta name="og:site_name" content={meta.home.title} />
@@ -72,7 +76,13 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <Analytics />
       <SpeedInsights />
       <GoogleAnalytics gaId="G-SZLNLGY5NV" />
-      <Column style={{ minHeight: '100vh' }} as="body" fillWidth margin="0" padding="0">
+      <Column
+        style={{ minHeight: '100vh' }}
+        as="body"
+        fillWidth
+        margin="0"
+        padding="0"
+      >
         <Background
           mask={{
             cursor: effects.mask.cursor,

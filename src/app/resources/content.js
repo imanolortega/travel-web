@@ -1,4 +1,5 @@
-const description = 'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.';
+const description =
+  'Viajando, escribiendo y fotografiando pueblos y ciudades argentinas.';
 
 const person = {
   firstName: 'Imanol',
@@ -63,7 +64,12 @@ const about = {
   intro: {
     display: true,
     title: 'Introducción',
-    description: <>Viajando, capturando y escribiendo sobre Argentina. Actualmente en Lago Puelo, Chubut.</>,
+    description: (
+      <>
+        Viajando, capturando y escribiendo sobre Argentina. Actualmente en Lago
+        Puelo, Chubut.
+      </>
+    ),
   },
 };
 
@@ -77,8 +83,8 @@ const blog = {
       title: 'Diario de viaje II: Trevelin',
       description: (
         <>
-          El Pueblo del Molino en la cordillera, la Colonia Galesa del Chubut y las campañas
-          militares del Estado argentino en la Patagonia.
+          El Pueblo del Molino en la cordillera, la Colonia Galesa del Chubut y
+          las campañas militares del Estado argentino en la Patagonia.
         </>
       ),
       image: '/images/trevelin/dragon-rojo.jpg',
@@ -89,8 +95,8 @@ const blog = {
       title: 'Diario de viaje: Capilla del Monte',
       description: (
         <>
-          Un poblado en el Valle de Punilla, un cerro sagrado, antiguas tradiciones, leyendas y
-          relatos de seres extraterrestres.
+          Un poblado en el Valle de Punilla, un cerro sagrado, antiguas
+          tradiciones, leyendas y relatos de seres extraterrestres.
         </>
       ),
       image: '/images/capilla/uritorco.jpg',
@@ -107,8 +113,8 @@ const gallery = {
   description_og: 'Galería de fotos. Fotografías de mi viaje por Argentina.',
   description: (
     <>
-      Todas las fotografías fueron tomadas durante los últimos meses con una cámara Sony Alpha 7 III
-      y un lente 28-70mm F3.5-5.6.
+      Todas las fotografías fueron tomadas durante los últimos meses con una
+      cámara Sony Alpha 7 III y un lente 28-70mm F3.5-5.6.
       <br />
       Son de mi autoría a excepción de las mencionadas.
     </>

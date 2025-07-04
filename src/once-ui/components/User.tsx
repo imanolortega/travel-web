@@ -18,14 +18,27 @@ interface UserProps {
 
 const User = forwardRef<HTMLDivElement, UserProps>(
   (
-    { name, children, subline, tagProps = {}, loading = false, avatarProps = {}, className },
+    {
+      name,
+      children,
+      subline,
+      tagProps = {},
+      loading = false,
+      avatarProps = {},
+      className,
+    },
     ref,
   ) => {
     const { src, value, empty, ...restAvatarProps } = avatarProps;
     const isEmpty = empty || (!src && !value);
 
     return (
-      <Flex ref={ref} vertical="center" gap="8" className={classNames(className)}>
+      <Flex
+        ref={ref}
+        vertical="center"
+        gap="8"
+        className={classNames(className)}
+      >
         <Avatar
           size="m"
           src={src}
@@ -39,7 +52,12 @@ const User = forwardRef<HTMLDivElement, UserProps>(
           <Flex direction="column" paddingLeft="4" paddingRight="12">
             {loading ? (
               <Flex minWidth={6} paddingY="4">
-                <Skeleton width="xl" height="m" shape="line" aria-label="Loading name" />
+                <Skeleton
+                  width="xl"
+                  height="m"
+                  shape="line"
+                  aria-label="Loading name"
+                />
               </Flex>
             ) : (
               <Flex gap="8" vertical="center">
@@ -55,10 +73,19 @@ const User = forwardRef<HTMLDivElement, UserProps>(
             )}
             {loading ? (
               <Flex paddingY="4">
-                <Skeleton width="l" height="xs" shape="line" aria-label="Loading subline" />
+                <Skeleton
+                  width="l"
+                  height="xs"
+                  shape="line"
+                  aria-label="Loading subline"
+                />
               </Flex>
             ) : (
-              <Text wrap="nowrap" variant="body-default-xs" onBackground="neutral-weak">
+              <Text
+                wrap="nowrap"
+                variant="body-default-xs"
+                onBackground="neutral-weak"
+              >
                 {subline}
               </Text>
             )}

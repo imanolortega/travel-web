@@ -25,7 +25,9 @@ const GlitchFx = forwardRef<HTMLDivElement, GlitchFxProps>(
     },
     ref,
   ) => {
-    const [isGlitching, setIsGlitching] = useState(continuous || trigger === 'instant');
+    const [isGlitching, setIsGlitching] = useState(
+      continuous || trigger === 'instant',
+    );
 
     useEffect(() => {
       if (continuous || trigger === 'instant') {

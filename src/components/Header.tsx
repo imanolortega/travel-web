@@ -51,7 +51,15 @@ export const Header = () => {
   return (
     <>
       <Fade hide="s" fillWidth position="fixed" height="80" zIndex={9} />
-      <Fade show="s" fillWidth position="fixed" bottom="0" to="top" height="80" zIndex={9} />
+      <Fade
+        show="s"
+        fillWidth
+        position="fixed"
+        bottom="0"
+        to="top"
+        height="80"
+        zIndex={9}
+      />
       <Flex
         fitHeight
         className={styles.position}
@@ -61,7 +69,12 @@ export const Header = () => {
         padding="8"
         horizontal="center"
       >
-        <Flex paddingLeft="12" fillWidth vertical="center" textVariant="body-default-s"></Flex>
+        <Flex
+          paddingLeft="12"
+          fillWidth
+          vertical="center"
+          textVariant="body-default-s"
+        ></Flex>
         <Flex fillWidth horizontal="center">
           <Flex
             background="surface"
