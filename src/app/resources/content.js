@@ -80,7 +80,7 @@ const blog = {
   path: '/blog',
   posts: [
     {
-      title: 'Diario de viaje II: Trevelin',
+      title: 'Diario de viaje amor. Trevelin',
       description: (
         <>
           El Pueblo del Molino en la cordillera, la Colonia Galesa del Chubut y
@@ -92,7 +92,7 @@ const blog = {
       id: 0,
     },
     {
-      title: 'Diario de viaje: Capilla del Monte',
+      title: 'Diario de escape. Capilla del Monte',
       description: (
         <>
           Un poblado en el Valle de Punilla, un cerro sagrado, antiguas
