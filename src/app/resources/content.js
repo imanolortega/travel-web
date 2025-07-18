@@ -80,7 +80,7 @@ const blog = {
   path: '/blog',
   posts: [
     {
-      title: 'Diario de viaje amor. Trevelin',
+      title: 'Diario de viaje gracia. Trevelin',
       description: (
         <>
           El Pueblo del Molino en la cordillera, la Colonia Galesa del Chubut y
